@@ -76,7 +76,7 @@ export default function Navbar() {
         </motion.a>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-2">
           {[
             { href: "#home", label: "Home" },
             { href: "#about", label: "About" },
@@ -88,7 +88,7 @@ export default function Navbar() {
             <motion.a 
               key={item.href}
               href={item.href} 
-              className={`nav-link font-medium relative px-2 py-1 ${activeSection === item.href.slice(1) ? "text-primary font-semibold" : ""}`}
+              className={`nav-link font-medium relative px-1 py-1 ${activeSection === item.href.slice(1) ? "text-primary font-semibold" : ""}`}
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
