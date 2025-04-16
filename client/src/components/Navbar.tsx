@@ -65,17 +65,24 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <motion.a 
-          href="#" 
-          className="text-2xl font-bold font-sans text-primary"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+      <div className="container mx-auto px-4 py-4 flex justify-center items-center relative">
+        {/* Mobile Menu Button - Positioned Absolutely on the Right */}
+        <motion.div
+          className="absolute right-4 md:hidden"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
-          Portfolio
-        </motion.a>
-        
-        {/* Desktop Navigation */}
+          <Button 
+            variant="ghost" 
+            size="icon"
+            onClick={toggleMenu}
+            aria-label="Toggle Menu"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </motion.div>
+      
+        {/* Desktop Navigation - Centered */}
         <nav className="hidden md:flex items-center space-x-2">
           {[
             { href: "#home", label: "Home" },
@@ -116,22 +123,6 @@ export default function Navbar() {
             <Moon className="h-4 w-4 text-slate-700 dark:text-slate-400 ml-1" />
           </div>
         </nav>
-        
-        {/* Mobile Menu Button */}
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <Button 
-            variant="ghost" 
-            size="icon"
-            className="md:hidden"
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-        </motion.div>
       </div>
       
       {/* Mobile Navigation */}
