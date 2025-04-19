@@ -123,7 +123,6 @@ interface SkillBubbleProps {
   category: typeof skillCategories[0];
   index: number;
   isActive: boolean;
-  onClick: () => void;
 }
 
 // Hook to safely handle window resize
@@ -155,10 +154,11 @@ function useWindowSize() {
   return windowSize;
 }
 
-function SkillBubble({ category, index, isActive, onClick }: SkillBubbleProps) {
+function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
   const bubbleControls = useAnimation();
   const bubbleRef = useRef<HTMLDivElement>(null);
   const { width: windowWidth } = useWindowSize();
+  const [isHovered, setIsHovered] = useState(false);
 
   // Float animation
   useEffect(() => {
@@ -179,13 +179,13 @@ function SkillBubble({ category, index, isActive, onClick }: SkillBubbleProps) {
       className={cn(
         "relative flex flex-col items-center justify-center",
         "cursor-pointer group",
-        isActive ? "z-10" : "z-0"
+        isHovered ? "z-10" : "z-0"
       )}
       variants={bubbleVariants}
       animate={bubbleControls}
-      onClick={onClick}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
       whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
     >
       <motion.div
         className={cn(
@@ -195,15 +195,15 @@ function SkillBubble({ category, index, isActive, onClick }: SkillBubbleProps) {
           category.color,
           category.hoverColor,
           "transition-all duration-300",
-          isActive ? "scale-110" : "",
-          isActive ? "md:h-48 md:w-48 h-32 w-32" : "md:h-32 md:w-32 h-24 w-24" 
+          isHovered ? "scale-110" : "",
+          isHovered ? "md:h-48 md:w-48 h-32 w-32" : "md:h-32 md:w-32 h-24 w-24" 
         )}
       >
         <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-50"></div>
         
         <AnimatePresence>
-          {isActive ? (
+          {isHovered ? (
             <motion.div
               className="absolute inset-0 flex flex-col items-center justify-center p-2"
               initial={{ opacity: 0 }}
@@ -215,7 +215,7 @@ function SkillBubble({ category, index, isActive, onClick }: SkillBubbleProps) {
                 {category.title}
               </div>
               <div className={cn("text-xs text-center", category.textColor, "opacity-90")}>
-                Click to collapse
+                Hover to explore
               </div>
             </motion.div>
           ) : (
@@ -234,9 +234,9 @@ function SkillBubble({ category, index, isActive, onClick }: SkillBubbleProps) {
         </AnimatePresence>
       </motion.div>
 
-      {/* Skills orbit (visible only when active) */}
+      {/* Skills orbit (visible only when hovered) */}
       <AnimatePresence>
-        {isActive && (
+        {isHovered && (
           <motion.div
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             variants={orbitVariants}
@@ -299,12 +299,6 @@ function SkillBubble({ category, index, isActive, onClick }: SkillBubbleProps) {
 }
 
 export default function SkillsSection() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  
-  const handleCategoryClick = (categoryId: string) => {
-    setActiveCategory(activeCategory === categoryId ? null : categoryId);
-  };
-
   return (
     <section id="skills" className="py-20 bg-muted/30 relative overflow-hidden">
       {/* Background gradient effects */}
@@ -334,8 +328,7 @@ export default function SkillsSection() {
               key={category.id}
               category={category}
               index={index}
-              isActive={activeCategory === category.id}
-              onClick={() => handleCategoryClick(category.id)}
+              isActive={false}
             />
           ))}
         </motion.div>
@@ -348,7 +341,7 @@ export default function SkillsSection() {
           viewport={{ once: true }}
           transition={{ delay: 1 }}
         >
-          Click on a bubble to explore skills in that category
+          Hover over a bubble to explore skills in that category
         </motion.p>
       </div>
     </section>
