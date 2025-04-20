@@ -223,9 +223,10 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
       ref={bubbleRef}
       className={cn(
         "relative flex flex-col items-center justify-center",
-        "cursor-pointer group",
+        "cursor-pointer group skill-bubble",
         isHovered ? "z-10" : "z-0"
       )}
+      data-skill-bubble="true"
       variants={bubbleVariants}
       animate={bubbleControls}
       onHoverStart={() => setIsHovered(true)}
@@ -297,7 +298,8 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
               return (
                 <motion.div
                   key={skill}
-                  className="absolute"
+                  className="absolute skill-bubble"
+                  data-skill-bubble="true"
                   variants={skillItemVariants}
                   style={{
                     x,
