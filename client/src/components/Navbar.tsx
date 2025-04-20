@@ -65,73 +65,26 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-center items-center relative">
-        {/* Mobile Menu Button - Positioned Absolutely on the Right */}
-        <motion.div
-          className="absolute right-4 md:hidden"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <Button 
-            variant="ghost" 
-            size="icon"
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-        </motion.div>
-        
-        {/* Theme Toggle - Absolutely Positioned to Top Right */}
-        <motion.div 
-          className="absolute right-4 top-1/2 -translate-y-1/2 hidden md:block"
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <button 
-            onClick={toggleTheme}
-            className="relative h-10 w-10 rounded-full overflow-hidden flex items-center justify-center"
-            aria-label="Toggle theme"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-200 to-amber-300 dark:from-indigo-400 dark:to-indigo-600 opacity-20 rounded-full" />
-            <motion.div 
-              initial={false}
-              animate={{ 
-                rotate: theme === 'dark' ? 360 : 0,
-                scale: theme === 'dark' ? [1, 1.2, 1] : [1, 0.8, 1],
-              }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="relative"
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={toggleMenu}
+              aria-label="Toggle Menu"
             >
-              <AnimatePresence mode="wait">
-                {theme === 'dark' ? (
-                  <motion.div
-                    key="moon"
-                    initial={{ opacity: 0, y: 10, rotate: -30 }}
-                    animate={{ opacity: 1, y: 0, rotate: 0 }}
-                    exit={{ opacity: 0, y: -10, rotate: 30 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <MoonStar className="h-5 w-5 text-indigo-200" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="sun"
-                    initial={{ opacity: 0, y: -10, rotate: 30 }}
-                    animate={{ opacity: 1, y: 0, rotate: 0 }}
-                    exit={{ opacity: 0, y: 10, rotate: -30 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Sun className="h-5 w-5 text-amber-500" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          </button>
-        </motion.div>
-      
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </motion.div>
+        </div>
+        
         {/* Desktop Navigation - Centered */}
-        <nav className="hidden md:flex items-center space-x-4">
+        <nav className="hidden md:flex items-center justify-center flex-1 space-x-4">
           {[
             { href: "#home", label: "Home" },
             { href: "#about", label: "About" },
@@ -186,6 +139,41 @@ export default function Navbar() {
             </motion.a>
           ))}
         </nav>
+        
+        {/* Theme Toggle Button - Right Aligned */}
+        <motion.button
+          onClick={toggleTheme}
+          className="relative flex items-center justify-center rounded-full p-1 overflow-hidden"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Toggle theme"
+        >
+          <div className="w-8 h-8 rounded-full flex items-center justify-center border border-border">
+            <AnimatePresence mode="sync" initial={false}>
+              {theme === 'dark' ? (
+                <motion.div
+                  key="moon"
+                  initial={{ opacity: 0, rotate: -30, scale: 0.5 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  exit={{ opacity: 0, rotate: 30, scale: 0.5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <MoonStar className="h-4 w-4 text-indigo-300" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="sun"
+                  initial={{ opacity: 0, rotate: 30, scale: 0.5 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  exit={{ opacity: 0, rotate: -30, scale: 0.5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Sun className="h-4 w-4 text-amber-500" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </motion.button>
       </div>
       
       {/* Mobile Navigation */}
@@ -221,18 +209,45 @@ export default function Navbar() {
             </motion.a>
           ))}
           
-          {/* Theme Toggle Switch (Mobile) */}
-          <div className="flex items-center py-2">
-            <span className="mr-3">Theme:</span>
-            <div className="flex items-center bg-background/80 p-1 px-2 rounded-full border border-border">
-              <Sun className="h-4 w-4 text-amber-500 mr-1" />
-              <Switch 
-                checked={theme === 'dark'}
-                onCheckedChange={toggleTheme}
-                className="data-[state=checked]:bg-primary"
-              />
-              <Moon className="h-4 w-4 text-slate-700 dark:text-slate-400 ml-1" />
-            </div>
+          {/* Theme Toggle Button (Mobile) */}
+          <div className="flex items-center gap-3 py-2">
+            <span>Theme:</span>
+            <motion.button
+              onClick={toggleTheme}
+              className="relative flex items-center justify-center rounded-full p-1 overflow-hidden"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Toggle theme"
+            >
+              <div className="w-8 h-8 rounded-full flex items-center justify-center border border-border">
+                <AnimatePresence mode="sync" initial={false}>
+                  {theme === 'dark' ? (
+                    <motion.div
+                      key="moon-mobile"
+                      initial={{ opacity: 0, rotate: -30, scale: 0.5 }}
+                      animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                      exit={{ opacity: 0, rotate: 30, scale: 0.5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <MoonStar className="h-4 w-4 text-indigo-300" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="sun-mobile"
+                      initial={{ opacity: 0, rotate: 30, scale: 0.5 }}
+                      animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                      exit={{ opacity: 0, rotate: -30, scale: 0.5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Sun className="h-4 w-4 text-amber-500" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              <span className="ml-2 text-sm">
+                {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
+              </span>
+            </motion.button>
           </div>
         </div>
       </motion.div>

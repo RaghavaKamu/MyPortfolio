@@ -28,15 +28,32 @@ export function preparePrompt(userMessage: string): string {
   return `${portfolioContext}\n\nUser: ${userMessage}\nRaghava:`;
 }
 
-// This function would call OpenAI API in a real implementation
-// For now, it's a placeholder that returns simulated responses
+// This function attempts to use OpenAI API if an API key is available
+// Otherwise falls back to simulated responses
 export async function chatWithAI(userMessage: string): Promise<string> {
-  // In a real app, this would make a fetch request to your backend
-  // which would then call OpenAI with the proper API key and prompt
+  // Try to use OpenAI if the API key is available in environment variables
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
   
-  // For now, we'll use the simulation function from the component
-  // but in a production app, you'd implement the actual OpenAI call here
-  
+  if (apiKey) {
+    try {
+      // Prepare prompt with portfolio context
+      const prompt = preparePrompt(userMessage);
+      
+      // Call OpenAI API
+      return await getOpenAIResponse(prompt, apiKey);
+    } catch (error) {
+      console.error("Error getting OpenAI response:", error);
+      // Fall back to simulated responses
+      return getSimulatedResponse(userMessage);
+    }
+  } else {
+    // Use simulated responses if no API key is available
+    return getSimulatedResponse(userMessage);
+  }
+}
+
+// Simulated response function that doesn't require API access
+function getSimulatedResponse(userMessage: string): string {
   const normalizedQuery = userMessage.toLowerCase();
   
   // Simple pattern matching for demo purposes
@@ -57,7 +74,7 @@ export async function chatWithAI(userMessage: string): Promise<string> {
   }
 }
 
-// Function to implement in the future with real OpenAI integration
+// Function to call the OpenAI API with proper error handling
 export async function getOpenAIResponse(prompt: string, apiKey: string): Promise<string> {
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -71,21 +88,33 @@ export async function getOpenAIResponse(prompt: string, apiKey: string): Promise
         messages: [
           {
             role: "system",
-            content: "You are raghava.ai, a helpful assistant on Raghava's portfolio website. You answer questions about Raghava's skills, projects, and experience in a friendly, professional tone."
+            content: "You are raghava.ai, a helpful assistant on Raghava's portfolio website. You answer questions about Raghava's skills, projects, and experience in a friendly, professional tone. Keep responses concise (under 3 sentences when possible) and focus on Raghava's professional attributes."
           },
           {
             role: "user",
             content: prompt
           }
         ],
-        max_tokens: 300
+        max_tokens: 250,
+        temperature: 0.7,
       })
     });
 
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('OpenAI API error:', errorData);
+      throw new Error(`API returned status ${response.status}: ${errorData.error?.message || 'Unknown error'}`);
+    }
+
     const data = await response.json();
-    return data.choices[0].message.content;
+    
+    if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+      throw new Error('Invalid response format from OpenAI API');
+    }
+    
+    return data.choices[0].message.content.trim();
   } catch (error) {
     console.error('Error calling OpenAI API:', error);
-    return "I'm having trouble connecting to my knowledge base. Please try again later.";
+    throw new Error('Failed to get AI response');
   }
 }
