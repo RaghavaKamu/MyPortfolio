@@ -1,11 +1,11 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-
 import { cn } from "@/lib/utils"
+import styles from "./button.module.css"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -41,16 +41,73 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
+    const [mounted, setMounted] = React.useState(false);
+    const buttonRef = React.useRef<HTMLButtonElement | null>(null);
+    
+    const forwardedRef = React.useCallback(
+      (element: HTMLButtonElement) => {
+        buttonRef.current = element;
+        if (typeof ref === "function") {
+          ref(element);
+        } else if (ref) {
+          ref.current = element;
+        }
+      },
+      [ref]
+    );
+
+    React.useEffect(() => {
+      setMounted(true);
+    }, []);
+
+    const updateSpotlightPosition = React.useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+      if (!buttonRef.current) return;
+      
+      const button = buttonRef.current;
+      const rect = button.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      
+      button.style.setProperty('--x', `${x}%`);
+      button.style.setProperty('--y', `${y}%`);
+    }, []);
+    
+    // Get the CSS module style based on the variant
+    const getStyleVariant = () => {
+      switch (variant) {
+        case 'default': return styles.primary;
+        case 'secondary': return styles.secondary;
+        case 'outline': return styles.outline;
+        case 'destructive': return styles.destructive;
+        case 'ghost': return styles.ghost;
+        case 'link': return styles.link;
+        default: return styles.primary;
+      }
+    };
+
+    // Use animation classes instead of Framer Motion props
+    const animationClassName = mounted ? "transform transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]" : "";
+
+    const combinedClassName = cn(
+      buttonVariants({ variant, size, className }),
+      mounted ? styles.glossyButton : "",
+      getStyleVariant(),
+      animationClassName
+    );
+
+    const Comp = asChild ? Slot : "button";
+    
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
+        ref={forwardedRef}
+        className={combinedClassName}
+        onMouseMove={updateSpotlightPosition}
         {...props}
       />
-    )
+    );
   }
-)
-Button.displayName = "Button"
+);
+
+Button.displayName = "Button";
 
 export { Button, buttonVariants }
