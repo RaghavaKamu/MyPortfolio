@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useTheme } from "@/lib/ThemeProvider";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Moon, Sun, Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
+import { Moon, Sun, Menu, X, MoonStar } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -81,9 +81,57 @@ export default function Navbar() {
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </motion.div>
+        
+        {/* Theme Toggle - Absolutely Positioned to Top Right */}
+        <motion.div 
+          className="absolute right-4 top-1/2 -translate-y-1/2 hidden md:block"
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <button 
+            onClick={toggleTheme}
+            className="relative h-10 w-10 rounded-full overflow-hidden flex items-center justify-center"
+            aria-label="Toggle theme"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-200 to-amber-300 dark:from-indigo-400 dark:to-indigo-600 opacity-20 rounded-full" />
+            <motion.div 
+              initial={false}
+              animate={{ 
+                rotate: theme === 'dark' ? 360 : 0,
+                scale: theme === 'dark' ? [1, 1.2, 1] : [1, 0.8, 1],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="relative"
+            >
+              <AnimatePresence mode="wait">
+                {theme === 'dark' ? (
+                  <motion.div
+                    key="moon"
+                    initial={{ opacity: 0, y: 10, rotate: -30 }}
+                    animate={{ opacity: 1, y: 0, rotate: 0 }}
+                    exit={{ opacity: 0, y: -10, rotate: 30 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <MoonStar className="h-5 w-5 text-indigo-200" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="sun"
+                    initial={{ opacity: 0, y: -10, rotate: 30 }}
+                    animate={{ opacity: 1, y: 0, rotate: 0 }}
+                    exit={{ opacity: 0, y: 10, rotate: -30 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Sun className="h-5 w-5 text-amber-500" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          </button>
+        </motion.div>
       
         {/* Desktop Navigation - Centered */}
-        <nav className="hidden md:flex items-center space-x-2">
+        <nav className="hidden md:flex items-center space-x-4">
           {[
             { href: "#home", label: "Home" },
             { href: "#about", label: "About" },
@@ -95,11 +143,22 @@ export default function Navbar() {
             <motion.a 
               key={item.href}
               href={item.href} 
-              className={`nav-link font-medium relative px-1 py-1 ${activeSection === item.href.slice(1) ? "text-primary font-semibold" : ""}`}
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              className={`nav-link font-medium relative px-2 py-1 overflow-hidden ${
+                activeSection === item.href.slice(1) ? "text-primary font-semibold" : ""
+              }`}
+              whileHover="hover"
+              variants={{
+                hover: {
+                  scale: 1.05,
+                  transition: {
+                    duration: 0.2,
+                    ease: "easeInOut",
+                  },
+                },
+              }}
             >
               {item.label}
+              {/* Active indicator */}
               {activeSection === item.href.slice(1) && (
                 <motion.div 
                   className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"
@@ -109,19 +168,23 @@ export default function Navbar() {
                   transition={{ duration: 0.2 }}
                 />
               )}
+              
+              {/* Hover effect indicator */}
+              <motion.div 
+                className="absolute bottom-0 left-0 w-full h-0.5 bg-primary/70 rounded-full"
+                initial={{ scaleX: 0, originX: 0 }}
+                variants={{
+                  hover: {
+                    scaleX: 1,
+                    transition: { 
+                      duration: 0.2,
+                      ease: "easeOut"
+                    }
+                  }
+                }}
+              />
             </motion.a>
           ))}
-          
-          {/* Theme Toggle Switch */}
-          <div className="flex items-center bg-background/50 p-1 px-2 rounded-full border border-border">
-            <Sun className="h-4 w-4 text-amber-500 mr-1" />
-            <Switch 
-              checked={theme === 'dark'}
-              onCheckedChange={toggleTheme}
-              className="data-[state=checked]:bg-primary"
-            />
-            <Moon className="h-4 w-4 text-slate-700 dark:text-slate-400 ml-1" />
-          </div>
         </nav>
       </div>
       

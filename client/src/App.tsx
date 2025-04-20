@@ -5,6 +5,7 @@ import { ThemeProvider } from "./lib/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Home from "@/pages/Home";
 import Footer from "@/components/Footer";
+import AIChatbot from "@/components/AIChatbot";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Home />
           </main>
           <Footer />
+          <AIChatbot />
         </div>
         <Toaster />
       </ThemeProvider>
