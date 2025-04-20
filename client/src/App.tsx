@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar";
 import Home from "@/pages/Home";
 import Footer from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
-import CursorLight from "@/components/CursorLight";
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
           </main>
           <Footer />
           <AIChatbot />
-          <CursorLight />
         </div>
         <Toaster />
       </ThemeProvider>
