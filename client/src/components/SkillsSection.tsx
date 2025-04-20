@@ -397,9 +397,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="py-20 bg-muted/30 relative overflow-hidden">
       {/* Interactive Background */}
-      <div className="pointer-events-none">
-        <InteractiveBackground />
-      </div>
+      <InteractiveBackground />
       
       {/* Background gradient effects */}
       <div className="absolute -top-48 -left-48 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>

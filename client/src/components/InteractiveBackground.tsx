@@ -66,33 +66,50 @@ export default function InteractiveBackground() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   
-  // Mouse move handler for both particles and cursor light
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
+  // Set up mousemove event listener on the entire document
+  useEffect(() => {
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (!containerRef.current) return;
+      
+      const rect = containerRef.current.getBoundingClientRect();
+      
+      // Check if mouse is within the container
+      if (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom
+      ) {
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        setMousePosition({ x, y });
+        setIsHovering(true);
+        
+        // Update cursor light position
+        if (cursorLightRef.current) {
+          cursorLightRef.current.style.left = `${x}px`;
+          cursorLightRef.current.style.top = `${y}px`;
+          cursorLightRef.current.style.opacity = '1';
+        }
+      } else {
+        // Mouse is outside container
+        setIsHovering(false);
+        if (cursorLightRef.current) {
+          cursorLightRef.current.style.opacity = '0';
+        }
+      }
+    };
     
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    setMousePosition({ x, y });
-    setIsHovering(true);
-    
-    // Update cursor light position
-    if (cursorLightRef.current) {
-      cursorLightRef.current.style.left = `${x}px`;
-      cursorLightRef.current.style.top = `${y}px`;
-      cursorLightRef.current.style.opacity = '1';
-    }
-  };
+    document.addEventListener('mousemove', handleGlobalMouseMove);
+    return () => {
+      document.removeEventListener('mousemove', handleGlobalMouseMove);
+    };
+  }, []);
   
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-    
-    // Hide cursor light when mouse leaves
-    if (cursorLightRef.current) {
-      cursorLightRef.current.style.opacity = '0';
-    }
-  };
+  // Empty handler functions since we're using the global event listener
+  const handleMouseMove = () => {};
+  const handleMouseLeave = () => {};
   
   // Update particle positions based on mouse position
   const getParticleStyles = (particle: Particle, index: number) => {
@@ -154,23 +171,23 @@ export default function InteractiveBackground() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-      style={{ zIndex: 0 }}
+      className="absolute inset-0 overflow-hidden"
+      style={{ zIndex: 2 }}
     >
       {/* Cursor light effect */}
       <div
         ref={cursorLightRef}
         className="absolute rounded-full pointer-events-none"
         style={{
-          width: '200px', // Smaller cursor light
-          height: '200px',
+          width: '350px', // Even larger cursor light
+          height: '350px',
           transform: 'translate(-50%, -50%)',
-          background: 'radial-gradient(circle, rgba(var(--primary), 0.08) 0%, rgba(var(--primary), 0.03) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--primary), 0.7) 0%, rgba(var(--primary), 0.3) 40%, transparent 80%)',
           opacity: 0,
-          transition: 'opacity 0.3s ease',
-          mixBlendMode: 'plus-lighter', // Lighter blend mode that won't overpower text
-          zIndex: 1,
-          filter: 'blur(8px)' // Add slight blur for a softer effect
+          transition: 'opacity 0.15s ease',
+          zIndex: 999, // Very high z-index to ensure it's visible above all content
+          filter: 'blur(3px)', // Even less blur for more visible effect
+          pointerEvents: 'none'
         }}
       />
       
