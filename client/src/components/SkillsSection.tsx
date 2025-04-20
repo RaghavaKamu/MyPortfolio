@@ -219,134 +219,152 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
   }, [bubbleControls, index]);
 
   return (
-    <motion.div
-      ref={bubbleRef}
-      className={cn(
-        "relative flex flex-col items-center justify-center",
-        "cursor-pointer group",
-        isHovered ? "z-50" : "z-0" // High z-index when hovered
+    <div className="relative">
+      {/* Separate container for skills to ensure they're on top of all other elements */}
+      {isHovered && (
+        <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1000 }}>
+          <div className="absolute" style={{ 
+            top: bubbleRef.current ? bubbleRef.current.getBoundingClientRect().top + window.scrollY + (bubbleRef.current.getBoundingClientRect().height / 2) : 0,
+            left: bubbleRef.current ? bubbleRef.current.getBoundingClientRect().left + window.scrollX + (bubbleRef.current.getBoundingClientRect().width / 2) : 0,
+          }}>
+            <AnimatePresence>
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+              >
+                {category.skills.map((skill, i) => {
+                  // Calculate position in a circle around the main bubble
+                  const angle = (i * (360 / category.skills.length)) * (Math.PI / 180);
+                  // Use a smaller radius on mobile but ensure skills don't overlap with category bubbles
+                  const radius = windowWidth < 768 ? 150 : 200; 
+                  const x = Math.cos(angle) * radius;
+                  const y = Math.sin(angle) * radius;
+
+                  return (
+                    <motion.div
+                      key={skill}
+                      className="absolute"
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ 
+                        opacity: 1, 
+                        scale: 1,
+                        x,
+                        y,
+                        transition: {
+                          type: "spring",
+                          stiffness: 200,
+                          damping: 20,
+                          delay: i * 0.05
+                        }
+                      }}
+                      exit={{ 
+                        opacity: 0, 
+                        scale: 0,
+                        transition: {
+                          duration: 0.2
+                        }
+                      }}
+                      style={{ 
+                        transform: 'translate(-50%, -50%)',
+                        pointerEvents: "auto" 
+                      }}
+                      whileHover={{ 
+                        scale: 1.15,
+                        transition: { 
+                          type: "spring", 
+                          stiffness: 300, 
+                          damping: 10 
+                        }
+                      }}
+                    >
+                      <Badge 
+                        className={cn(
+                          "px-3 py-1 text-sm font-medium shadow-lg",
+                          "bg-white/95 dark:bg-slate-900/95 border-2",
+                          {
+                            "border-blue-500": category.id === "languages",
+                            "border-purple-500": category.id === "frontend",
+                            "border-orange-500": category.id === "cloud",
+                            "border-red-500": category.id === "database",
+                            "border-teal-500": category.id === "networking",
+                            "border-green-500": category.id === "machinelearning",
+                          },
+                          "hover:bg-white dark:hover:bg-slate-900",
+                          "transition-all duration-200"
+                        )}
+                      >
+                        {skill}
+                      </Badge>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
       )}
-      variants={bubbleVariants}
-      animate={bubbleControls}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ scale: 1.1 }}
-    >
+
+      {/* The main category bubble */}
       <motion.div
+        ref={bubbleRef}
         className={cn(
-          "flex items-center justify-center rounded-full",
-          "bg-gradient-to-br shadow-lg",
-          "relative overflow-hidden",
-          category.color,
-          category.hoverColor,
-          "transition-all duration-300",
-          isHovered ? "scale-110" : "",
-          isHovered ? "md:h-48 md:w-48 h-32 w-32" : "md:h-32 md:w-32 h-24 w-24" 
+          "relative flex flex-col items-center justify-center",
+          "cursor-pointer group",
+          isHovered ? "z-10" : "z-0" // Increase z-index when hovered, but keep lower than skills
         )}
+        variants={bubbleVariants}
+        animate={bubbleControls}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        whileHover={{ scale: 1.1 }}
       >
-        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-50"></div>
-        
-        <AnimatePresence mode="wait">
-          {isHovered ? (
-            <motion.div
-              className="absolute inset-0 flex flex-col items-center justify-center p-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className={cn("text-base font-bold text-center", category.textColor)}>
-                {category.title}
-              </div>
-            </motion.div>
-          ) : (
-            <motion.div
-              className="flex flex-col items-center justify-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <div className={cn("mb-1", category.textColor)}>{category.icon}</div>
-              <div className={cn("text-xs font-medium text-center", category.textColor)}>
-                {category.title}
-              </div>
-            </motion.div>
+        <motion.div
+          className={cn(
+            "flex items-center justify-center rounded-full",
+            "bg-gradient-to-br shadow-lg",
+            "relative overflow-hidden",
+            category.color,
+            category.hoverColor,
+            "transition-all duration-300",
+            isHovered ? "scale-110" : "",
+            isHovered ? "md:h-48 md:w-48 h-32 w-32" : "md:h-32 md:w-32 h-24 w-24" 
           )}
-        </AnimatePresence>
+        >
+          <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-50"></div>
+          
+          <AnimatePresence mode="wait">
+            {isHovered ? (
+              <motion.div
+                className="absolute inset-0 flex flex-col items-center justify-center p-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className={cn("text-base font-bold text-center", category.textColor)}>
+                  {category.title}
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div
+                className="flex flex-col items-center justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <div className={cn("mb-1", category.textColor)}>{category.icon}</div>
+                <div className={cn("text-xs font-medium text-center", category.textColor)}>
+                  {category.title}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
       </motion.div>
-
-      {/* Skills orbit (visible only when hovered) */}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[100]"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            style={{ pointerEvents: "none" }}
-          >
-            {category.skills.map((skill, i) => {
-              // Calculate position in a circle around the main bubble
-              const angle = (i * (360 / category.skills.length)) * (Math.PI / 180);
-              // Use a smaller radius on mobile but ensure skills don't overlap with category bubbles
-              const radius = windowWidth < 768 ? 130 : 180; 
-              const x = Math.cos(angle) * radius;
-              const y = Math.sin(angle) * radius;
-
-              return (
-                <motion.div
-                  key={skill}
-                  className="absolute z-[150]"
-                  initial={{ opacity: 0, scale: 0, x, y }}
-                  animate={{ 
-                    opacity: 1, 
-                    scale: 1,
-                    x,
-                    y,
-                    transition: {
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 20,
-                      delay: i * 0.05
-                    }
-                  }}
-                  exit={{ opacity: 0, scale: 0 }}
-                  style={{ pointerEvents: "auto" }}
-                  whileHover={{ 
-                    scale: 1.15,
-                    transition: { 
-                      type: "spring", 
-                      stiffness: 300, 
-                      damping: 10 
-                    }
-                  }}
-                >
-                  <Badge 
-                    className={cn(
-                      "px-3 py-1 text-sm font-medium shadow-lg",
-                      "bg-white/95 dark:bg-slate-900/95 border-2",
-                      {
-                        "border-blue-500": category.id === "languages",
-                        "border-purple-500": category.id === "frontend",
-                        "border-orange-500": category.id === "cloud",
-                        "border-red-500": category.id === "database",
-                        "border-teal-500": category.id === "networking",
-                        "border-green-500": category.id === "machinelearning",
-                      },
-                      "hover:bg-white dark:hover:bg-slate-900",
-                      "transition-all duration-200"
-                    )}
-                  >
-                    {skill}
-                  </Badge>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+    </div>
   );
 }
 
