@@ -48,7 +48,7 @@ export default function ProjectsSection() {
   
   return (
     <section id="projects" className="py-20 bg-background relative">
-      <InteractiveBackground />
+      <InteractiveBackground intensity={70} size={650} color="rgba(var(--primary), 0.15)" blur={65} />
       <div className="container mx-auto px-4 relative z-10">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-8 text-center"

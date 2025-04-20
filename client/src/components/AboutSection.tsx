@@ -26,7 +26,7 @@ const education = [
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-background relative">
-      <InteractiveBackground />
+      <InteractiveBackground intensity={75} size={600} color="rgba(var(--primary), 0.12)" blur={70} />
       <div className="container mx-auto px-4 relative z-10">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-16 text-center"
