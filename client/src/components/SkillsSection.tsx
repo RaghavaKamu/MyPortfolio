@@ -224,7 +224,7 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
       className={cn(
         "relative flex flex-col items-center justify-center",
         "cursor-pointer group",
-        isHovered ? "z-10" : "z-0"
+        "z-0" // Always keep other bubbles at a lower z-index
       )}
       variants={bubbleVariants}
       animate={bubbleControls}
@@ -280,7 +280,7 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50"
             variants={orbitVariants}
             initial="hidden"
             animate="show"
@@ -289,15 +289,15 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
             {category.skills.map((skill, i) => {
               // Calculate position in a circle around the main bubble
               const angle = (i * (360 / category.skills.length)) * (Math.PI / 180);
-              // Use a smaller radius on mobile
-              const radius = windowWidth < 768 ? 110 : 140; 
+              // Use a smaller radius on mobile but ensure skills don't overlap with category bubbles
+              const radius = windowWidth < 768 ? 120 : 160; 
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
 
               return (
                 <motion.div
                   key={skill}
-                  className="absolute"
+                  className="absolute z-50"
                   variants={skillItemVariants}
                   style={{
                     x,
