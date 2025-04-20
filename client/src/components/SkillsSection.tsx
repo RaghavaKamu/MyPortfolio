@@ -218,90 +218,104 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
     });
   }, [bubbleControls, index]);
 
+  // Log hover state changes
+  useEffect(() => {
+    console.log(`Bubble ${category.title} hover state: ${isHovered}`);
+  }, [isHovered, category.title]);
+
+  const handleHoverStart = () => {
+    console.log("Hover started on", category.title);
+    setIsHovered(true);
+  };
+
+  const handleHoverEnd = () => {
+    console.log("Hover ended on", category.title);
+    setIsHovered(false);
+  };
+
   return (
     <div className="relative">
-      {/* Separate container for skills to ensure they're on top of all other elements */}
+      {/* Skills orbit (visible only when hovered) */}
       {isHovered && (
         <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1000 }}>
           <div className="absolute" style={{ 
             top: bubbleRef.current ? bubbleRef.current.getBoundingClientRect().top + window.scrollY + (bubbleRef.current.getBoundingClientRect().height / 2) : 0,
             left: bubbleRef.current ? bubbleRef.current.getBoundingClientRect().left + window.scrollX + (bubbleRef.current.getBoundingClientRect().width / 2) : 0,
           }}>
-            <AnimatePresence>
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-              >
-                {category.skills.map((skill, i) => {
-                  // Calculate position in a circle around the main bubble
-                  const angle = (i * (360 / category.skills.length)) * (Math.PI / 180);
-                  // Use a smaller radius on mobile but ensure skills don't overlap with category bubbles
-                  const radius = windowWidth < 768 ? 150 : 200; 
-                  const x = Math.cos(angle) * radius;
-                  const y = Math.sin(angle) * radius;
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.2 }}
+            >
+              {category.skills.map((skill, i) => {
+                // Calculate position in a circle around the main bubble
+                const angle = (i * (360 / category.skills.length)) * (Math.PI / 180);
+                // Use a smaller radius on mobile but ensure skills don't overlap with category bubbles
+                const radius = windowWidth < 768 ? 150 : 200; 
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
 
-                  return (
-                    <motion.div
-                      key={skill}
-                      className="absolute"
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ 
-                        opacity: 1, 
-                        scale: 1,
-                        x,
-                        y,
-                        transition: {
-                          type: "spring",
-                          stiffness: 200,
-                          damping: 20,
-                          delay: i * 0.05
-                        }
-                      }}
-                      exit={{ 
-                        opacity: 0, 
-                        scale: 0,
-                        transition: {
-                          duration: 0.2
-                        }
-                      }}
-                      style={{ 
-                        transform: 'translate(-50%, -50%)',
-                        pointerEvents: "auto" 
-                      }}
-                      whileHover={{ 
-                        scale: 1.15,
-                        transition: { 
-                          type: "spring", 
-                          stiffness: 300, 
-                          damping: 10 
-                        }
-                      }}
+                return (
+                  <motion.div
+                    key={skill}
+                    className="absolute"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ 
+                      opacity: 1, 
+                      scale: 1,
+                      x,
+                      y,
+                      transition: {
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 20,
+                        delay: i * 0.05
+                      }
+                    }}
+                    exit={{ 
+                      opacity: 0, 
+                      scale: 0,
+                      transition: {
+                        duration: 0.1
+                      }
+                    }}
+                    style={{ 
+                      transform: 'translate(-50%, -50%)',
+                      pointerEvents: "auto" 
+                    }}
+                    whileHover={{ 
+                      scale: 1.15,
+                      transition: { 
+                        type: "spring", 
+                        stiffness: 300, 
+                        damping: 10 
+                      }
+                    }}
+                  >
+                    <Badge 
+                      className={cn(
+                        "px-3 py-1 text-sm font-medium shadow-lg",
+                        "bg-white/95 dark:bg-slate-900/95 border-2",
+                        {
+                          "border-blue-500": category.id === "languages",
+                          "border-purple-500": category.id === "frontend",
+                          "border-orange-500": category.id === "cloud",
+                          "border-red-500": category.id === "database",
+                          "border-teal-500": category.id === "networking",
+                          "border-green-500": category.id === "machinelearning",
+                        },
+                        "hover:bg-white dark:hover:bg-slate-900",
+                        "transition-all duration-200"
+                      )}
                     >
-                      <Badge 
-                        className={cn(
-                          "px-3 py-1 text-sm font-medium shadow-lg",
-                          "bg-white/95 dark:bg-slate-900/95 border-2",
-                          {
-                            "border-blue-500": category.id === "languages",
-                            "border-purple-500": category.id === "frontend",
-                            "border-orange-500": category.id === "cloud",
-                            "border-red-500": category.id === "database",
-                            "border-teal-500": category.id === "networking",
-                            "border-green-500": category.id === "machinelearning",
-                          },
-                          "hover:bg-white dark:hover:bg-slate-900",
-                          "transition-all duration-200"
-                        )}
-                      >
-                        {skill}
-                      </Badge>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-            </AnimatePresence>
+                      {skill}
+                    </Badge>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
       )}
@@ -316,8 +330,8 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
         )}
         variants={bubbleVariants}
         animate={bubbleControls}
-        onHoverStart={() => setIsHovered(true)}
-        onHoverEnd={() => setIsHovered(false)}
+        onHoverStart={handleHoverStart}
+        onHoverEnd={handleHoverEnd}
         whileHover={{ scale: 1.1 }}
       >
         <motion.div
