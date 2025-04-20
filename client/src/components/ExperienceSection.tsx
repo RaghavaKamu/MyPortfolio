@@ -11,6 +11,7 @@ import {
   Card, CardContent, CardDescription, 
   CardFooter, CardHeader, CardTitle 
 } from "@/components/ui/card";
+import InteractiveBackground from "./InteractiveBackground";
 
 // Extended experience data with additional fields
 const extendedExperiences = experiences.map((exp, index) => ({
@@ -41,8 +42,9 @@ export default function ExperienceSection() {
   };
   
   return (
-    <section id="experience" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="experience" className="py-20 bg-muted/30 relative">
+      <InteractiveBackground />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-6 text-center"
           initial={{ opacity: 0, y: -20 }}
