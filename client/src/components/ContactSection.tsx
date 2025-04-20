@@ -183,13 +183,16 @@ export default function ContactSection() {
                 />
               </div>
               
-              <Button 
+              <ButtonSpotlight 
                 type="submit" 
                 className="w-full"
                 disabled={isSubmitting}
+                spotlightColor="rgba(var(--primary), 0.25)" 
+                spotlightSize={220}
+                spotlightOpacity={0.5}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
+              </ButtonSpotlight>
             </form>
           </motion.div>
         </div>

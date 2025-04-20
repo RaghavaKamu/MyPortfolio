@@ -203,34 +203,45 @@ export default function ProjectsSection() {
                     Showing {(currentPage - 1) * projectsPerPage + 1} - {Math.min(currentPage * projectsPerPage, filteredProjects.length)} of {filteredProjects.length} projects
                   </div>
                   <div className="flex space-x-2">
-                    <Button 
+                    <ButtonSpotlight 
                       variant="outline" 
                       size="icon" 
                       onClick={handlePrevPage} 
                       disabled={currentPage === 1}
                       className="h-8 w-8"
+                      spotlightColor="rgba(var(--primary), 0.15)"
+                      spotlightSize={60}
+                      spotlightOpacity={0.3}
                     >
                       <ChevronLeft className="h-4 w-4" />
-                    </Button>
+                    </ButtonSpotlight>
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                      <Button
+                      <ButtonSpotlight
                         key={page}
                         variant={page === currentPage ? "default" : "outline"}
                         className={`h-8 w-8 p-0 ${page === currentPage ? 'bg-primary text-white' : ''}`}
                         onClick={() => setCurrentPage(page)}
+                        spotlightColor={page === currentPage ? 
+                          "rgba(var(--primary), 0.2)" : 
+                          "rgba(var(--primary), 0.1)"}
+                        spotlightSize={80}
+                        spotlightOpacity={0.3}
                       >
                         {page}
-                      </Button>
+                      </ButtonSpotlight>
                     ))}
-                    <Button 
+                    <ButtonSpotlight 
                       variant="outline" 
                       size="icon" 
                       onClick={handleNextPage} 
                       disabled={currentPage === totalPages}
                       className="h-8 w-8"
+                      spotlightColor="rgba(var(--primary), 0.15)"
+                      spotlightSize={60}
+                      spotlightOpacity={0.3}
                     >
                       <ChevronRight className="h-4 w-4" />
-                    </Button>
+                    </ButtonSpotlight>
                   </div>
                 </div>
               )}
