@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ButtonSpotlight } from "@/components/ui/button-spotlight";
 import { Github, Linkedin, Twitter, Mail, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
@@ -56,12 +57,26 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.7 }}
             >
-              <Button asChild variant="default" className="bg-primary hover:bg-primary/90 text-white">
+              <ButtonSpotlight 
+                asChild 
+                variant="default" 
+                className="bg-primary hover:bg-primary/90 text-white"
+                spotlightColor="rgba(var(--primary), 0.2)" 
+                spotlightSize={180}
+                spotlightOpacity={0.5}
+              >
                 <a href="#contact">Get in Touch</a>
-              </Button>
-              <Button variant="outline" asChild className="border-white text-white hover:bg-white/10">
+              </ButtonSpotlight>
+              <ButtonSpotlight 
+                variant="outline" 
+                asChild 
+                className="border-white text-white hover:bg-white/10"
+                spotlightColor="rgba(255, 255, 255, 0.15)" 
+                spotlightSize={150}
+                spotlightOpacity={0.35}
+              >
                 <a href="#projects">View Projects</a>
-              </Button>
+              </ButtonSpotlight>
             </motion.div>
             <motion.div 
               className="flex mt-8 space-x-6"

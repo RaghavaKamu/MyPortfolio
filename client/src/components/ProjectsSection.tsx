@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ButtonSpotlight } from "@/components/ui/button-spotlight";
 import { Input } from "@/components/ui/input";
 import { ExternalLink, Github, Search, Filter, ChevronLeft, ChevronRight } from "lucide-react";
 import { projects, projectCategories, ProjectCategory } from "@/data";
@@ -159,18 +160,34 @@ export default function ProjectsSection() {
                             ))}
                           </div>
                           <div className="flex space-x-4">
-                            <Button size="sm" asChild variant="outline" className="border-primary/30 hover:border-primary">
+                            <ButtonSpotlight 
+                              size="sm" 
+                              variant="outline" 
+                              className="border-primary/30 hover:border-primary"
+                              spotlightColor="rgba(var(--primary), 0.15)" 
+                              spotlightSize={120}
+                              spotlightOpacity={0.3}
+                              asChild
+                            >
                               <a href={project.demo} className="font-medium flex items-center">
                                 <span>Demo</span>
                                 <ExternalLink className="ml-1 h-3.5 w-3.5" />
                               </a>
-                            </Button>
-                            <Button size="sm" asChild variant="outline" className="border-primary/30 hover:border-primary">
+                            </ButtonSpotlight>
+                            <ButtonSpotlight 
+                              size="sm" 
+                              variant="outline" 
+                              className="border-primary/30 hover:border-primary"
+                              spotlightColor="rgba(var(--primary), 0.15)" 
+                              spotlightSize={120}
+                              spotlightOpacity={0.3}
+                              asChild
+                            >
                               <a href={project.code} className="font-medium flex items-center">
                                 <span>Code</span>
                                 <Github className="ml-1 h-3.5 w-3.5" />
                               </a>
-                            </Button>
+                            </ButtonSpotlight>
                           </div>
                         </div>
                       </motion.div>
@@ -222,10 +239,15 @@ export default function ProjectsSection() {
         </motion.div>
         
         <div className="text-center mt-6">
-          <Button className="bg-primary hover:bg-primary/90 text-white">
+          <ButtonSpotlight 
+            className="bg-primary hover:bg-primary/90 text-white"
+            spotlightColor="rgba(var(--primary), 0.25)" 
+            spotlightSize={200}
+            spotlightOpacity={0.6}
+          >
             <span>View All Projects</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-          </Button>
+          </ButtonSpotlight>
         </div>
       </div>
     </section>
