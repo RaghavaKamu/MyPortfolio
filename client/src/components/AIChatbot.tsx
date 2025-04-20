@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bot, SendHorizontal, X, MessageSquare } from "lucide-react";
+import { SendHorizontal, X, Brain, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -104,29 +104,42 @@ export default function AIChatbot() {
               exit={{ scale: 0, opacity: 0 }}
               className="relative"
             >
-              <motion.div
-                className="absolute -top-10 right-0 bg-primary text-primary-foreground rounded-full py-1 px-3 text-sm whitespace-nowrap"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1 }}
-              >
-                Chat with me 👋
-              </motion.div>
               <motion.button
-                className="h-14 w-14 rounded-full bg-gradient-to-r from-primary to-primary/80 text-white flex items-center justify-center shadow-lg"
-                whileHover={{ scale: 1.1 }}
+                className="h-14 w-14 overflow-hidden rounded-full bg-gradient-to-r from-primary/90 to-primary/80 text-white flex items-center justify-center shadow-lg relative"
+                whileHover={{ 
+                  scale: 1.1, 
+                  boxShadow: "0 0 20px rgba(var(--primary), 0.5)"
+                }}
                 whileTap={{ scale: 0.95 }}
                 onClick={toggleChat}
-                animate={{
-                  y: [0, -5, 0],
-                  transition: {
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    duration: 2,
-                  },
-                }}
               >
-                <Bot className="h-6 w-6" />
+                {/* Futuristic brain icon */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10" />
+                
+                {/* Animated pulse ring */}
+                <div className="absolute inset-0 rounded-full animate-pulse opacity-50" 
+                  style={{
+                    background: "radial-gradient(circle, rgba(var(--primary), 0.3) 0%, transparent 70%)",
+                    animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
+                  }}
+                />
+                
+                {/* Sparkle effects */}
+                <motion.div 
+                  className="absolute top-1 right-2" 
+                  animate={{
+                    opacity: [0.2, 1, 0.2],
+                    scale: [0.8, 1, 0.8],
+                    transition: { duration: 2, repeat: Infinity }
+                  }}
+                >
+                  <Sparkles className="h-3 w-3 text-white/80" />
+                </motion.div>
+                
+                {/* Brain icon */}
+                <div className="relative z-10">
+                  <Brain className="h-6 w-6" />
+                </div>
               </motion.button>
             </motion.div>
           )}
@@ -147,7 +160,7 @@ export default function AIChatbot() {
             <div className="flex items-center justify-between p-4 border-b border-border bg-gradient-to-r from-primary/10 to-primary/5">
               <div className="flex items-center gap-2">
                 <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Bot className="h-5 w-5 text-primary" />
+                  <Brain className="h-5 w-5 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-semibold">raghava.ai</h3>
