@@ -1,9 +1,11 @@
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import InteractiveBackground from "./InteractiveBackground";
 
 export default function Footer() {
   return (
-    <footer className="bg-card py-8">
-      <div className="container mx-auto px-4">
+    <footer className="bg-card py-8 relative">
+      <InteractiveBackground />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <a href="#" className="text-2xl font-bold text-primary">Portfolio</a>
