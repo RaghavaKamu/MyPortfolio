@@ -16,34 +16,25 @@ const skillCategories = [
     color: "from-blue-400 to-blue-600",
     hoverColor: "group-hover:from-blue-500 group-hover:to-blue-700",
     textColor: "text-blue-50",
-    skills: ["JavaScript", "TypeScript", "Python", "Ruby", "GoLang"]
+    skills: ["GoLang", "JavaScript", "Python", "Ruby", "C"]
   },
   {
     id: "frontend",
-    title: "Frontend",
+    title: "Web Development",
     icon: <Globe className="h-8 w-8" />,
     color: "from-purple-400 to-purple-600",
     hoverColor: "group-hover:from-purple-500 group-hover:to-purple-700",
     textColor: "text-purple-50",
-    skills: ["HTML", "CSS", "React.js", "Vue", "Angular"]
-  },
-  {
-    id: "backend",
-    title: "Backend",
-    icon: <Server className="h-8 w-8" />,
-    color: "from-green-400 to-green-600",
-    hoverColor: "group-hover:from-green-500 group-hover:to-green-700",
-    textColor: "text-green-50",
-    skills: ["Node.js", "Express", "Django", "Spring Boot", "FastAPI"]
+    skills: ["HTML", "CSS", "React.js", "Django", "Spring Boot"]
   },
   {
     id: "cloud",
-    title: "Cloud Tools",
+    title: "Cloud & DevOps",
     icon: <Cloud className="h-8 w-8" />,
     color: "from-orange-400 to-orange-600",
     hoverColor: "group-hover:from-orange-500 group-hover:to-orange-700",
     textColor: "text-orange-50",
-    skills: ["Azure", "AWS", "Google Cloud", "Docker", "Kubernetes"]
+    skills: ["Azure", "AWS", "Git", "GitHub", "CI/CD"]
   },
   {
     id: "database",
@@ -52,16 +43,25 @@ const skillCategories = [
     color: "from-red-400 to-red-600",
     hoverColor: "group-hover:from-red-500 group-hover:to-red-700",
     textColor: "text-red-50",
-    skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Firebase"]
+    skills: ["Oracle", "MySQL", "MongoDB", "SQL", "NoSQL"]
   },
   {
-    id: "devops",
-    title: "DevOps",
-    icon: <TerminalSquare className="h-8 w-8" />,
+    id: "networking",
+    title: "Networking",
+    icon: <Network className="h-8 w-8" />,
     color: "from-teal-400 to-teal-600",
     hoverColor: "group-hover:from-teal-500 group-hover:to-teal-700",
     textColor: "text-teal-50",
-    skills: ["Git", "CI/CD", "Jenkins", "GitHub Actions", "Terraform"]
+    skills: ["Cisco", "TCP/IP", "Network Security", "Routing", "LAN/WAN"]
+  },
+  {
+    id: "machinelearning",
+    title: "Machine Learning",
+    icon: <HardDrive className="h-8 w-8" />,
+    color: "from-green-400 to-green-600",
+    hoverColor: "group-hover:from-green-500 group-hover:to-green-700",
+    textColor: "text-green-50",
+    skills: ["TensorFlow", "Data Analysis", "Sentiment Analysis", "Deep Learning", "Neural Networks"]
   }
 ];
 
@@ -277,10 +277,10 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
                       {
                         "border-blue-500": category.id === "languages",
                         "border-purple-500": category.id === "frontend",
-                        "border-green-500": category.id === "backend",
                         "border-orange-500": category.id === "cloud",
                         "border-red-500": category.id === "database",
-                        "border-teal-500": category.id === "devops",
+                        "border-teal-500": category.id === "networking",
+                        "border-green-500": category.id === "machinelearning",
                       },
                       "hover:bg-white dark:hover:bg-slate-900",
                       "transition-all duration-200"
@@ -299,6 +299,37 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
 }
 
 export default function SkillsSection() {
+  const { width: windowWidth } = useWindowSize();
+
+  // Calculate positions for each bubble in a scattered pattern
+  // These positions are percentages of the container
+  const getBubblePositions = () => {
+    // Different layouts for mobile and desktop
+    if (windowWidth < 768) {
+      // Simple mobile layout with slight offsets
+      return [
+        { top: "5%", left: "25%" },
+        { top: "15%", left: "65%" },
+        { top: "35%", left: "15%" },
+        { top: "50%", left: "70%" },
+        { top: "70%", left: "25%" },
+        { top: "85%", left: "60%" },
+      ];
+    } else {
+      // More scattered desktop layout
+      return [
+        { top: "10%", left: "30%" },
+        { top: "15%", left: "70%" },
+        { top: "38%", left: "20%" },
+        { top: "45%", left: "65%" },
+        { top: "65%", left: "35%" },
+        { top: "70%", left: "75%" },
+      ];
+    }
+  };
+
+  const bubblePositions = getBubblePositions();
+
   return (
     <section id="skills" className="py-20 bg-muted/30 relative overflow-hidden">
       {/* Background gradient effects */}
@@ -317,25 +348,34 @@ export default function SkillsSection() {
         </motion.h2>
         
         <motion.div 
-          className="flex flex-wrap justify-center gap-8 md:gap-12"
+          className="relative h-[600px] md:h-[800px] w-full"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
         >
           {skillCategories.map((category, index) => (
-            <SkillBubble
+            <motion.div
               key={category.id}
-              category={category}
-              index={index}
-              isActive={false}
-            />
+              className="absolute"
+              style={{
+                top: bubblePositions[index].top,
+                left: bubblePositions[index].left,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <SkillBubble
+                category={category}
+                index={index}
+                isActive={false}
+              />
+            </motion.div>
           ))}
         </motion.div>
         
         {/* Instructions text */}
         <motion.p
-          className="text-center text-muted-foreground mt-12 italic"
+          className="text-center text-muted-foreground mt-8 italic"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
