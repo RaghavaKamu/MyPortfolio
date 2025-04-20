@@ -8,7 +8,19 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 
 // Define skill categories with enhanced data for visualization
+// Order has been arranged to match the star pattern positions
 const skillCategories = [
+  // Center position
+  {
+    id: "machinelearning",
+    title: "Machine Learning",
+    icon: <HardDrive className="h-8 w-8" />,
+    color: "from-green-400 to-green-600",
+    hoverColor: "group-hover:from-green-500 group-hover:to-green-700",
+    textColor: "text-green-50",
+    skills: ["TensorFlow", "Data Analysis", "Sentiment Analysis", "Deep Learning", "Neural Networks"]
+  },
+  // Top position
   {
     id: "languages",
     title: "Programming Languages",
@@ -18,6 +30,7 @@ const skillCategories = [
     textColor: "text-blue-50",
     skills: ["GoLang", "JavaScript", "Python", "Ruby", "C"]
   },
+  // Right position
   {
     id: "frontend",
     title: "Web Development",
@@ -27,15 +40,7 @@ const skillCategories = [
     textColor: "text-purple-50",
     skills: ["HTML", "CSS", "React.js", "Django", "Spring Boot"]
   },
-  {
-    id: "cloud",
-    title: "Cloud & DevOps",
-    icon: <Cloud className="h-8 w-8" />,
-    color: "from-orange-400 to-orange-600",
-    hoverColor: "group-hover:from-orange-500 group-hover:to-orange-700",
-    textColor: "text-orange-50",
-    skills: ["Azure", "AWS", "Git", "GitHub", "CI/CD"]
-  },
+  // Bottom position
   {
     id: "database",
     title: "Databases",
@@ -45,6 +50,7 @@ const skillCategories = [
     textColor: "text-red-50",
     skills: ["Oracle", "MySQL", "MongoDB", "SQL", "NoSQL"]
   },
+  // Left position
   {
     id: "networking",
     title: "Networking",
@@ -54,14 +60,15 @@ const skillCategories = [
     textColor: "text-teal-50",
     skills: ["Cisco", "TCP/IP", "Network Security", "Routing", "LAN/WAN"]
   },
+  // Extra position (between center and left)
   {
-    id: "machinelearning",
-    title: "Machine Learning",
-    icon: <HardDrive className="h-8 w-8" />,
-    color: "from-green-400 to-green-600",
-    hoverColor: "group-hover:from-green-500 group-hover:to-green-700",
-    textColor: "text-green-50",
-    skills: ["TensorFlow", "Data Analysis", "Sentiment Analysis", "Deep Learning", "Neural Networks"]
+    id: "cloud",
+    title: "Cloud & DevOps",
+    icon: <Cloud className="h-8 w-8" />,
+    color: "from-orange-400 to-orange-600",
+    hoverColor: "group-hover:from-orange-500 group-hover:to-orange-700",
+    textColor: "text-orange-50",
+    skills: ["Azure", "AWS", "Git", "GitHub", "CI/CD"]
   }
 ];
 
@@ -160,14 +167,51 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
   const { width: windowWidth } = useWindowSize();
   const [isHovered, setIsHovered] = useState(false);
 
-  // Float animation
+  // Different float animations for each bubble 
   useEffect(() => {
+    // Create different animation patterns based on index
+    const animations = [
+      // Center/first bubble - gentle pulse
+      {
+        scale: [1, 1.05, 1],
+        y: [0, -5, 0],
+      },
+      // Top bubble - vertical movement
+      {
+        y: [0, -15, 0],
+        rotate: [0, -2, 0, 2, 0],
+      },
+      // Right side bubbles - diagonal movement
+      {
+        y: [0, -8, 0],
+        x: [0, 8, 0],
+      },
+      // Bottom bubble - horizontal wobble
+      {
+        x: [-10, 10, -10],
+        rotate: [-1, 1, -1],
+      },
+      // Left side bubbles - figure-8 movement
+      {
+        y: [0, -5, 0, 5, 0],
+        x: [0, 5, 0, -5, 0],
+      },
+      // Extra bubble - gentle rotation
+      {
+        rotate: [-3, 3, -3],
+        y: [0, -3, 0],
+      },
+    ];
+
+    // Get the animation for this bubble (or use the first one as default)
+    const animation = animations[index % animations.length];
+    
     bubbleControls.start({
-      y: [0, -10, 0],
+      ...animation,
       transition: {
         repeat: Infinity,
         repeatType: "mirror",
-        duration: 4 + index * 0.5, // Different durations for each bubble
+        duration: 5 + index * 0.8, // Different durations for each bubble
         ease: "easeInOut"
       }
     });
@@ -301,29 +345,51 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
 export default function SkillsSection() {
   const { width: windowWidth } = useWindowSize();
 
-  // Calculate positions for each bubble in a scattered pattern
+  // Calculate positions for each bubble in a more artistic pattern
   // These positions are percentages of the container
   const getBubblePositions = () => {
     // Different layouts for mobile and desktop
     if (windowWidth < 768) {
-      // Simple mobile layout with slight offsets
+      // Triangular pattern for mobile (more compact)
       return [
-        { top: "5%", left: "25%" },
-        { top: "15%", left: "65%" },
-        { top: "35%", left: "15%" },
-        { top: "50%", left: "70%" },
-        { top: "70%", left: "25%" },
-        { top: "85%", left: "60%" },
+        // Center (Machine Learning)
+        { top: "25%", left: "50%" },
+        
+        // Top (Programming Languages)
+        { top: "5%", left: "50%" },
+        
+        // Right Side (Web Development)
+        { top: "25%", left: "80%" },
+        
+        // Bottom (Databases) 
+        { top: "45%", left: "50%" },
+        
+        // Left Side (Networking)
+        { top: "25%", left: "20%" },
+        
+        // Bottom of triangle (Cloud & DevOps)
+        { top: "65%", left: "50%" },
       ];
     } else {
-      // More scattered desktop layout
+      // Interactive diamond/star pattern for desktop
       return [
-        { top: "10%", left: "30%" },
-        { top: "15%", left: "70%" },
-        { top: "38%", left: "20%" },
-        { top: "45%", left: "65%" },
-        { top: "65%", left: "35%" },
-        { top: "70%", left: "75%" },
+        // Center bubble (Machine Learning - most relevant to your work)
+        { top: "40%", left: "50%" },
+        
+        // Top point (Programming Languages)
+        { top: "8%", left: "50%" },
+        
+        // Right point (Web Development)
+        { top: "40%", left: "85%" },
+        
+        // Bottom point (Databases)
+        { top: "72%", left: "50%" },
+        
+        // Left point (Networking)
+        { top: "40%", left: "15%" },
+        
+        // Extra bubble (Cloud & DevOps) - offset from center
+        { top: "25%", left: "30%" },
       ];
     }
   };
