@@ -3,40 +3,64 @@ export type SkillIconType = 'file-code' | 'code' | 'terminal' | 'react' | 'serve
 
 export const skills = [
   {
-    name: "HTML5",
-    icon: "file-code" 
-  },
-  {
-    name: "CSS3",
-    icon: "code"
+    name: "GoLang",
+    icon: "terminal" 
   },
   {
     name: "JavaScript",
-    icon: "terminal"
+    icon: "file-code"
   },
   {
-    name: "React",
+    name: "Python",
+    icon: "code"
+  },
+  {
+    name: "Ruby",
+    icon: "file-code"
+  },
+  {
+    name: "React.js",
     icon: "react"
   },
   {
-    name: "Node.js",
+    name: "Django",
     icon: "server"
   },
   {
-    name: "MongoDB",
-    icon: "database"
+    name: "Spring Boot",
+    icon: "server"
+  },
+  {
+    name: "Azure",
+    icon: "server"
+  },
+  {
+    name: "AWS",
+    icon: "server"
   },
   {
     name: "Git",
     icon: "github"
   },
   {
-    name: "TypeScript",
-    icon: "typescript"
+    name: "Oracle",
+    icon: "database"
   },
   {
-    name: "Express",
-    icon: "express"
+    name: "MySQL",
+    icon: "database"
+  },
+  {
+    name: "MongoDB",
+    icon: "database"
+  },
+  {
+    name: "HTML",
+    icon: "file-code"
+  },
+  {
+    name: "CSS",
+    icon: "code"
   }
 ];
 
@@ -53,110 +77,56 @@ export const projectCategories: ProjectCategory[] = [
 
 export const projects = [
   {
-    title: "E-commerce Website",
-    description: "A full-featured e-commerce platform with product catalog, user authentication, and payment processing.",
+    title: "Drug Evaluation in Medicine Recommendation System",
+    description: "Built a machine learning model that predicts drug effectiveness for patients and implemented a sentiment analysis system that analyzes user reviews on medicines.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+    technologies: ["Python", "Django", "MySQL", "Machine Learning", "Sentiment Analysis"],
+    category: "Machine Learning",
+    demo: "#",
+    code: "#"
+  },
+  {
+    title: "Dental Care Centre Website",
+    description: "Designed a responsive website that enables online doctor appointments and integrated backend services to ensure secure user authentication.",
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
+    technologies: ["HTML", "CSS", "Node.js", "MongoDB"],
+    category: "Web Development",
+    demo: "#",
+    code: "#"
+  },
+  {
+    title: "Automated Irrigation System using IoT",
+    description: "Developed a smart irrigation system that analyzes soil and climate conditions, and implemented automation to control water supply based on environmental data.",
+    image: "https://images.unsplash.com/photo-1563906267088-b029e7101114?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+    technologies: ["Python", "Arduino", "IoT Sensors", "Machine Learning"],
+    category: "IoT",
+    demo: "#",
+    code: "#"
+  },
+  {
+    title: "Portfolio Website",
+    description: "Created a responsive portfolio website with interactive UI elements, dynamic theme switching, and an AI-powered chatbot assistant.",
     image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    technologies: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion", "OpenAI"],
     category: "Web Development",
-    demo: "#",
+    demo: "my-portfolio-bf0d5.web.app",
     code: "#"
   },
   {
-    title: "Task Management App",
-    description: "A productivity application that helps users organize tasks, set deadlines, and track progress.",
-    image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
-    technologies: ["React", "Firebase", "Redux", "Tailwind"],
-    category: "Web Development",
-    demo: "#",
-    code: "#"
-  },
-  {
-    title: "Blog Platform",
-    description: "A modern blogging platform with rich text editing, comments, and user profiles.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80",
-    technologies: ["Next.js", "GraphQL", "PostgreSQL", "Auth0"],
-    category: "Web Development",
-    demo: "#",
-    code: "#"
-  },
-  {
-    title: "Image Recognition App",
-    description: "An AI application that recognizes objects and faces in images using deep learning algorithms.",
-    image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
-    technologies: ["Python", "TensorFlow", "OpenCV", "Flask"],
+    title: "Machine Learning Research Project",
+    description: "Researched and developed deep learning techniques for pattern recognition and data analysis as part of the machine learning internship.",
+    image: "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+    technologies: ["Python", "TensorFlow", "Deep Learning", "Data Analysis"],
     category: "Machine Learning",
     demo: "#",
     code: "#"
   },
   {
-    title: "Smart Home Automation",
-    description: "An IoT system that automates home devices like lights, thermostats, and security cameras.",
-    image: "https://images.unsplash.com/photo-1558002038-1055e2e28ed1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    technologies: ["Raspberry Pi", "MQTT", "Node.js", "React"],
-    category: "IoT",
-    demo: "#",
-    code: "#"
-  },
-  {
-    title: "Sentiment Analysis Tool",
-    description: "A machine learning model that analyzes text to determine sentiment and emotional tone.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    technologies: ["Python", "NLTK", "scikit-learn", "PyTorch"],
-    category: "Machine Learning",
-    demo: "#",
-    code: "#"
-  },
-  {
-    title: "Fitness Tracker App",
-    description: "A mobile application that tracks workouts, nutrition, and health metrics.",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    technologies: ["React Native", "Firebase", "Redux", "Expo"],
-    category: "Mobile App",
-    demo: "#",
-    code: "#"
-  },
-  {
-    title: "Weather Station",
-    description: "An IoT weather station that collects environmental data and provides forecasts.",
-    image: "https://images.unsplash.com/photo-1527482797697-8795b05a13fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-    technologies: ["Arduino", "Sensors", "Python", "InfluxDB"],
-    category: "IoT",
-    demo: "#",
-    code: "#"
-  },
-  {
-    title: "Code Editor",
-    description: "A lightweight code editor with syntax highlighting and plugin support.",
-    image: "https://images.unsplash.com/photo-1542831371-32f555c86880?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    technologies: ["Electron", "TypeScript", "CodeMirror", "Node.js"],
-    category: "Desktop App",
-    demo: "#",
-    code: "#"
-  },
-  {
-    title: "Stock Market Analyzer",
-    description: "A data analysis tool that visualizes stock market trends and predicts movement patterns.",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    technologies: ["Python", "Pandas", "Matplotlib", "Scikit-learn"],
-    category: "Data Analysis",
-    demo: "#",
-    code: "#"
-  },
-  {
-    title: "Social Media Dashboard",
-    description: "A comprehensive dashboard to manage and analyze social media accounts and campaigns.",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-    technologies: ["React", "D3.js", "Node.js", "Express"],
+    title: "Technical Workshop Management System",
+    description: "Created a platform for managing IEEE technical workshops and mentoring programs, with features for registration, scheduling, and resource sharing.",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+    technologies: ["JavaScript", "Node.js", "MongoDB", "Express"],
     category: "Web Development",
-    demo: "#",
-    code: "#"
-  },
-  {
-    title: "AR Navigation App",
-    description: "A mobile app that provides augmented reality navigation assistance in urban environments.",
-    image: "https://images.unsplash.com/photo-1581263518406-31e6457229e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    technologies: ["ARKit", "Swift", "Core Location", "MapKit"],
-    category: "Mobile App",
     demo: "#",
     code: "#"
   }
@@ -164,24 +134,31 @@ export const projects = [
 
 export const experiences = [
   {
-    title: "Senior Frontend Developer",
-    company: "TechCorp Inc.",
-    period: "2021 - Present",
-    description: "Led frontend development for multiple web applications, mentored junior developers, and improved performance by 40%.",
-    skills: ["React", "TypeScript", "GraphQL", "CI/CD"]
+    title: "Graduate Student",
+    company: "New Jersey Institute of Technology",
+    period: "2023 - Expected 2025",
+    description: "Pursuing a Master of Science in Computer Science with focus on software development, machine learning, and cloud technologies.",
+    skills: ["GoLang", "Python", "Machine Learning", "Cloud Computing"]
   },
   {
-    title: "Full Stack Developer",
-    company: "WebSolutions Ltd.",
-    period: "2018 - 2021",
-    description: "Developed and maintained web applications for various clients, implemented new features, and optimized database performance.",
-    skills: ["JavaScript", "Node.js", "Express", "MongoDB"]
+    title: "Machine Learning Intern",
+    company: "CORIZO",
+    period: "Oct 2022 - Mar 2023",
+    description: "Developed machine learning models, analyzed patterns, optimized predictions, and researched deep learning techniques contributing to AI-based solutions.",
+    skills: ["Machine Learning", "Python", "Deep Learning", "Data Analysis"]
   },
   {
-    title: "Frontend Developer Intern",
-    company: "StartupHQ",
-    period: "2017 - 2018",
-    description: "Assisted in developing user interfaces, fixed bugs, and contributed to project documentation.",
-    skills: ["HTML", "CSS", "JavaScript", "jQuery"]
+    title: "Technical Core Committee Member",
+    company: "IEEE NPS",
+    period: "Jul 2021 - Jan 2023",
+    description: "Organized technical events, managed workshops and mentoring programs, and collaborated on research projects working on innovative tech solutions.",
+    skills: ["Project Management", "Technical Leadership", "Research", "Event Organization"]
+  },
+  {
+    title: "Bachelor's Student",
+    company: "Vellore Institute of Technology",
+    period: "Jun 2019 - May 2023",
+    description: "Completed Bachelor of Science in Computer Science with focus on programming, web development, and participation in technical activities.",
+    skills: ["JavaScript", "Python", "Web Development", "Programming"]
   }
 ];
