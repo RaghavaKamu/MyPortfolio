@@ -255,11 +255,8 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <div className={cn("text-lg font-bold text-center mb-1", category.textColor)}>
+              <div className={cn("text-base font-bold text-center", category.textColor)}>
                 {category.title}
-              </div>
-              <div className={cn("text-xs text-center", category.textColor, "opacity-90")}>
-                Hover to explore
               </div>
             </motion.div>
           ) : (
@@ -269,8 +266,8 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <div className={cn("mb-2", category.textColor)}>{category.icon}</div>
-              <div className={cn("text-sm font-bold text-center", category.textColor)}>
+              <div className={cn("mb-1", category.textColor)}>{category.icon}</div>
+              <div className={cn("text-xs font-medium text-center", category.textColor)}>
                 {category.title}
               </div>
             </motion.div>
@@ -414,7 +411,7 @@ export default function SkillsSection() {
         </motion.h2>
         
         <motion.div 
-          className="relative h-[600px] md:h-[800px] w-full"
+          className="relative h-[450px] md:h-[600px] w-full"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -438,17 +435,6 @@ export default function SkillsSection() {
             </motion.div>
           ))}
         </motion.div>
-        
-        {/* Instructions text */}
-        <motion.p
-          className="text-center text-muted-foreground mt-8 italic"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1 }}
-        >
-          Hover over a bubble to explore skills in that category
-        </motion.p>
       </div>
     </section>
   );
