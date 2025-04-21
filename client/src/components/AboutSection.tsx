@@ -59,13 +59,13 @@ export default function AboutSection() {
                 Get to know me
               </h3>
               <p className="mb-4 text-muted-foreground">
-                I'm a passionate Full Stack Developer with expertise in building exceptional digital experiences. With a background in computer science and 3+ years of industry experience, I specialize in creating responsive, user-friendly applications.
+                I'm Raghava Kami Reddy Vasa, a passionate Full Stack Developer pursuing my Master's in Computer Science at NJIT with an expected graduation in April 2025. With over 3 years of industry experience, I specialize in building responsive, user-friendly web applications with modern technologies like React.js, Node.js, and Python.
               </p>
               <p className="mb-4 text-muted-foreground">
-                My approach combines technical expertise with creative problem-solving to deliver solutions that not only meet but exceed client expectations. I enjoy working on challenging projects that push my abilities and allow me to learn new technologies.
+                My professional journey includes working as a Full Stack Developer at Webologix Inc where I developed robust applications and collaborated with cross-functional teams. I have a strong foundation in both frontend and backend technologies, complemented by experience in machine learning and IoT projects.
               </p>
               <p className="text-muted-foreground">
-                When I'm not coding, you can find me exploring hiking trails, reading tech blogs, or experimenting with new recipes in the kitchen.
+                When I'm not coding, you can find me exploring hiking trails around New Jersey, reading tech blogs to stay current with industry trends, or experimenting with new recipes in the kitchen. I'm always looking for opportunities to expand my skills and tackle challenging projects.
               </p>
             </motion.div>
             
@@ -126,9 +126,9 @@ export default function AboutSection() {
           >
             <div className="relative overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" 
-                alt="About Me" 
-                className="w-full h-auto rounded-lg shadow-lg object-cover aspect-video"
+                src="@assets/profile.jpg" 
+                alt="Raghava Kami Reddy Vasa" 
+                className="w-full h-auto rounded-lg shadow-lg object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6">
