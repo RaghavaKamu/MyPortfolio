@@ -18,13 +18,7 @@ interface Message {
 export default function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [isBotTyping, setIsBotTyping] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content: "👋 Hi there! I'm Raghava's AI assistant. Ask me anything about Raghava's skills, projects, or experience!",
-      timestamp: new Date(),
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -96,7 +90,7 @@ export default function AIChatbot() {
   return (
     <>
       {/* Chat Button */}
-      <div className="fixed bottom-5 right-5 z-50">
+      <div className="fixed bottom-6 right-6 z-50">
         <AnimatePresence>
           {!isOpen && (
             <motion.div
@@ -185,7 +179,7 @@ export default function AIChatbot() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-5 right-5 w-[350px] md:w-[400px] h-[500px] bg-card rounded-lg shadow-xl z-50 overflow-hidden border border-border"
+            className="fixed bottom-6 right-6 w-[350px] md:w-[400px] h-[500px] bg-card rounded-lg shadow-xl z-50 overflow-hidden border border-border"
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
@@ -227,6 +221,14 @@ export default function AIChatbot() {
               className="p-4 overflow-y-auto h-[calc(100%-130px)] custom-scrollbar bg-gradient-to-b from-background/80 to-background"
             >
               <div className="space-y-4">
+                {messages.length === 0 && (
+                  <div className="flex items-center justify-center h-32 mt-12">
+                    <div className="text-center max-w-[80%] text-muted-foreground">
+                      <Brain className="h-10 w-10 mx-auto mb-4 text-primary/30" />
+                      <p className="text-sm">Ask Raghava's AI about his skills, projects, or experience</p>
+                    </div>
+                  </div>
+                )}
                 {messages.map((message, index) => (
                   <motion.div
                     key={index}
