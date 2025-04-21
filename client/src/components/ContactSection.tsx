@@ -89,8 +89,8 @@ export default function ContactSection() {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-medium">Email</h4>
-                  <a href="mailto:raghava.rao25@gmail.com" className="text-primary hover:underline">
-                    raghava.rao25@gmail.com
+                  <a href="mailto:vrkreddy27@gmail.com" className="text-primary hover:underline">
+                    vrkreddy27@gmail.com
                   </a>
                 </div>
               </div>

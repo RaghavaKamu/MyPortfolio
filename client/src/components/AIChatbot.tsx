@@ -224,7 +224,7 @@ export default function AIChatbot() {
             {/* Chat Messages */}
             <div 
               ref={chatContainerRef}
-              className="p-4 overflow-y-auto h-[calc(100%-128px)] custom-scrollbar bg-gradient-to-b from-background/80 to-background"
+              className="p-4 overflow-y-auto h-[calc(100%-130px)] custom-scrollbar bg-gradient-to-b from-background/80 to-background"
             >
               <div className="space-y-4">
                 {messages.map((message, index) => (
