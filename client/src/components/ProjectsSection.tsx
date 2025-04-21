@@ -251,13 +251,11 @@ export default function ProjectsSection() {
         
         <div className="text-center mt-12">
           <ButtonSpotlight 
-            className="border border-primary/30 hover:border-primary/50 text-primary hover:text-primary/90 px-6 py-6 text-lg group relative overflow-hidden"
-            variant="ghost"
-            spotlightColor="rgba(var(--primary), 0.15)" 
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-6 text-lg group relative overflow-hidden"
+            spotlightColor="rgba(255, 255, 255, 0.2)" 
             spotlightSize={250}
-            spotlightOpacity={0.5}
+            spotlightOpacity={0.6}
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md"></span>
             <span className="relative z-10 flex items-center justify-center">
               <span>View All Projects</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
