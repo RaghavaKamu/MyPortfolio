@@ -100,58 +100,27 @@ export default function AIChatbot() {
               className="relative"
             >
               <motion.button
-                className="group h-14 w-14 overflow-hidden rounded-full bg-gradient-to-r from-primary/90 to-primary/80 text-white flex items-center justify-center shadow-lg relative"
+                className="group h-14 w-14 overflow-hidden rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg relative"
                 whileHover={{ 
                   scale: 1.1, 
-                  boxShadow: "0 0 25px rgba(var(--primary), 0.6)"
+                  boxShadow: "0 0 25px rgba(79, 70, 229, 0.6)"
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={toggleChat}
               >
                 {/* Animated glowing backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-indigo-600/10" />
                 
                 {/* Inner glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/0 via-primary/10 to-primary/30 group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/0 via-indigo-500/10 to-indigo-400/20 group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
                 
                 {/* Animated pulse ring */}
                 <div className="absolute inset-0 rounded-full animate-pulse opacity-50" 
                   style={{
-                    background: "radial-gradient(circle, rgba(var(--primary), 0.4) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%)",
                     animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
                   }}
                 />
-                
-                {/* Orbital sparkle effects */}
-                <div className="absolute inset-0 rounded-full">
-                  <motion.div 
-                    className="absolute h-2 w-2 rounded-full bg-white/80"
-                    style={{ top: '15%', left: '15%' }}
-                    animate={{
-                      opacity: [0.4, 0.8, 0.4],
-                      scale: [0.8, 1.2, 0.8],
-                      transition: { duration: 3, repeat: Infinity }
-                    }}
-                  />
-                  <motion.div 
-                    className="absolute h-1.5 w-1.5 rounded-full bg-white/70"
-                    style={{ top: '70%', left: '25%' }}
-                    animate={{
-                      opacity: [0.3, 0.7, 0.3],
-                      scale: [0.7, 1.1, 0.7],
-                      transition: { duration: 2.5, repeat: Infinity, delay: 0.5 }
-                    }}
-                  />
-                  <motion.div 
-                    className="absolute h-2 w-2 rounded-full bg-white/80"
-                    style={{ top: '20%', right: '20%' }}
-                    animate={{
-                      opacity: [0.3, 0.9, 0.3],
-                      scale: [0.7, 1.3, 0.7],
-                      transition: { duration: 4, repeat: Infinity, delay: 1 }
-                    }}
-                  />
-                </div>
                 
                 {/* Brain icon with glow effect */}
                 <div className="relative z-10 group-hover:scale-110 transition-transform duration-300 transform">
@@ -161,13 +130,13 @@ export default function AIChatbot() {
                 
                 {/* Hover text indicator */}
                 <motion.div 
-                  className="absolute -top-10 bg-card/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-border/50 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute -top-10 bg-indigo-900/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-indigo-600/30 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={{ opacity: 0, y: 10 }}
                   whileHover={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="text-foreground whitespace-nowrap">Ask anything about Raghava</div>
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-card border-r border-b border-border/50"></div>
+                  <div className="text-white whitespace-nowrap">Ask anything about Raghava</div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-indigo-900 border-r border-b border-indigo-600/30"></div>
                 </motion.div>
               </motion.button>
             </motion.div>
@@ -179,52 +148,47 @@ export default function AIChatbot() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-6 right-6 w-[350px] md:w-[400px] h-[500px] bg-card rounded-lg shadow-xl z-50 overflow-hidden border border-border"
+            className="fixed bottom-6 right-6 w-[350px] md:w-[400px] h-[500px] bg-indigo-950 rounded-lg shadow-xl z-50 overflow-hidden border border-indigo-700/30"
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
           >
             {/* Chat Header */}
-            <div className="flex items-center justify-between p-4 border-b border-border bg-gradient-to-r from-primary/15 to-primary/5 relative overflow-hidden">
+            <div className="flex items-center justify-between p-4 border-b border-indigo-900/30 bg-gradient-to-r from-indigo-900/90 to-indigo-800/80 relative overflow-hidden">
               {/* Dynamic background pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute h-40 w-40 rounded-full bg-primary/40 blur-3xl -top-20 -right-20" />
-                <div className="absolute h-40 w-40 rounded-full bg-primary/40 blur-3xl -bottom-20 -left-20" />
+              <div className="absolute inset-0 opacity-30">
+                <div className="absolute h-40 w-40 rounded-full bg-indigo-500/30 blur-3xl -top-20 -right-20" />
+                <div className="absolute h-40 w-40 rounded-full bg-indigo-600/30 blur-3xl -bottom-20 -left-20" />
               </div>
               
               <div className="flex items-center gap-2 relative z-10">
-                <div className="h-9 w-9 rounded-full bg-gradient-to-br from-primary/70 to-primary/40 flex items-center justify-center shadow-md">
+                <div className="h-9 w-9 rounded-full bg-gradient-to-br from-indigo-500/80 to-indigo-600/70 flex items-center justify-center shadow-md">
                   <Brain className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground/90">Raghava's AI</h3>
-                  <p className="text-xs text-muted-foreground">Your virtual portfolio assistant</p>
+                  <h3 className="font-semibold text-white">Raghava's AI</h3>
+                  <p className="text-xs text-indigo-200/70">Your virtual portfolio assistant</p>
                 </div>
               </div>
-              <ButtonSpotlight
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 relative z-10"
+              <button
+                className="h-8 w-8 flex items-center justify-center rounded-full bg-indigo-700/50 hover:bg-indigo-600/60 text-white relative z-10 transition-colors"
                 onClick={toggleChat}
-                spotlightColor="rgba(var(--primary), 0.15)"
-                spotlightSize={80}
-                spotlightOpacity={0.3}
               >
                 <X className="h-4 w-4" />
-              </ButtonSpotlight>
+              </button>
             </div>
             
             {/* Chat Messages */}
             <div 
               ref={chatContainerRef}
-              className="p-4 overflow-y-auto h-[calc(100%-130px)] custom-scrollbar bg-gradient-to-b from-background/80 to-background"
+              className="p-4 overflow-y-auto h-[calc(100%-130px)] custom-scrollbar bg-gradient-to-b from-indigo-950/50 to-indigo-950/70"
             >
               <div className="space-y-4">
                 {messages.length === 0 && (
                   <div className="flex items-center justify-center h-32 mt-12">
-                    <div className="text-center max-w-[80%] text-muted-foreground">
-                      <Brain className="h-10 w-10 mx-auto mb-4 text-primary/30" />
+                    <div className="text-center max-w-[80%] text-indigo-300/50">
+                      <Brain className="h-10 w-10 mx-auto mb-4 text-indigo-400/30" />
                       <p className="text-sm">Ask Raghava's AI about his skills, projects, or experience</p>
                     </div>
                   </div>
@@ -242,10 +206,10 @@ export default function AIChatbot() {
                   >
                     <div
                       className={cn(
-                        "max-w-[80%] rounded-lg px-4 py-3 shadow-sm",
+                        "max-w-[80%] rounded-lg px-4 py-3 shadow-md",
                         message.role === "user"
-                          ? "bg-gradient-to-br from-primary to-primary/90 text-primary-foreground"
-                          : "bg-gradient-to-br from-muted/90 to-muted border border-border/30"
+                          ? "bg-gradient-to-br from-indigo-600 to-indigo-700 text-white border border-indigo-500/30"
+                          : "bg-gradient-to-br from-indigo-900/80 to-indigo-800/70 text-indigo-100 border border-indigo-700/30"
                       )}
                     >
                       <p className="text-sm leading-relaxed">{message.content}</p>
@@ -253,8 +217,8 @@ export default function AIChatbot() {
                         className={cn(
                           "text-xs mt-1.5 flex items-center",
                           message.role === "user"
-                            ? "text-primary-foreground/70"
-                            : "text-muted-foreground"
+                            ? "text-indigo-200/80"
+                            : "text-indigo-300/60"
                         )}
                       >
                         {message.role === "assistant" && (
@@ -272,13 +236,13 @@ export default function AIChatbot() {
                 {/* Typing indicator */}
                 {isBotTyping && (
                   <div className="flex justify-start">
-                    <div className="bg-gradient-to-br from-muted/90 to-muted max-w-[80%] rounded-lg px-4 py-3 border border-border/30 shadow-sm">
+                    <div className="bg-gradient-to-br from-indigo-900/80 to-indigo-800/70 max-w-[80%] rounded-lg px-4 py-3 border border-indigo-700/30 shadow-md">
                       <div className="flex space-x-2 items-center h-5">
-                        <Brain className="h-3.5 w-3.5 text-foreground/40 mr-1" />
+                        <Brain className="h-3.5 w-3.5 text-indigo-300/60 mr-1" />
                         <div className="flex space-x-1 items-center">
-                          <div className="h-2 w-2 bg-foreground/30 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-                          <div className="h-2 w-2 bg-foreground/30 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-                          <div className="h-2 w-2 bg-foreground/30 rounded-full animate-bounce"></div>
+                          <div className="h-2 w-2 bg-indigo-400/60 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                          <div className="h-2 w-2 bg-indigo-400/60 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                          <div className="h-2 w-2 bg-indigo-400/60 rounded-full animate-bounce"></div>
                         </div>
                       </div>
                     </div>
@@ -290,36 +254,49 @@ export default function AIChatbot() {
             {/* Input Area */}
             <form
               onSubmit={handleSubmit}
-              className="p-4 border-t border-border flex gap-2 items-center bg-gradient-to-t from-background/60 to-background/30 backdrop-blur-sm relative"
+              className="p-4 border-t border-indigo-900/20 flex gap-3 items-center bg-gradient-to-r from-indigo-950/80 to-indigo-900/70 backdrop-blur-sm relative"
             >
               {/* Subtle glow effect behind input */}
-              <div className="absolute inset-0 overflow-hidden opacity-30">
-                <div className="absolute h-32 w-32 rounded-full bg-primary/30 blur-3xl -top-16 left-1/2 transform -translate-x-1/2" />
+              <div className="absolute inset-0 overflow-hidden opacity-40">
+                <div className="absolute h-32 w-32 rounded-full bg-indigo-600/30 blur-3xl -top-16 left-1/2 transform -translate-x-1/2" />
               </div>
               
-              <div className="relative flex-1 rounded-full overflow-hidden shadow-sm border border-border/50 group backdrop-blur-sm">
+              <div className="relative flex-1 rounded-full overflow-hidden shadow-sm border border-indigo-600/30 group">
                 <Input
                   ref={inputRef}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask anything about Raghava..."
-                  className="rounded-full border-0 bg-background/60 backdrop-blur-sm focus-visible:ring-0 focus-visible:ring-offset-0 group-hover:bg-background/80 transition-colors"
+                  className="rounded-full border-0 bg-indigo-900/70 text-white placeholder:text-indigo-200/70 focus-visible:ring-0 focus-visible:ring-offset-0 transition-colors"
                 />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/5 to-primary/0 rounded-full pointer-events-none"></div>
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-indigo-800/50 to-indigo-600/30 rounded-full pointer-events-none"></div>
               </div>
               
               <ButtonSpotlight
                 type="submit"
                 size="icon"
-                className="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-primary/90 text-primary-foreground shadow-md relative overflow-hidden"
+                className="h-12 w-12 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white shadow-md relative overflow-hidden"
                 disabled={isBotTyping || !input.trim()}
-                spotlightColor="rgba(255, 255, 255, 0.1)"
+                spotlightColor="rgba(255, 255, 255, 0.2)"
                 spotlightSize={120}
                 spotlightOpacity={0.5}
               >
-                {/* Inner highlight */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/20 rounded-full"></div>
-                <SendHorizontal className="h-4 w-4 relative z-10" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-indigo-400/10 to-indigo-300/20 rounded-full"></div>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 24 24" 
+                  width="24" 
+                  height="24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  className="relative z-10 h-5 w-5 transform rotate-45"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
               </ButtonSpotlight>
             </form>
           </motion.div>
