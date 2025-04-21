@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 import InteractiveBackground from "./InteractiveBackground";
 
 export default function Footer() {
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <a href="#" className="text-2xl font-bold text-primary">Raghava Reddy</a>
+            <a href="#home" className="text-2xl font-bold text-primary">Raghava Reddy</a>
           </div>
           
           <nav className="flex flex-wrap justify-center space-x-6 mb-4 md:mb-0">
@@ -28,6 +28,9 @@ export default function Footer() {
             </a>
             <a href="https://twitter.com/raghava_rao25" className="hover:text-primary transition-colors" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
               <Twitter className="h-5 w-5" />
+            </a>
+            <a href="https://www.instagram.com/raghava_rao_25" className="hover:text-primary transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <Instagram className="h-5 w-5" />
             </a>
             <a href="mailto:vrkreddy27@gmail.com" className="hover:text-primary transition-colors" aria-label="Email">
               <Mail className="h-5 w-5" />
