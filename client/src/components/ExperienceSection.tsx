@@ -16,7 +16,7 @@ import InteractiveBackground from "./InteractiveBackground";
 // Extended experience data with additional fields
 const extendedExperiences = experiences.map((exp, index) => ({
   ...exp,
-  location: ["New York, NY", "San Francisco, CA", "Boston, MA"][index % 3],
+  location: ["New Jersey, USA", "Hyderabad, India", "Bangalore, India"][index % 3],
   achievements: [
     "Led a team of 5 developers to deliver projects on time and under budget",
     "Increased application performance by 40% through optimization techniques",

@@ -9,17 +9,17 @@ import InteractiveBackground from "./InteractiveBackground";
 const education = [
   {
     degree: "Master of Science in Computer Science",
-    institution: "Stanford University",
-    year: "2018 - 2020",
-    location: "Stanford, CA",
-    description: "Specialized in Artificial Intelligence and Machine Learning with a thesis on Reinforcement Learning applications."
+    institution: "New Jersey Institute of Technology",
+    year: "2023 - 2025",
+    location: "New Jersey, United States",
+    description: "Master's degree in Computer Science with a focus on software development and machine learning."
   },
   {
     degree: "Bachelor of Engineering in Computer Science",
-    institution: "MIT",
-    year: "2014 - 2018",
-    location: "Cambridge, MA",
-    description: "Graduated with honors. Focused on software engineering and distributed systems."
+    institution: "Vellore Institute of Technology",
+    year: "2019 - 2023",
+    location: "Vellore, India",
+    description: "Graduated with honors. Focused on software engineering and Internet of Things."
   }
 ];
 
@@ -59,7 +59,7 @@ export default function AboutSection() {
                 Get to know me
               </h3>
               <p className="mb-4 text-muted-foreground">
-                I'm a passionate Full Stack Developer with expertise in building exceptional digital experiences. With a background in computer science and 5+ years of industry experience, I specialize in creating responsive, user-friendly applications.
+                I'm a passionate Full Stack Developer with expertise in building exceptional digital experiences. With a background in computer science and 3+ years of industry experience, I specialize in creating responsive, user-friendly applications.
               </p>
               <p className="mb-4 text-muted-foreground">
                 My approach combines technical expertise with creative problem-solving to deliver solutions that not only meet but exceed client expectations. I enjoy working on challenging projects that push my abilities and allow me to learn new technologies.
@@ -134,7 +134,7 @@ export default function AboutSection() {
               <div className="absolute bottom-0 left-0 p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">Problem Solver & Tech Enthusiast</h3>
                 <div className="flex space-x-2">
-                  <span className="bg-primary/80 text-white text-xs px-2 py-1 rounded">5+ Years Experience</span>
+                  <span className="bg-primary/80 text-white text-xs px-2 py-1 rounded">2+ Years Experience</span>
                   <span className="bg-white/20 text-white text-xs px-2 py-1 rounded">Team Leader</span>
                 </div>
               </div>

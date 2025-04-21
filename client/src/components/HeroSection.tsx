@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ButtonSpotlight } from "@/components/ui/button-spotlight";
 import { Github, Linkedin, Twitter, Mail, ChevronDown } from "lucide-react";
+import profilePic from "@assets/profile.jpg";
 
 export default function HeroSection() {
   return (
@@ -119,7 +120,7 @@ export default function HeroSection() {
             <div className="relative">
               <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl"></div>
               <img 
-                src="/attached_assets/profile.jpg" 
+                src={profilePic} 
                 alt="Raghava Reddy" 
                 className="w-64 h-64 md:w-96 md:h-96 object-cover rounded-full relative z-10 border-4 border-white/80"
               />
