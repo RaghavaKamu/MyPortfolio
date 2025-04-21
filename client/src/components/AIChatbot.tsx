@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SendHorizontal, X, Brain, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ButtonSpotlight } from "@/components/ui/button-spotlight";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -167,14 +168,17 @@ export default function AIChatbot() {
                   <p className="text-xs text-muted-foreground">Your virtual portfolio assistant</p>
                 </div>
               </div>
-              <Button
+              <ButtonSpotlight
                 variant="ghost"
                 size="icon"
                 className="h-8 w-8"
                 onClick={toggleChat}
+                spotlightColor="rgba(var(--primary), 0.15)"
+                spotlightSize={80}
+                spotlightOpacity={0.3}
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </ButtonSpotlight>
             </div>
             
             {/* Chat Messages */}
@@ -244,14 +248,17 @@ export default function AIChatbot() {
                 placeholder="Ask anything about Raghava..."
                 className="rounded-full"
               />
-              <Button
+              <ButtonSpotlight
                 type="submit"
                 size="icon"
-                className="h-9 w-9 rounded-full"
+                className="h-9 w-9 rounded-full bg-primary text-primary-foreground"
                 disabled={isBotTyping || !input.trim()}
+                spotlightColor="rgba(var(--primary), 0.2)"
+                spotlightSize={80}
+                spotlightOpacity={0.4}
               >
                 <SendHorizontal className="h-4 w-4" />
-              </Button>
+              </ButtonSpotlight>
             </form>
           </motion.div>
         )}

@@ -1,0 +1,90 @@
+Please apply the following updates across my portfolio website:
+
+⸻
+
+🏠 Home Page:
+	1.	Change the display name to “Raghava Reddy”.
+	2.	Replace the subtitle:
+Old:
+"I build exceptional digital experiences that make people's lives simpler through clean and intuitive design."
+New:
+"Computer Science graduate with expertise in software development, machine learning, and web technologies."
+	3.	Update my social profile links:
+	•	GitHub: https://github.com/RaghavaKamu
+	•	LinkedIn: https://www.linkedin.com/in/raghava-reddy-432481279/
+	•	Twitter (X): https://x.com/RaghavaReddy27
+	4.	Replace the profile image with the uploaded one named profile pic.
+
+⸻
+
+📄 About Page:
+
+1. “Get to Know Me” Section:
+
+Replace the paragraph with:
+
+“I’m a passionate Full Stack Developer with expertise in building exceptional digital experiences. With a background in computer science and 3+ years of industry experience, I specialize in creating responsive, user-friendly applications.
+
+My approach combines technical expertise with creative problem-solving to deliver solutions that not only meet but exceed client expectations. I enjoy working on challenging projects that push my abilities and allow me to learn new technologies.
+
+When I’m not coding, you can find me exploring hiking trails, reading tech blogs, or experimenting with new recipes in the kitchen.”
+
+2. Education Section:
+
+Update the education details as follows:
+	•	Master of Science in Computer Science
+Institution: New Jersey Institute of Technology
+Years: 2023–2025
+Location: New Jersey, United States
+Description: Master’s degree in Computer Science with a focus on software development and machine learning.
+	•	Bachelor of Engineering in Computer Science
+Institution: Vellore Institute of Technology
+Years: 2019–2023
+Location: Vellore, India
+Description: Graduated with honors. Focused on software engineering and Internet of Things.
+
+3. Experience Overview Section:
+
+Change “5+ years of experience” to “2+ years of experience”.
+
+⸻
+
+💼 Experience Page:
+
+1. Frontend Developer:
+	•	Location: Hyderabad, India
+	•	Duration: 2020–2021
+
+2. Full Stack Developer (Internship):
+	•	Company: Webologix
+	•	Title: Intern
+	•	Duration: 2021–2022
+	•	Location: Bangalore, India
+
+3. Full Stack Developer:
+	•	Company: Webologix Inc
+	•	Title: Full Stack Developer (converted to full-time role)
+	•	Duration: 2023
+	•	Location: Bangalore, India
+
+4. Career Spotlight Section:
+
+Update the experience timeline and roles based on the above corrected information.
+
+⸻
+
+📬 Get in Touch Page:
+	1.	Email: vrkreddy27@gmail.com
+	2.	Location: Jersey City, NJ, USA
+	3.	Instagram: https://www.instagram.com/im_raghavareddy/
+	4.	Update social icons to match Home Page links (GitHub, LinkedIn, Twitter X, Instagram)
+	5.	Update copyright footer:
+	•	Replace with: © Raghava Reddy
+
+⸻
+
+🤖 Chatbot (raghava.ai):
+	1.	Rename chatbot to Raghava.ai (capitalize R).
+	2.	Replace all instances of placeholder names like John Doe with Raghava Reddy.
+	3.	Remove this intro message completely:
+"👋 Hi there! I'm raghava.ai. Ask me anything about Raghava's skills, projects, or experience!"

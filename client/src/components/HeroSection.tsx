@@ -33,7 +33,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
             >
-              Hi, I'm <span className="text-primary">John Doe</span>
+              Hi, I'm <span className="text-primary">Raghava Reddy</span>
             </motion.h1>
             <motion.h2 
               className="text-2xl md:text-3xl font-medium mb-6 text-gray-200"
@@ -49,7 +49,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.7 }}
             >
-              I build exceptional digital experiences that make people's lives simpler through clean and intuitive design.
+              Computer Science graduate with expertise in software development, machine learning, and web technologies.
             </motion.p>
             <motion.div 
               className="flex space-x-4"
@@ -85,10 +85,10 @@ export default function HeroSection() {
               transition={{ delay: 0.6, duration: 0.7 }}
             >
               {[
-                { icon: Github, label: "GitHub", href: "#" },
-                { icon: Linkedin, label: "LinkedIn", href: "#" },
-                { icon: Twitter, label: "Twitter", href: "#" },
-                { icon: Mail, label: "Email", href: "#" }
+                { icon: Github, label: "GitHub", href: "https://github.com/RaghavaKamu" },
+                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/raghava-reddy-432481279/" },
+                { icon: Twitter, label: "Twitter", href: "https://x.com/RaghavaReddy27" },
+                { icon: Mail, label: "Email", href: "mailto:vrkreddy27@gmail.com" }
               ].map((item, index) => {
                 const Icon = item.icon;
                 return (
@@ -119,8 +119,8 @@ export default function HeroSection() {
             <div className="relative">
               <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl"></div>
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
-                alt="John Doe" 
+                src="/attached_assets/profile.jpg" 
+                alt="Raghava Reddy" 
                 className="w-64 h-64 md:w-96 md:h-96 object-cover rounded-full relative z-10 border-4 border-white/80"
               />
             </div>
