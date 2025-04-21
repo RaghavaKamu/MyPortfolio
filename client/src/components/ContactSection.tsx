@@ -112,16 +112,16 @@ export default function ContactSection() {
                 <div className="ml-4">
                   <h4 className="font-medium">Social Profiles</h4>
                   <div className="flex mt-2 space-x-4">
-                    <a href="#" className="text-foreground hover:text-primary transition-colors" aria-label="GitHub">
+                    <a href="https://github.com/Raghavrao1996" className="text-foreground hover:text-primary transition-colors" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                       <Github className="h-5 w-5" />
                     </a>
-                    <a href="#" className="text-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/raghava-rao-05193820a" className="text-foreground hover:text-primary transition-colors" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-5 w-5" />
                     </a>
-                    <a href="#" className="text-foreground hover:text-primary transition-colors" aria-label="Twitter">
+                    <a href="https://twitter.com/raghava_rao25" className="text-foreground hover:text-primary transition-colors" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
                       <Twitter className="h-5 w-5" />
                     </a>
-                    <a href="#" className="text-foreground hover:text-primary transition-colors" aria-label="Instagram">
+                    <a href="https://www.instagram.com/raghava_rao_25" className="text-foreground hover:text-primary transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                       <Instagram className="h-5 w-5" />
                     </a>
                   </div>
@@ -185,13 +185,33 @@ export default function ContactSection() {
               
               <ButtonSpotlight 
                 type="submit" 
-                className="w-full"
+                className="w-full group relative overflow-hidden"
                 disabled={isSubmitting}
                 spotlightColor="rgba(var(--primary), 0.25)" 
-                spotlightSize={220}
-                spotlightOpacity={0.5}
+                spotlightSize={260}
+                spotlightOpacity={0.6}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                <span className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md"></span>
+                <span className="relative z-10 flex items-center justify-center">
+                  <span className="mr-2">{isSubmitting ? "Sending..." : "Send Message"}</span>
+                  {!isSubmitting && (
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="18" 
+                      height="18" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="transform group-hover:translate-x-1 transition-transform duration-300"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  )}
+                </span>
               </ButtonSpotlight>
             </form>
           </motion.div>
