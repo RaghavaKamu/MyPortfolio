@@ -15,16 +15,27 @@ import {
 import InteractiveBackground from "./InteractiveBackground";
 
 // Extended experience data with additional fields
-const extendedExperiences = experiences.map((exp, index) => ({
-  ...exp,
-  location: ["New Jersey, USA", "Hyderabad, India", "Bangalore, India"][index % 3],
-  achievements: [
-    "Led a team of 5 developers to deliver projects on time and under budget",
-    "Increased application performance by 40% through optimization techniques",
-    "Onboarded and mentored 3 junior developers",
-    "Implemented CI/CD pipeline reducing deployment time by 60%"
-  ].slice(0, index + 2)
-}));
+const extendedExperiences = experiences.map((exp, index) => {
+  let location = "New Jersey, USA";
+  
+  // Assign locations based on the company or title
+  if (exp.title === "Frontend Developer") {
+    location = "Hyderabad, India";
+  } else if (exp.title === "Full Stack Developer (Internship)" || exp.title === "Full Stack Developer") {
+    location = "Bangalore, India";
+  }
+  
+  return {
+    ...exp,
+    location,
+    achievements: [
+      "Led a team of 5 developers to deliver projects on time and under budget",
+      "Increased application performance by 40% through optimization techniques",
+      "Onboarded and mentored 3 junior developers",
+      "Implemented CI/CD pipeline reducing deployment time by 60%"
+    ].slice(0, index + 2)
+  };
+});
 
 export default function ExperienceSection() {
   const [activeExperience, setActiveExperience] = useState(0);

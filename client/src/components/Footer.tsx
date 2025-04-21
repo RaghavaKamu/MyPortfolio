@@ -20,16 +20,16 @@ export default function Footer() {
           </nav>
           
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-primary transition-colors" aria-label="GitHub">
+            <a href="https://github.com/Raghavrao1996" className="hover:text-primary transition-colors" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5" />
             </a>
-            <a href="#" className="hover:text-primary transition-colors" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/raghava-rao-05193820a" className="hover:text-primary transition-colors" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="#" className="hover:text-primary transition-colors" aria-label="Twitter">
+            <a href="https://twitter.com/raghava_rao25" className="hover:text-primary transition-colors" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
               <Twitter className="h-5 w-5" />
             </a>
-            <a href="#" className="hover:text-primary transition-colors" aria-label="Email">
+            <a href="mailto:vrkreddy27@gmail.com" className="hover:text-primary transition-colors" aria-label="Email">
               <Mail className="h-5 w-5" />
             </a>
           </div>

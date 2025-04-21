@@ -141,24 +141,24 @@ export const experiences = [
     skills: ["GoLang", "Python", "Machine Learning", "Cloud Computing"]
   },
   {
-    title: "Machine Learning Intern",
-    company: "CORIZO",
-    period: "Oct 2022 - Mar 2023",
-    description: "Developed machine learning models, analyzed patterns, optimized predictions, and researched deep learning techniques contributing to AI-based solutions.",
-    skills: ["Machine Learning", "Python", "Deep Learning", "Data Analysis"]
+    title: "Full Stack Developer",
+    company: "Webologix Inc",
+    period: "2023",
+    description: "Converted to a full-time role after successful internship. Developed robust full-stack applications and collaborated with cross-functional teams to deliver high-quality software solutions.",
+    skills: ["React.js", "Node.js", "MongoDB", "JavaScript", "Full Stack Development"]
   },
   {
-    title: "Technical Core Committee Member",
-    company: "IEEE NPS",
-    period: "Jul 2021 - Jan 2023",
-    description: "Organized technical events, managed workshops and mentoring programs, and collaborated on research projects working on innovative tech solutions.",
-    skills: ["Project Management", "Technical Leadership", "Research", "Event Organization"]
+    title: "Full Stack Developer (Internship)",
+    company: "Webologix",
+    period: "2021 - 2022",
+    description: "Worked on web application development projects utilizing modern frameworks and technologies. Participated in the complete software development lifecycle from conception to deployment.",
+    skills: ["JavaScript", "Web Development", "Frontend", "Backend", "MongoDB"]
   },
   {
-    title: "Bachelor's Student",
-    company: "Vellore Institute of Technology",
-    period: "Jun 2019 - May 2023",
-    description: "Completed Bachelor of Science in Computer Science with focus on programming, web development, and participation in technical activities.",
-    skills: ["JavaScript", "Python", "Web Development", "Programming"]
+    title: "Frontend Developer",
+    company: "Freelance",
+    period: "2020 - 2021",
+    description: "Designed and developed responsive user interfaces for various client websites. Implemented modern frontend technologies to create engaging and interactive web experiences.",
+    skills: ["HTML", "CSS", "JavaScript", "React.js", "UI/UX Design"]
   }
 ];
