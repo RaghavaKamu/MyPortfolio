@@ -21,7 +21,7 @@ export default function AIChatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "👋 Hi there! I'm raghava.ai. Ask me anything about Raghava's skills, projects, or experience!",
+      content: "👋 Hi there! I'm Raghava's AI assistant. Ask me anything about Raghava's skills, projects, or experience!",
       timestamp: new Date(),
     },
   ]);
@@ -204,7 +204,7 @@ export default function AIChatbot() {
                   <Brain className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground/90">raghava.ai</h3>
+                  <h3 className="font-semibold text-foreground/90">Raghava's AI</h3>
                   <p className="text-xs text-muted-foreground">Your virtual portfolio assistant</p>
                 </div>
               </div>
