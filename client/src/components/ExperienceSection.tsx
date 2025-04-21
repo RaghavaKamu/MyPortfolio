@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ButtonSpotlight } from "@/components/ui/button-spotlight";
 import { 
   Download, Briefcase, Calendar, MapPin, Award, 
   BuildingIcon, Users, ChevronRight, ChevronLeft, ArrowRight 
@@ -250,7 +251,7 @@ export default function ExperienceSection() {
                   <Award className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">5+ Years</h4>
+                  <h4 className="font-semibold">2+ Years</h4>
                   <p className="text-sm text-white/70">Professional Experience</p>
                 </div>
               </div>
@@ -276,13 +277,16 @@ export default function ExperienceSection() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button 
+              <ButtonSpotlight 
                 variant="outline" 
                 className="border-white/20 text-white hover:bg-white/10 hover:text-white w-full"
+                spotlightColor="rgba(255, 255, 255, 0.2)"
+                spotlightSize={180}
+                spotlightOpacity={0.3}
               >
                 <Download className="mr-2 h-4 w-4" />
                 <span>Download Full Resume</span>
-              </Button>
+              </ButtonSpotlight>
             </CardFooter>
           </Card>
           
@@ -291,22 +295,28 @@ export default function ExperienceSection() {
               <div className="flex justify-between items-center">
                 <CardTitle>Experience Spotlight</CardTitle>
                 <div className="flex space-x-2">
-                  <Button 
+                  <ButtonSpotlight 
                     variant="outline" 
                     size="icon" 
                     className="h-8 w-8 rounded-full"
                     onClick={prevExperience}
+                    spotlightColor="rgba(var(--primary), 0.15)"
+                    spotlightSize={60}
+                    spotlightOpacity={0.3}
                   >
                     <ChevronLeft className="h-4 w-4" />
-                  </Button>
-                  <Button 
+                  </ButtonSpotlight>
+                  <ButtonSpotlight 
                     variant="outline" 
                     size="icon" 
                     className="h-8 w-8 rounded-full"
                     onClick={nextExperience}
+                    spotlightColor="rgba(var(--primary), 0.15)"
+                    spotlightSize={60}
+                    spotlightOpacity={0.3}
                   >
                     <ChevronRight className="h-4 w-4" />
-                  </Button>
+                  </ButtonSpotlight>
                 </div>
               </div>
               <CardDescription>
