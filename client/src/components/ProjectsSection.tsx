@@ -250,17 +250,12 @@ export default function ProjectsSection() {
         </motion.div>
         
         <div className="text-center mt-12">
-          <ButtonSpotlight 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-6 text-lg group relative overflow-hidden"
-            spotlightColor="rgba(255, 255, 255, 0.2)" 
-            spotlightSize={250}
-            spotlightOpacity={0.6}
+          <Button 
+            className="bg-[#4F46E5] hover:bg-[#4338CA] text-white px-6 py-3 rounded-md text-md font-medium group transition-all"
           >
-            <span className="relative z-10 flex items-center justify-center">
-              <span>View All Projects</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </span>
-          </ButtonSpotlight>
+            View All Projects
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 h-5 w-5 inline"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </Button>
         </div>
       </div>
     </section>
