@@ -115,12 +115,7 @@ export default function AIChatbot() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/0 via-indigo-500/10 to-indigo-400/20 group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
                 
                 {/* Animated pulse ring */}
-                <div className="absolute inset-0 rounded-full animate-pulse opacity-50" 
-                  style={{
-                    background: "radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%)",
-                    animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
-                  }}
-                />
+                <div className="absolute inset-0 rounded-full animate-pulse opacity-50 pulse-ring" />
                 
                 {/* Brain icon with glow effect */}
                 <div className="relative z-10 group-hover:scale-110 transition-transform duration-300 transform">
@@ -174,6 +169,7 @@ export default function AIChatbot() {
               <button
                 className="h-8 w-8 flex items-center justify-center rounded-full bg-indigo-700/50 hover:bg-indigo-600/60 text-white relative z-10 transition-colors"
                 onClick={toggleChat}
+                title="Close Chat"
               >
                 <X className="h-4 w-4" />
               </button>
