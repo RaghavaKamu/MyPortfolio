@@ -124,7 +124,7 @@ export default function AboutSection() {
           >
             <div className="relative overflow-hidden rounded-lg">
               <img 
-                src="../assets/profile.jpg" 
+                src="/assets/profile.jpg" 
                 alt="Raghava Kami Reddy Vasa" 
                 className="w-full h-auto rounded-lg shadow-lg object-cover"
               />
