@@ -4,6 +4,7 @@ import {
   Calendar, MapPin, GripVertical
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import profileImg from "../assets/profile.jpg";
 
 const education = [
   {
@@ -124,7 +125,7 @@ export default function AboutSection() {
           >
             <div className="relative overflow-hidden rounded-lg">
               <img 
-                src="/assets/profile.jpg" 
+                src={profileImg} 
                 alt="Raghava Kami Reddy Vasa" 
                 className="w-full h-auto rounded-lg shadow-lg object-cover"
               />
