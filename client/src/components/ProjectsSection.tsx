@@ -7,7 +7,6 @@ import { ExternalLink, Github, Search, Filter, ChevronLeft, ChevronRight } from 
 import { projects, projectCategories, ProjectCategory } from "@/data";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import InteractiveBackground from "./InteractiveBackground";
 
 export default function ProjectsSection() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,7 +48,6 @@ export default function ProjectsSection() {
   
   return (
     <section id="projects" className="py-20 bg-background relative">
-      <InteractiveBackground intensity={70} size={650} color="rgba(var(--primary), 0.15)" blur={65} />
       <div className="container mx-auto px-4 relative z-10">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-8 text-center"
