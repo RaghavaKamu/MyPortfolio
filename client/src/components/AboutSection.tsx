@@ -4,7 +4,6 @@ import {
   Calendar, MapPin, GripVertical
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import InteractiveBackground from "./InteractiveBackground";
 
 const education = [
   {
@@ -26,7 +25,6 @@ const education = [
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-background relative">
-      <InteractiveBackground intensity={75} size={600} color="rgba(var(--primary), 0.12)" blur={70} />
       <div className="container mx-auto px-4 relative z-10">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-16 text-center"
@@ -126,7 +124,7 @@ export default function AboutSection() {
           >
             <div className="relative overflow-hidden rounded-lg">
               <img 
-                src="@assets/profile.jpg" 
+                src="../assets/profile.jpg" 
                 alt="Raghava Kami Reddy Vasa" 
                 className="w-full h-auto rounded-lg shadow-lg object-cover"
               />
