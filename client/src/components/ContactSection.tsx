@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Link as LinkIcon, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import InteractiveBackground from "./InteractiveBackground";
 
 export default function ContactSection() {
   const { toast } = useToast();
@@ -58,7 +57,6 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-20 relative">
-      <InteractiveBackground intensity={75} size={650} color="rgba(var(--primary), 0.16)" blur={75} />
       <div className="container mx-auto px-4 relative z-10">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-16 text-center"
