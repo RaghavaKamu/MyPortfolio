@@ -319,12 +319,12 @@ function SkillBubble({ category, index, isActive }: SkillBubbleProps) {
                     "px-3 py-1 text-sm font-medium shadow-lg",
                     "bg-white/95 dark:bg-slate-900/95 border-2",
                     {
-                      "border-indigo-500": category.id === "languages",
-                      "border-violet-500": category.id === "frontend",
-                      "border-amber-500": category.id === "cloud",
-                      "border-rose-500": category.id === "database",
-                      "border-cyan-500": category.id === "networking",
-                      "border-emerald-500": category.id === "machinelearning",
+                      "border-indigo-500 text-indigo-600 dark:text-indigo-400": category.id === "languages",
+                      "border-violet-500 text-violet-600 dark:text-violet-400": category.id === "frontend",
+                      "border-amber-500 text-amber-600 dark:text-amber-400": category.id === "cloud",
+                      "border-rose-500 text-rose-600 dark:text-rose-400": category.id === "database",
+                      "border-cyan-500 text-cyan-600 dark:text-cyan-400": category.id === "networking",
+                      "border-emerald-500 text-emerald-600 dark:text-emerald-400": category.id === "machinelearning",
                     },
                     "hover:bg-white dark:hover:bg-slate-900",
                     "transition-all duration-200"
