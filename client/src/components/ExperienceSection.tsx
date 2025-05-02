@@ -288,13 +288,19 @@ export default function ExperienceSection() {
             <CardFooter>
               <ButtonSpotlight 
                 variant="outline" 
-                className="border-white/20 text-white hover:bg-white/10 hover:text-white w-full"
-                spotlightColor="rgba(255, 255, 255, 0.2)"
+                className="border-primary/70 text-primary dark:border-white/20 dark:text-white hover:bg-primary/10 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white w-full"
+                spotlightColor="rgba(var(--primary), 0.2)"
                 spotlightSize={180}
                 spotlightOpacity={0.3}
               >
-                <Download className="mr-2 h-4 w-4" />
-                <span>Download Full Resume</span>
+                <a 
+                  href="/attached_assets/resume.pdf" 
+                  download="resume.pdf" 
+                  className="flex items-center"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  <span>Download Full Resume</span>
+                </a>
               </ButtonSpotlight>
             </CardFooter>
           </Card>

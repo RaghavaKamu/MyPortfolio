@@ -71,8 +71,8 @@ export default function HeroSection() {
               <ButtonSpotlight 
                 variant="outline" 
                 asChild 
-                className="border-white text-white hover:bg-white/10"
-                spotlightColor="rgba(255, 255, 255, 0.15)" 
+                className="border-primary/70 text-primary dark:border-white dark:text-white hover:bg-primary/10 dark:hover:bg-white/10"
+                spotlightColor="rgba(var(--primary), 0.15)" 
                 spotlightSize={150}
                 spotlightOpacity={0.35}
               >
