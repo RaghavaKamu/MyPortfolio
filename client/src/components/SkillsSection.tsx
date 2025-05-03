@@ -17,7 +17,10 @@ const skillCategories = [
     hoverColor: "group-hover:from-emerald-600 group-hover:via-green-500 group-hover:to-emerald-700",
     textColor: "text-emerald-50",
     glowColor: "rgba(16, 185, 129, 0.4)",
-    skills: ["TensorFlow", "Data Analysis", "Sentiment Analysis", "Deep Learning", "Neural Networks"]
+    skills: [
+      "TensorFlow", "Data Analysis", "Sentiment Analysis", 
+      "Deep Learning", "Neural Networks", "Scikit-learn", "Pandas"
+    ]
   },
   {
     id: "languages",
@@ -27,7 +30,10 @@ const skillCategories = [
     hoverColor: "group-hover:from-blue-700 group-hover:via-indigo-600 group-hover:to-blue-800",
     textColor: "text-blue-50",
     glowColor: "rgba(79, 70, 229, 0.4)",
-    skills: ["GoLang", "JavaScript", "Python", "Ruby", "C"]
+    skills: [
+      "GoLang", "JavaScript", "Python", "Ruby", "C", 
+      "TypeScript", "Java"
+    ]
   },
   {
     id: "frontend",
@@ -37,7 +43,10 @@ const skillCategories = [
     hoverColor: "group-hover:from-violet-700 group-hover:via-purple-600 group-hover:to-violet-800",
     textColor: "text-purple-50",
     glowColor: "rgba(139, 92, 246, 0.4)",
-    skills: ["HTML", "CSS", "React.js", "Django", "Spring Boot"]
+    skills: [
+      "HTML", "CSS", "React.js", "Django", "Spring Boot",
+      "Next.js", "Tailwind CSS", "Figma"
+    ]
   },
   {
     id: "database",
@@ -47,7 +56,10 @@ const skillCategories = [
     hoverColor: "group-hover:from-rose-600 group-hover:via-red-600 group-hover:to-rose-700",
     textColor: "text-red-50",
     glowColor: "rgba(225, 29, 72, 0.4)",
-    skills: ["Oracle", "MySQL", "MongoDB", "SQL", "NoSQL"]
+    skills: [
+      "Oracle", "MySQL", "MongoDB", "SQL", "NoSQL", 
+      "PostgreSQL", "Firebase"
+    ]
   },
   {
     id: "networking",
@@ -57,7 +69,10 @@ const skillCategories = [
     hoverColor: "group-hover:from-cyan-600 group-hover:via-teal-600 group-hover:to-cyan-700",
     textColor: "text-teal-50",
     glowColor: "rgba(20, 184, 166, 0.4)",
-    skills: ["Cisco", "TCP/IP", "Network Security", "Routing", "LAN/WAN"]
+    skills: [
+      "Cisco", "TCP/IP", "Network Security", "Routing", "LAN/WAN", 
+      "Wireshark", "VPN", "Firewall Config"
+    ]
   },
   {
     id: "cloud",
@@ -67,7 +82,23 @@ const skillCategories = [
     hoverColor: "group-hover:from-amber-600 group-hover:via-orange-600 group-hover:to-amber-700",
     textColor: "text-orange-50",
     glowColor: "rgba(234, 88, 12, 0.4)",
-    skills: ["Azure", "AWS", "Git", "GitHub", "CI/CD"]
+    skills: [
+      "Azure", "AWS", "Git", "GitHub", "CI/CD",
+      "Docker", "Kubernetes", "Jenkins", "Terraform"
+    ]
+  },
+  {
+    id: "tools",
+    title: "Tools",
+    icon: <FileCode className="h-8 w-8" />,
+    color: "from-pink-500 via-pink-400 to-pink-600",
+    hoverColor: "group-hover:from-pink-600 group-hover:via-pink-500 group-hover:to-pink-700",
+    textColor: "text-pink-50",
+    glowColor: "rgba(236, 72, 153, 0.4)",
+    skills: [
+      "VS Code", "Postman", "Notion", "Figma", 
+      "Jira", "Slack", "Zoom", "Trello"
+    ]
   }
 ];
 
@@ -274,6 +305,7 @@ const SkillBubble = React.memo(function SkillBubble({ category, index }: SkillBu
                       "border-rose-500 text-rose-600 dark:text-rose-400": category.id === "database",
                       "border-cyan-500 text-cyan-600 dark:text-cyan-400": category.id === "networking",
                       "border-emerald-500 text-emerald-600 dark:text-emerald-400": category.id === "machinelearning",
+                      "border-pink-500 text-pink-600 dark:text-pink-400": category.id === "tools",
                     },
                     "hover:bg-white dark:hover:bg-slate-900",
                     "transition-all duration-200"
@@ -317,8 +349,8 @@ export default function SkillsSection() {
               key={category.id}
               className="absolute"
               style={{
-                top: index === 0 ? "40%" : index === 1 ? "8%" : index === 2 ? "40%" : index === 3 ? "72%" : index === 4 ? "40%" : "25%",
-                left: index === 0 ? "50%" : index === 1 ? "50%" : index === 2 ? "85%" : index === 3 ? "50%" : index === 4 ? "15%" : "30%",
+                top: index === 0 ? "40%" : index === 1 ? "8%" : index === 2 ? "40%" : index === 3 ? "72%" : index === 4 ? "40%" : index === 5 ? "25%" : "30%",
+                left: index === 0 ? "50%" : index === 1 ? "50%" : index === 2 ? "85%" : index === 3 ? "50%" : index === 4 ? "15%" : index === 5 ? "70%" : "30%",
                 transform: "translate(-50%, -50%)",
               }}
             >
