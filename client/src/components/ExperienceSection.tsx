@@ -149,7 +149,7 @@ export default function ExperienceSection() {
               >
                 <a 
                   href={resumePDF}
-                  download="Resume.pdf"
+                  download
                   className="flex items-center w-full justify-center"
                 >
                   <Download className="mr-2 h-4 w-4" />
