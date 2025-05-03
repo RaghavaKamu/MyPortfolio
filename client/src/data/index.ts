@@ -74,7 +74,18 @@ export const projectCategories: ProjectCategory[] = [
   'Desktop App',
   'Data Analysis'
 ];
-
+export const extendedExperiences = [
+  {
+    title: "Frontend Developer",
+    company: "XYZ Inc.",
+    period: "Jan 2023 – Present",
+    location: "Remote",
+    description: "Worked on improving UI/UX...",
+    skills: ["React", "Tailwind", "TypeScript"],
+    achievements: ["Increased conversion by 30%", "Led UI migration project"],
+  },
+  // add more items as needed
+];
 export const projects = [
   {
     title: "Drug Evaluation in Medicine Recommendation System",

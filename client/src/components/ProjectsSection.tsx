@@ -81,7 +81,9 @@ export default function ProjectsSection() {
             <div className="md:w-1/4">
               <div className="flex items-center border rounded-md px-3 py-2 bg-card">
                 <Filter className="h-4 w-4 text-muted-foreground mr-2" />
+                <label htmlFor="category-select" className="sr-only">Filter by category</label>
                 <select
+                  id="category-select"
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value as ProjectCategory | "All")}
                   className="bg-transparent flex-1 outline-none"
