@@ -46,34 +46,6 @@ export default function Home() {
     };
   }, [controls]);
 
-  // Set up smooth scrolling for anchor links
-  useEffect(() => {
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'A') {
-        const href = target.getAttribute('href');
-        if (href && href.startsWith('#') && href !== '#') {
-          e.preventDefault();
-          
-          const targetElement = document.querySelector(href);
-          if (targetElement) {
-            // Scroll to target with offset for header
-            window.scrollTo({
-              top: (targetElement as HTMLElement).offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
-        }
-      }
-    };
-
-    document.addEventListener('click', handleAnchorClick);
-    
-    return () => {
-      document.removeEventListener('click', handleAnchorClick);
-    };
-  }, []);
-
   return (
     <>
       <HeroSection />

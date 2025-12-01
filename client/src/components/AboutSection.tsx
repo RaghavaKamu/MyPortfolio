@@ -23,6 +23,25 @@ const education = [
   }
 ];
 
+const workExperience = [
+  {
+    title: "Python Developer",
+    company: "JPMorgan Chase - NA, USA",
+    period: "Present",
+    location: "New Jersey, United States",
+    description:
+      "Currently working as a Python Developer, building secure, low-latency banking microservices with Django REST, PostgreSQL, Apache Kafka, and Airflow to support high-volume financial transactions and real-time fraud monitoring.",
+  },
+  {
+    title: "Python Developer",
+    company: "HCL Tech - India",
+    period: "Previous",
+    location: "India",
+    description:
+      "Previously developed large-scale retail and e-commerce platforms using FastAPI/Flask, MySQL, Cassandra, Kafka, and Prefect, deploying containerized services on Azure with Docker and Kubernetes.",
+  },
+];
+
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-background relative">
@@ -58,33 +77,11 @@ export default function AboutSection() {
                 Get to know me
               </h3>
               <p className="mb-4 text-muted-foreground">
-                I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA, currently pursuing my Master's in Computer Science at NJIT with an expected graduation in April 2025. With 3+ years of experience across banking, finance, retail, and e-commerce, I build secure, scalable backend services and intuitive user experiences using Python, Django REST Framework, FastAPI, and modern frontend stacks.
+                I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA, currently pursuing my Master's in Computer Science at NJIT (graduating April 2025). I have 3+ years of experience building secure, data-driven products across banking, finance, retail, and e-commerce.
               </p>
               <p className="mb-4 text-muted-foreground">
-                My professional journey includes working as a Python Developer at JPMorgan Chase in North America, where I build and deploy secure microservices for high-volume financial transactions, and as a Python Developer at HCL Tech in India, where I developed large-scale retail and e-commerce platforms. I have a strong foundation in backend engineering, data engineering, and API integrations, complemented by experience with fraud detection, real-time data streaming, and analytics dashboards.
+                I specialize in designing reliable backend APIs and microservices with Python, Django REST Framework, FastAPI, and modern data stacks like PostgreSQL, MySQL, Cassandra, Apache Kafka, Airflow/Prefect, and Pandas/NumPy—deployed on AWS and Azure with Docker and Kubernetes.
               </p>
-              <p className="mb-4 text-muted-foreground">
-                I regularly work with technologies like PostgreSQL, MySQL, Cassandra, Apache Kafka, Airflow/Prefect, Pandas/NumPy, Scikit-learn, and cloud platforms such as AWS and Azure using Docker and Kubernetes. I'm always looking for opportunities to apply these skills to solve complex problems in financial services and data-intensive applications.
-              </p>
-
-              <div className="mt-4 space-y-3">
-                <h4 className="text-sm font-semibold text-foreground flex items-center">
-                  <span className="bg-primary/10 p-1.5 rounded-full mr-2">
-                    <Briefcase className="h-4 w-4 text-primary" />
-                  </span>
-                  Current Work Experience
-                </h4>
-                <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>
-                    <span className="font-medium text-foreground">Python Developer – JPMorgan Chase, NA</span>{" "}
-                    · Real-time banking microservices, Kafka-based transaction streams, PostgreSQL, Airflow, Tableau.
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">Python Developer – HCL Tech, India</span>{" "}
-                    · Retail & e-commerce platforms using FastAPI/Flask, MySQL, Cassandra, Kafka, Prefect, Azure, Kubernetes.
-                  </li>
-                </ul>
-              </div>
             </motion.div>
             
             <motion.div 
@@ -123,6 +120,54 @@ export default function AboutSection() {
                         <div className="flex items-center text-xs text-muted-foreground mb-3">
                           <Calendar className="h-3 w-3 mr-1" />
                           <span className="mr-3">{item.year}</span>
+                          <MapPin className="h-3 w-3 mr-1" />
+                          <span>{item.location}</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="mt-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <h3 className="text-2xl font-semibold mb-6 flex items-center">
+                <span className="bg-primary/10 p-2 rounded-full mr-3">
+                  <Briefcase className="h-5 w-5 text-primary" />
+                </span>
+                Work Experience
+              </h3>
+              
+              <div className="space-y-6 relative pl-6">
+                <div className="absolute left-0 top-2 bottom-0 w-0.5 bg-border">
+                  <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-3 h-3 rounded-full bg-primary" />
+                  <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-3 h-3 rounded-full bg-primary" />
+                </div>
+
+                {workExperience.map((item, index) => (
+                  <motion.div 
+                    key={index}
+                    className="relative"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
+                  >
+                    <Card className="border-l-4 border-l-primary hover:shadow-md transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="text-lg font-medium text-primary mb-1">
+                          {item.title} · <span className="text-foreground">{item.company}</span>
+                        </h4>
+                        <div className="flex items-center text-xs text-muted-foreground mb-3">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          <span className="mr-3">{item.period}</span>
                           <MapPin className="h-3 w-3 mr-1" />
                           <span>{item.location}</span>
                         </div>
