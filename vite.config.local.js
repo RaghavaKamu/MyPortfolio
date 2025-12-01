@@ -12,6 +12,15 @@ export default defineConfig({
     react(),
     themePlugin(),
   ],
+  server: {
+    proxy: {
+      // Proxy API calls during local development to the Express backend
+      "/api": {
+        target: "http://localhost:5001",
+        changeOrigin: true,
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client", "src"),

@@ -18,9 +18,16 @@ const skillCategories = [
     textColor: "text-emerald-50",
     glowColor: "rgba(16, 185, 129, 0.4)",
     skills: [
-      "TensorFlow", "Data Analysis", "Sentiment Analysis", 
-      "Deep Learning", "Neural Networks", "Scikit-learn", "Pandas"
-    ]
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn",
+      "Pandas",
+      "NumPy",
+      "Fraud Detection Models",
+      "Risk Scoring",
+      "Credit Risk Analytics",
+      "Customer Segmentation"
+    ],
   },
   {
     id: "languages",
@@ -37,16 +44,21 @@ const skillCategories = [
   },
   {
     id: "frontend",
-    title: "Web Development",
+    title: "Web & API Development",
     icon: <Globe className="h-8 w-8" />,
     color: "from-violet-600 via-purple-500 to-violet-700",
     hoverColor: "group-hover:from-violet-700 group-hover:via-purple-600 group-hover:to-violet-800",
     textColor: "text-purple-50",
     glowColor: "rgba(139, 92, 246, 0.4)",
     skills: [
-      "HTML", "CSS", "React.js", "Django", "Spring Boot",
-      "Next.js", "Tailwind CSS", "Figma"
-    ]
+      "HTML",
+      "CSS",
+      "React.js",
+      "Django / Django REST",
+      "Flask / FastAPI",
+      "GraphQL (Ariadne)",
+      "Tailwind CSS"
+    ],
   },
   {
     id: "database",
@@ -62,17 +74,21 @@ const skillCategories = [
     ]
   },
   {
-    id: "networking",
-    title: "Networking",
+    id: "dataengineering",
+    title: "Data Engineering & Streaming",
     icon: <Network className="h-8 w-8" />,
     color: "from-cyan-500 via-teal-500 to-cyan-600",
     hoverColor: "group-hover:from-cyan-600 group-hover:via-teal-600 group-hover:to-cyan-700",
     textColor: "text-teal-50",
     glowColor: "rgba(20, 184, 166, 0.4)",
     skills: [
-      "Cisco", "TCP/IP", "Network Security", "Routing", "LAN/WAN", 
-      "Wireshark", "VPN", "Firewall Config"
-    ]
+      "Apache Kafka",
+      "Spark Streaming",
+      "Airflow / Prefect",
+      "ETL Pipelines",
+      "Real-time Transaction Systems",
+      "Data Warehousing (Snowflake, Redshift)"
+    ],
   },
   {
     id: "cloud",
@@ -83,9 +99,15 @@ const skillCategories = [
     textColor: "text-orange-50",
     glowColor: "rgba(234, 88, 12, 0.4)",
     skills: [
-      "Azure", "AWS", "Git", "GitHub", "CI/CD",
-      "Docker", "Kubernetes", "Jenkins", "Terraform"
-    ]
+      "AWS",
+      "Azure",
+      "GCP",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Git / GitHub",
+      "Cloud Security & Compliance"
+    ],
   },
   {
     id: "tools",
@@ -96,9 +118,15 @@ const skillCategories = [
     textColor: "text-pink-50",
     glowColor: "rgba(236, 72, 153, 0.4)",
     skills: [
-      "VS Code", "Postman", "Notion", "Figma", 
-      "Jira", "Slack", "Zoom", "Trello"
-    ]
+      "Tableau",
+      "Power BI",
+      "VS Code",
+      "Postman",
+      "Prometheus / Grafana",
+      "ELK Stack",
+      "Jira",
+      "Notion"
+    ],
   }
 ];
 

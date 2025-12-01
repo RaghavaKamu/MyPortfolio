@@ -58,13 +58,13 @@ export default function AboutSection() {
                 Get to know me
               </h3>
               <p className="mb-4 text-muted-foreground">
-                I'm Raghava Kami Reddy Vasa, a passionate Full Stack Developer pursuing my Master's in Computer Science at NJIT with an expected graduation in April 2025. With over 3 years of industry experience, I specialize in building responsive, user-friendly web applications with modern technologies like React.js, Node.js, and Python.
+                I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA, currently pursuing my Master's in Computer Science at NJIT with an expected graduation in April 2025. With 3+ years of experience across banking, finance, retail, and e-commerce, I build secure, scalable backend services and intuitive user experiences using Python, Django REST Framework, FastAPI, and modern frontend stacks.
               </p>
               <p className="mb-4 text-muted-foreground">
-                My professional journey includes working as a Full Stack Developer at Webologix Inc where I developed robust applications and collaborated with cross-functional teams. I have a strong foundation in both frontend and backend technologies, complemented by experience in machine learning and IoT projects.
+                My professional journey includes working as a Python Developer at JPMorgan Chase in North America, where I build and deploy secure microservices for high-volume financial transactions, and as a Python Developer at HCL Tech in India, where I developed large-scale retail and e-commerce platforms. I have a strong foundation in backend engineering, data engineering, and API integrations, complemented by experience with fraud detection, real-time data streaming, and analytics dashboards.
               </p>
               <p className="text-muted-foreground">
-                When I'm not coding, you can find me exploring hiking trails around New Jersey, reading tech blogs to stay current with industry trends, or experimenting with new recipes in the kitchen. I'm always looking for opportunities to expand my skills and tackle challenging projects.
+                I regularly work with technologies like PostgreSQL, MySQL, Cassandra, Apache Kafka, Airflow/Prefect, Pandas/NumPy, Scikit-learn, and cloud platforms such as AWS and Azure using Docker and Kubernetes. I'm always looking for opportunities to apply these skills to solve complex problems in financial services and data-intensive applications.
               </p>
             </motion.div>
             
@@ -131,10 +131,10 @@ export default function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Problem Solver & Tech Enthusiast</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Python Full Stack Developer</h3>
                 <div className="flex space-x-2">
-                  <span className="bg-primary/80 text-white text-xs px-2 py-1 rounded">2+ Years Experience</span>
-                  <span className="bg-white/20 text-white text-xs px-2 py-1 rounded">Team Leader</span>
+                  <span className="bg-primary/80 text-white text-xs px-2 py-1 rounded">3+ Years Experience</span>
+                  <span className="bg-white/20 text-white text-xs px-2 py-1 rounded">Finance & Retail Domains</span>
                 </div>
               </div>
             </div>

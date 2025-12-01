@@ -5,8 +5,6 @@ import {
   Download, Award, BuildingIcon, Users, Calendar, MapPin, 
   ChevronRight, ChevronLeft, ArrowRight 
 } from "lucide-react";
-// Import your resume directly
-import resumePDF from "../assets/Resume.pdf";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { ButtonSpotlight } from "./ui/button-spotlight";
@@ -19,25 +17,32 @@ import {
 const ExperienceItem = lazy(() => import("./ExperienceItem"));
 
 // Define extendedExperiences locally instead of importing it
-const extendedExperiences = experiences.map((exp, index) => {
+const extendedExperiences = experiences.map((exp) => {
   let location = "New Jersey, USA";
-  
-  // Assign locations based on the company or title
-  if (exp.title === "Frontend Developer") {
-    location = "Hyderabad, India";
-  } else if (exp.title === "Full Stack Developer (Internship)" || exp.title === "Full Stack Developer") {
-    location = "Bangalore, India";
+
+  if (exp.company.includes("JPMorgan")) {
+    location = "New Jersey, USA";
+  } else if (exp.company.includes("HCL Tech")) {
+    location = "India";
   }
-  
+
   return {
     ...exp,
     location,
-    achievements: [
-      "Led a team of 5 developers to deliver projects on time and under budget",
-      "Increased application performance by 40% through optimization techniques",
-      "Onboarded and mentored 3 junior developers",
-      "Implemented CI/CD pipeline reducing deployment time by 60%"
-    ].slice(0, index + 2)
+    achievements:
+      exp.company.includes("JPMorgan")
+        ? [
+            "Improved fraud monitoring and payment reconciliation efficiency using Apache Kafka–based streaming.",
+            "Optimized PostgreSQL schemas and queries to handle millions of daily financial transactions.",
+            "Automated ETL workflows with Apache Airflow to enhance data accuracy in financial reporting.",
+            "Developed real-time Tableau dashboards to visualize liquidity, credit risk, and fraud alerts.",
+          ]
+        : [
+            "Built scalable retail microservices using FastAPI and Flask for high-traffic e-commerce workloads.",
+            "Implemented real-time inventory and pricing updates using Apache Kafka.",
+            "Automated order processing and inventory sync workflows with Prefect.",
+            "Deployed containerized services to Azure with Docker and Kubernetes for auto-scaling during peak loads.",
+          ],
   };
 });
 
@@ -77,7 +82,9 @@ export default function ExperienceSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          My professional journey in the tech industry...
+          My professional journey spans large-scale banking systems at JPMorgan Chase in North America and
+          high-traffic retail and e-commerce platforms at HCL Tech in India, where I focus on secure, data-driven
+          Python backends, real-time streaming, and cloud-native architectures.
         </motion.p>
 
         <Suspense fallback={<div className="text-center">Loading experience...</div>}>
@@ -114,7 +121,7 @@ export default function ExperienceSection() {
                   <Award className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">2+ Years</h4>
+                  <h4 className="font-semibold">3+ Years</h4>
                   <p className="text-sm text-white/70">Professional Experience</p>
                 </div>
               </div>
@@ -134,8 +141,8 @@ export default function ExperienceSection() {
                   <BuildingIcon className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">3 Companies</h4>
-                  <p className="text-sm text-white/70">Industry Leaders</p>
+                  <h4 className="font-semibold">2 Companies</h4>
+                  <p className="text-sm text-white/70">Banking & Retail Domains</p>
                 </div>
               </div>
             </CardContent>
@@ -148,7 +155,7 @@ export default function ExperienceSection() {
                 spotlightOpacity={0.3}
               >
                 <a 
-                  href={resumePDF}
+                  href="/Resume.pdf"
                   download
                   className="flex items-center w-full justify-center"
                 >

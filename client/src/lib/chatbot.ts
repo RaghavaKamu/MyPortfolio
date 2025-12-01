@@ -30,33 +30,33 @@ export function preparePrompt(userMessage: string): string {
       - Graduated with honors, focus on software engineering and Internet of Things
     
     ## WORK EXPERIENCE
-    - Full Stack Developer
-      - Webologix Inc
-      - 2023
-      - Converted to full-time role after successful internship
-      - Developed robust full-stack applications
-      - Collaborated with cross-functional teams to deliver high-quality software solutions
+    - Python Developer
+      - JPMorgan Chase - NA, USA
+      - Present
+      - Built and deployed secure backend microservices using Python and Django REST Framework to process high-volume financial transactions with low latency
+      - Implemented Apache Kafka for real-time transaction streaming to enhance fraud monitoring and payment reconciliation
+      - Optimized PostgreSQL data models and queries for core banking systems handling millions of daily transaction records
+      - Integrated RESTful APIs with SWIFT / ISO 20022 standards to enable interbank fund transfers and financial data exchange
+      - Automated ETL workflows using Apache Airflow and created Tableau dashboards for key financial KPIs
     
-    - Full Stack Developer (Internship)
-      - Webologix
-      - 2021 - 2022
-      - Worked on web application development using modern frameworks
-      - Participated in the complete software development lifecycle
-    
-    - Frontend Developer (Freelance)
-      - 2020 - 2021
-      - Designed and developed responsive user interfaces for client websites
-      - Implemented modern frontend technologies for interactive web experiences
+    - Python Developer
+      - HCL Tech - India
+      - Previous
+      - Developed dynamic retail and e-commerce web platforms using Python and FastAPI
+      - Designed and maintained MySQL and Cassandra databases for real-time product/inventory updates
+      - Built modular microservices with Flask and integrated with third-party payment gateways
+      - Streamed live inventory and pricing updates using Apache Kafka
+      - Automated order processing and inventory synchronization workflows with Prefect
+      - Implemented GraphQL APIs (Ariadne) and deployed containerized services on Azure with Docker and Kubernetes
     
     ## TECHNICAL SKILLS
-    - Programming Languages: GoLang, JavaScript, Python, Ruby, C
-    - Frontend Development: HTML, CSS, React.js, TypeScript, Tailwind CSS
-    - Backend Development: Node.js, Django, Spring Boot, Express.js
-    - Databases: Oracle, MySQL, MongoDB
-    - Cloud Platforms: Azure, AWS
-    - Version Control: Git, GitHub
-    - Tools & Methodologies: Agile, Scrum, REST APIs, CI/CD
-    - Other: Framer Motion, TensorFlow, Machine Learning, Data Analysis
+    - Programming & Backend: Python (3.x), Django / Django REST Framework, Flask / FastAPI, GraphQL (Ariadne), Node.js
+    - Frontend: HTML, CSS, React.js, TypeScript, Tailwind CSS
+    - Data & Databases: PostgreSQL, MySQL, Oracle, MongoDB, Cassandra, Data Warehousing (Snowflake, Redshift)
+    - Data Engineering & Streaming: Apache Kafka, Spark Streaming, Airflow / Prefect, ETL Pipelines, Real-time Transaction Systems
+    - Machine Learning & Analytics: Pandas / NumPy, Scikit-learn, TensorFlow / PyTorch, Fraud Detection Models, Risk Scoring, Credit Risk Analytics, Customer Segmentation, Tableau, Power BI
+    - Cloud & DevOps: AWS, Azure, GCP (equivalents), Docker & Kubernetes, CI/CD, Cloud Security & Compliance
+    - Monitoring & Security: Prometheus / Grafana, ELK Stack, OAuth 2.0 / JWT, PCI-DSS, GDPR / CCPA, AML / KYC Systems, Transaction Monitoring Platforms
     
     ## PROJECTS
     1. Drug Evaluation in Medicine Recommendation System
@@ -178,14 +178,12 @@ function getSimulatedResponse(userMessage: string): string {
       return "My technical skills include programming languages (GoLang, JavaScript, Python, Ruby), frontend development (React.js, HTML/CSS), backend frameworks (Node.js, Django, Spring Boot), databases (MySQL, MongoDB), and cloud platforms (AWS, Azure). I also have experience with Git, Agile methodologies, and machine learning.";
     }
   } else if (normalizedQuery.includes("experience") || normalizedQuery.includes("background") || normalizedQuery.includes("job") || normalizedQuery.includes("career")) {
-    if (normalizedQuery.includes("webologix") || normalizedQuery.includes("full stack") || normalizedQuery.includes("full-stack")) {
-      return "I worked as a Full Stack Developer at Webologix Inc in 2023, after converting from an internship role. I developed robust applications and collaborated with cross-functional teams to deliver high-quality software solutions. My tech stack included React.js, Node.js, and MongoDB.";
-    } else if (normalizedQuery.includes("intern") || normalizedQuery.includes("internship")) {
-      return "During my internship at Webologix (2021-2022), I worked on web application development using modern frameworks and technologies. I gained valuable experience participating in the complete software development lifecycle from conception to deployment.";
-    } else if (normalizedQuery.includes("freelance") || normalizedQuery.includes("frontend")) {
-      return "I worked as a Freelance Frontend Developer from 2020-2021, designing responsive user interfaces for various client websites. I implemented modern frontend technologies to create engaging and interactive web experiences.";
+    if (normalizedQuery.includes("jpmorgan") || normalizedQuery.includes("chase") || normalizedQuery.includes("bank") || normalizedQuery.includes("finance")) {
+      return "I currently work as a Python Developer at JPMorgan Chase in North America, where I build and deploy secure backend microservices using Python and Django REST Framework to handle high-volume financial transactions. I also work with Apache Kafka for real-time streaming, PostgreSQL for core banking data, and integrations that follow SWIFT / ISO 20022 standards.";
+    } else if (normalizedQuery.includes("hcl") || normalizedQuery.includes("retail") || normalizedQuery.includes("ecommerce") || normalizedQuery.includes("e-commerce")) {
+      return "Previously, I worked as a Python Developer at HCL Tech in India, developing large-scale retail and e-commerce platforms using Python, FastAPI, and Flask. My work included designing MySQL and Cassandra databases, implementing Apache Kafka–based inventory and pricing updates, and automating order processing workflows with Prefect.";
     } else {
-      return "My professional experience includes working as a Full Stack Developer at Webologix Inc (2023), a Full Stack Development Internship at Webologix (2021-2022), and Freelance Frontend Development (2020-2021). Throughout these roles, I've gained expertise in both frontend and backend technologies.";
+      return "My professional experience spans Python Developer roles at JPMorgan Chase in North America and HCL Tech in India. I focus on building secure, scalable backend services, real-time streaming pipelines with Apache Kafka, and data-driven systems using PostgreSQL, MySQL, Cassandra, Airflow/Prefect, and cloud platforms like AWS and Azure.";
     }
   } else if (normalizedQuery.includes("contact") || normalizedQuery.includes("email") || normalizedQuery.includes("reach") || normalizedQuery.includes("phone") || normalizedQuery.includes("social")) {
     if (normalizedQuery.includes("email") || normalizedQuery.includes("mail")) {

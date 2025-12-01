@@ -2,66 +2,37 @@
 export type SkillIconType = 'file-code' | 'code' | 'terminal' | 'react' | 'server' | 'database' | 'github' | 'typescript' | 'express';
 
 export const skills = [
-  {
-    name: "GoLang",
-    icon: "terminal" 
-  },
-  {
-    name: "JavaScript",
-    icon: "file-code"
-  },
-  {
-    name: "Python",
-    icon: "code"
-  },
-  {
-    name: "Ruby",
-    icon: "file-code"
-  },
-  {
-    name: "React.js",
-    icon: "react"
-  },
-  {
-    name: "Django",
-    icon: "server"
-  },
-  {
-    name: "Spring Boot",
-    icon: "server"
-  },
-  {
-    name: "Azure",
-    icon: "server"
-  },
-  {
-    name: "AWS",
-    icon: "server"
-  },
-  {
-    name: "Git",
-    icon: "github"
-  },
-  {
-    name: "Oracle",
-    icon: "database"
-  },
-  {
-    name: "MySQL",
-    icon: "database"
-  },
-  {
-    name: "MongoDB",
-    icon: "database"
-  },
-  {
-    name: "HTML",
-    icon: "file-code"
-  },
-  {
-    name: "CSS",
-    icon: "code"
-  }
+  // Core backend & APIs
+  { name: "Python", icon: "code" },
+  { name: "Django REST Framework", icon: "server" },
+  { name: "Flask / FastAPI", icon: "server" },
+  { name: "GraphQL (Ariadne)", icon: "server" },
+
+  // Data & streaming
+  { name: "PostgreSQL", icon: "database" },
+  { name: "MySQL", icon: "database" },
+  { name: "Cassandra", icon: "database" },
+  { name: "MongoDB", icon: "database" },
+  { name: "Apache Kafka", icon: "terminal" },
+  { name: "Airflow / Prefect", icon: "terminal" },
+
+  // Machine learning & analytics
+  { name: "Scikit-learn", icon: "code" },
+  { name: "TensorFlow / PyTorch", icon: "code" },
+  { name: "Pandas / NumPy", icon: "code" },
+  { name: "Fraud Detection & Risk Scoring", icon: "terminal" },
+  { name: "Tableau / Power BI", icon: "file-code" },
+
+  // Cloud & DevOps
+  { name: "AWS", icon: "server" },
+  { name: "Azure", icon: "server" },
+  { name: "Docker & Kubernetes", icon: "server" },
+  { name: "CI/CD", icon: "terminal" },
+
+  // Web fundamentals
+  { name: "React.js", icon: "react" },
+  { name: "HTML / CSS", icon: "file-code" },
+  { name: "Git & GitHub", icon: "github" },
 ];
 
 export type ProjectCategory = 'Web Development' | 'Machine Learning' | 'IoT' | 'Mobile App' | 'Desktop App' | 'Data Analysis';
@@ -145,31 +116,41 @@ export const projects = [
 
 export const experiences = [
   {
-    title: "Graduate Student",
-    company: "New Jersey Institute of Technology",
-    period: "2023 - Expected 2025",
-    description: "Pursuing a Master of Science in Computer Science with focus on software development, machine learning, and cloud technologies.",
-    skills: ["GoLang", "Python", "Machine Learning", "Cloud Computing"]
+    title: "Python Developer",
+    company: "JPMorgan Chase - NA, USA",
+    period: "Present",
+    description:
+      "Building and deploying secure backend microservices using Python and Django REST Framework to process high-volume financial transactions with low latency. Implementing Apache Kafka-based streaming, optimizing PostgreSQL data models, and integrating RESTful APIs with SWIFT / ISO 20022 standards for interbank fund transfers and financial data exchange.",
+    skills: [
+      "Python",
+      "Django REST Framework",
+      "PostgreSQL",
+      "Apache Kafka",
+      "REST APIs",
+      "SWIFT / ISO 20022",
+      "Airflow",
+      "Tableau",
+      "AWS"
+    ],
   },
   {
-    title: "Full Stack Developer",
-    company: "Webologix Inc",
-    period: "2023",
-    description: "Converted to a full-time role after successful internship. Developed robust full-stack applications and collaborated with cross-functional teams to deliver high-quality software solutions.",
-    skills: ["React.js", "Node.js", "MongoDB", "JavaScript", "Full Stack Development"]
+    title: "Python Developer",
+    company: "HCL Tech - India",
+    period: "Previous",
+    description:
+      "Developed dynamic retail and e-commerce platforms using Python and FastAPI, designed and maintained MySQL and Cassandra databases for real-time product updates, and built modular microservices integrated with third-party payment gateways. Streamlined inventory and pricing updates with Apache Kafka and automated order processing workflows using Prefect.",
+    skills: [
+      "Python",
+      "FastAPI",
+      "Flask",
+      "MySQL",
+      "Cassandra",
+      "Apache Kafka",
+      "Prefect",
+      "GraphQL (Ariadne)",
+      "Azure",
+      "Docker",
+      "Kubernetes"
+    ],
   },
-  {
-    title: "Full Stack Developer (Internship)",
-    company: "Webologix",
-    period: "2021 - 2022",
-    description: "Worked on web application development projects utilizing modern frameworks and technologies. Participated in the complete software development lifecycle from conception to deployment.",
-    skills: ["JavaScript", "Web Development", "Frontend", "Backend", "MongoDB"]
-  },
-  {
-    title: "Frontend Developer",
-    company: "Freelance",
-    period: "2020 - 2021",
-    description: "Designed and developed responsive user interfaces for various client websites. Implemented modern frontend technologies to create engaging and interactive web experiences.",
-    skills: ["HTML", "CSS", "JavaScript", "React.js", "UI/UX Design"]
-  }
 ];
