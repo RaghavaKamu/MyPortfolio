@@ -63,9 +63,28 @@ export default function AboutSection() {
               <p className="mb-4 text-muted-foreground">
                 My professional journey includes working as a Python Developer at JPMorgan Chase in North America, where I build and deploy secure microservices for high-volume financial transactions, and as a Python Developer at HCL Tech in India, where I developed large-scale retail and e-commerce platforms. I have a strong foundation in backend engineering, data engineering, and API integrations, complemented by experience with fraud detection, real-time data streaming, and analytics dashboards.
               </p>
-              <p className="text-muted-foreground">
+              <p className="mb-4 text-muted-foreground">
                 I regularly work with technologies like PostgreSQL, MySQL, Cassandra, Apache Kafka, Airflow/Prefect, Pandas/NumPy, Scikit-learn, and cloud platforms such as AWS and Azure using Docker and Kubernetes. I'm always looking for opportunities to apply these skills to solve complex problems in financial services and data-intensive applications.
               </p>
+
+              <div className="mt-4 space-y-3">
+                <h4 className="text-sm font-semibold text-foreground flex items-center">
+                  <span className="bg-primary/10 p-1.5 rounded-full mr-2">
+                    <Briefcase className="h-4 w-4 text-primary" />
+                  </span>
+                  Current Work Experience
+                </h4>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li>
+                    <span className="font-medium text-foreground">Python Developer – JPMorgan Chase, NA</span>{" "}
+                    · Real-time banking microservices, Kafka-based transaction streams, PostgreSQL, Airflow, Tableau.
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground">Python Developer – HCL Tech, India</span>{" "}
+                    · Retail & e-commerce platforms using FastAPI/Flask, MySQL, Cassandra, Kafka, Prefect, Azure, Kubernetes.
+                  </li>
+                </ul>
+              </div>
             </motion.div>
             
             <motion.div 
