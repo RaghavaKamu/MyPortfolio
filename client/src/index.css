@@ -9,9 +9,84 @@
 
   html {
     scroll-behavior: smooth;
+    /* Prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    /* Improve mobile rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Optimize touch actions */
+    touch-action: manipulation;
+  }
+
+  /* Optimize images on mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+    /* Prevent image dragging on mobile */
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Smooth scrolling for mobile */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 80px;
+    }
+    
+    /* Reduce animations on mobile for better performance */
+    * {
+      animation-duration: 0.2s !important;
+      transition-duration: 0.2s !important;
+    }
+    
+    /* Optimize rendering with GPU acceleration */
+    section, div, article {
+      will-change: auto;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    /* Optimize images */
+    img {
+      image-rendering: -webkit-optimize-contrast;
+    }
+  }
+  
+  /* Touch optimizations */
+  @media (pointer: coarse) {
+    /* Larger tap targets on touch devices */
+    button, a, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Disable hover effects on touch */
+    *:hover {
+      transform: none !important;
+    }
+  }
+
+  /* Disable hover effects on touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    *:hover {
+      /* Reduce hover animations on touch devices */
+    }
   }
 }
