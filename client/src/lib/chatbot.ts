@@ -249,18 +249,49 @@ function getSimulatedResponse(userMessage: string): string {
     return "Hello! I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase. I'm pursuing my Master's in Computer Science at NJIT and have 3+ years of experience building scalable backend systems. How can I help you learn more about my work today?";
   }
   
-  // === ABOUT ME / INTRODUCTIONS ===
-  if (normalizedQuery.includes("tell me about you") || 
-      normalizedQuery.includes("who are you") ||
-      normalizedQuery.includes("introduce yourself") ||
-      normalizedQuery.includes("describe yourself") ||
-      normalizedQuery.match(/^about$/i) ||
-      normalizedQuery.match(/^who is (raghava|you)$/i) ||
-      normalizedQuery.includes("what do you do") ||
-      normalizedQuery.includes("what's your story") ||
-      normalizedQuery.includes("about yourself") ||
-      (normalizedQuery.includes("tell me") && normalizedQuery.includes("about") && (normalizedQuery.includes("you") || normalizedQuery.includes("yourself")))) {
+  // === ABOUT ME / INTRODUCTIONS === (Check this early for general "about me" questions)
+  // Check for single word queries first
+  if (normalizedQuery === "about" || normalizedQuery === "who" || normalizedQuery === "you") {
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I'm pursuing my Master's at NJIT and have 3+ years building scalable backend systems. Would you like to know more about my work, skills, or experience?";
+  }
+  
+  // Check for "tell me about you" variations
+  if ((normalizedQuery.includes("tell") && normalizedQuery.includes("about") && (normalizedQuery.includes("you") || normalizedQuery.includes("yourself") || normalizedQuery.includes("raghava"))) ||
+      normalizedQuery.includes("tell me about you") ||
+      normalizedQuery.includes("tell me about yourself")) {
     return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I'm also pursuing my Master's in Computer Science at NJIT (graduating April 2025) and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
+  }
+  
+  // Check for "who are you" variations
+  if (normalizedQuery.includes("who are you") ||
+      normalizedQuery.includes("who is raghava") ||
+      normalizedQuery.includes("who is you") ||
+      normalizedQuery.match(/^who (are|is)/)) {
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I'm pursuing my Master's at NJIT and have 3+ years of experience building secure, scalable backend systems. I specialize in Python, Django, PostgreSQL, Apache Kafka, and cloud technologies. How can I help you learn more about my work?";
+  }
+  
+  // Check for introduction/description requests
+  if (normalizedQuery.includes("introduce yourself") ||
+      normalizedQuery.includes("introduce you") ||
+      normalizedQuery.includes("describe yourself") ||
+      normalizedQuery.includes("describe you")) {
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I'm also pursuing my Master's in Computer Science at NJIT (graduating April 2025) and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
+  }
+  
+  // Check for "what do you do" variations
+  if (normalizedQuery.includes("what do you do") ||
+      normalizedQuery.includes("what's your story") ||
+      normalizedQuery.includes("what is your story") ||
+      normalizedQuery.includes("about yourself") ||
+      normalizedQuery.includes("about you")) {
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I'm also pursuing my Master's in Computer Science at NJIT (graduating April 2025) and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
+  }
+  
+  // Catch variations with "can you tell me" or similar
+  if ((normalizedQuery.includes("can you") || normalizedQuery.includes("could you")) && 
+      (normalizedQuery.includes("tell me") || normalizedQuery.includes("share")) &&
+      (normalizedQuery.includes("about") || normalizedQuery.includes("who"))) {
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I'm pursuing my Master's at NJIT and have 3+ years building scalable backend systems with Python, Django, PostgreSQL, and Apache Kafka. Feel free to ask me about my work experience, projects, skills, or anything else you'd like to know!";
   }
   
   // === WORK EXPERIENCE ===
@@ -401,7 +432,7 @@ function getSimulatedResponse(userMessage: string): string {
   }
   
   // === DEFAULT RESPONSE ===
-  return "That's an interesting question! I'd be happy to tell you about my skills, projects, education, work experience at JPMorgan Chase and HCL Tech, or anything else about my background. Feel free to ask me about Python development, real-time systems, machine learning, or cloud technologies. What would you like to know more about?";
+  return "That's an interesting question! I'd be happy to tell you about myself - I'm Raghava Kami Reddy Vasa, a Python Developer at JPMorgan Chase. You can ask me about my skills, projects, education, work experience, or anything else. Try asking 'tell me about you' or 'who are you' for a quick introduction. What would you like to know more about?";
 }
 
 // Function to call the OpenAI API with proper error handling
