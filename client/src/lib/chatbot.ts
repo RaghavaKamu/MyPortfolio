@@ -23,9 +23,9 @@ export function preparePrompt(userMessage: string): string {
     - Master of Science in Computer Science
       - Institution: New Jersey Institute of Technology (NJIT)
       - Location: New Jersey, United States
-      - Duration: 2023 - Expected April 2025
+      - Duration: 2023 - May 2025
       - Focus: Software development, machine learning, and cloud technologies
-      - Status: Currently pursuing, graduating in April 2025
+      - Status: Graduated in May 2025
     
     - Bachelor of Engineering in Computer Science
       - Institution: Vellore Institute of Technology (VIT)
@@ -246,20 +246,20 @@ function getSimulatedResponse(userMessage: string): string {
   
   // === GREETINGS & INTRODUCTIONS ===
   if (normalizedQuery.match(/^(hi|hello|hey|greetings?|good (morning|afternoon|evening)|what'?s up|howdy)/)) {
-    return "Hello! I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase. I'm pursuing my Master's in Computer Science at NJIT and have 3+ years of experience building scalable backend systems. How can I help you learn more about my work today?";
+    return "Hello! I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase. I graduated with my Master's in Computer Science from NJIT in May 2025 and have 3+ years of experience building scalable backend systems. How can I help you learn more about my work today?";
   }
   
   // === ABOUT ME / INTRODUCTIONS === (Check this early for general "about me" questions)
   // Check for single word queries first
   if (normalizedQuery === "about" || normalizedQuery === "who" || normalizedQuery === "you") {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I'm pursuing my Master's at NJIT and have 3+ years building scalable backend systems. Would you like to know more about my work, skills, or experience?";
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I graduated with my Master's from NJIT in May 2025 and have 3+ years building scalable backend systems. Would you like to know more about my work, skills, or experience?";
   }
   
   // Check for "tell me about you" variations
   if ((normalizedQuery.includes("tell") && normalizedQuery.includes("about") && (normalizedQuery.includes("you") || normalizedQuery.includes("yourself") || normalizedQuery.includes("raghava"))) ||
       normalizedQuery.includes("tell me about you") ||
       normalizedQuery.includes("tell me about yourself")) {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I'm also pursuing my Master's in Computer Science at NJIT (graduating April 2025) and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I graduated with my Master's in Computer Science from NJIT in May 2025 and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
   }
   
   // Check for "who are you" variations
@@ -267,7 +267,7 @@ function getSimulatedResponse(userMessage: string): string {
       normalizedQuery.includes("who is raghava") ||
       normalizedQuery.includes("who is you") ||
       normalizedQuery.match(/^who (are|is)/)) {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I'm pursuing my Master's at NJIT and have 3+ years of experience building secure, scalable backend systems. I specialize in Python, Django, PostgreSQL, Apache Kafka, and cloud technologies. How can I help you learn more about my work?";
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I graduated with my Master's from NJIT in May 2025 and have 3+ years of experience building secure, scalable backend systems. I specialize in Python, Django, PostgreSQL, Apache Kafka, and cloud technologies. How can I help you learn more about my work?";
   }
   
   // Check for introduction/description requests
@@ -275,7 +275,7 @@ function getSimulatedResponse(userMessage: string): string {
       normalizedQuery.includes("introduce you") ||
       normalizedQuery.includes("describe yourself") ||
       normalizedQuery.includes("describe you")) {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I'm also pursuing my Master's in Computer Science at NJIT (graduating April 2025) and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I graduated with my Master's in Computer Science from NJIT in May 2025 and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
   }
   
   // Check for "what do you do" variations
@@ -284,14 +284,14 @@ function getSimulatedResponse(userMessage: string): string {
       normalizedQuery.includes("what is your story") ||
       normalizedQuery.includes("about yourself") ||
       normalizedQuery.includes("about you")) {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I'm also pursuing my Master's in Computer Science at NJIT (graduating April 2025) and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I graduated with my Master's in Computer Science from NJIT in May 2025 and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
   }
   
   // Catch variations with "can you tell me" or similar
   if ((normalizedQuery.includes("can you") || normalizedQuery.includes("could you")) && 
       (normalizedQuery.includes("tell me") || normalizedQuery.includes("share")) &&
       (normalizedQuery.includes("about") || normalizedQuery.includes("who"))) {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I'm pursuing my Master's at NJIT and have 3+ years building scalable backend systems with Python, Django, PostgreSQL, and Apache Kafka. Feel free to ask me about my work experience, projects, skills, or anything else you'd like to know!";
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I graduated with my Master's from NJIT in May 2025 and have 3+ years building scalable backend systems with Python, Django, PostgreSQL, and Apache Kafka. Feel free to ask me about my work experience, projects, skills, or anything else you'd like to know!";
   }
   
   // === WORK EXPERIENCE ===
@@ -348,11 +348,11 @@ function getSimulatedResponse(userMessage: string): string {
   // === EDUCATION ===
   if (normalizedQuery.match(/education|study|degree|university|college|school|graduate|master|bachelor|njit|vit/)) {
     if (normalizedQuery.match(/master|graduate|njit|new jersey|current|pursuing/)) {
-      return "I'm currently pursuing my Master of Science in Computer Science at New Jersey Institute of Technology (NJIT), expected to graduate in April 2025. My graduate studies focus on software development, machine learning, and cloud technologies, which complement my professional experience.";
+      return "I graduated with my Master of Science in Computer Science from New Jersey Institute of Technology (NJIT) in May 2025. My graduate studies focused on software development, machine learning, and cloud technologies, which complement my professional experience.";
     } else if (normalizedQuery.match(/bachelor|undergrad|vit|vellore|undergraduate/)) {
       return "I completed my Bachelor of Engineering in Computer Science from Vellore Institute of Technology (VIT) from 2019 to 2023, graduating with honors. My undergraduate focus was on software engineering and Internet of Things, which laid the foundation for my career.";
     } else {
-      return "I'm currently pursuing a Master's in Computer Science at NJIT (graduating April 2025) and completed my Bachelor's in Computer Science from Vellore Institute of Technology (2019-2023) with honors. Both programs have strengthened my theoretical foundations and practical software development skills.";
+      return "I graduated with my Master's in Computer Science from NJIT in May 2025 and completed my Bachelor's in Computer Science from Vellore Institute of Technology (2019-2023) with honors. Both programs have strengthened my theoretical foundations and practical software development skills.";
     }
   }
   
@@ -377,7 +377,7 @@ function getSimulatedResponse(userMessage: string): string {
   
   // === LOCATION ===
   if (normalizedQuery.match(/location|where|live|based|from|address|city|state|country/)) {
-    return "I'm currently based in Skillman, New Jersey, USA, where I'm pursuing my Master's degree at NJIT and working at JPMorgan Chase. I'm originally from India, where I completed my undergraduate studies at Vellore Institute of Technology. I'm open to opportunities in the New Jersey area and remote work.";
+    return "I'm currently based in Skillman, New Jersey, USA, where I graduated with my Master's degree from NJIT in May 2025 and am working at JPMorgan Chase. I'm originally from India, where I completed my undergraduate studies at Vellore Institute of Technology. I'm open to opportunities in the New Jersey area and remote work.";
   }
   
   // === CERTIFICATIONS & ACHIEVEMENTS ===
