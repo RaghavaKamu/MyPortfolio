@@ -249,6 +249,20 @@ function getSimulatedResponse(userMessage: string): string {
     return "Hello! I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase. I'm pursuing my Master's in Computer Science at NJIT and have 3+ years of experience building scalable backend systems. How can I help you learn more about my work today?";
   }
   
+  // === ABOUT ME / INTRODUCTIONS ===
+  if (normalizedQuery.includes("tell me about you") || 
+      normalizedQuery.includes("who are you") ||
+      normalizedQuery.includes("introduce yourself") ||
+      normalizedQuery.includes("describe yourself") ||
+      normalizedQuery.match(/^about$/i) ||
+      normalizedQuery.match(/^who is (raghava|you)$/i) ||
+      normalizedQuery.includes("what do you do") ||
+      normalizedQuery.includes("what's your story") ||
+      normalizedQuery.includes("about yourself") ||
+      (normalizedQuery.includes("tell me") && normalizedQuery.includes("about") && (normalizedQuery.includes("you") || normalizedQuery.includes("yourself")))) {
+    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I'm also pursuing my Master's in Computer Science at NJIT (graduating April 2025) and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
+  }
+  
   // === WORK EXPERIENCE ===
   if (normalizedQuery.includes("experience") || normalizedQuery.includes("background") || normalizedQuery.includes("job") || normalizedQuery.includes("career") || normalizedQuery.includes("work")) {
     if (normalizedQuery.match(/jpmorgan|chase|jp.?morgan|bank|finance|financial|current|present|now|currently/)) {
