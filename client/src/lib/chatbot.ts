@@ -13,10 +13,10 @@ export function preparePrompt(userMessage: string): string {
     - Current Location: Skillman, New Jersey, USA
     - Email: vrkreddy27@gmail.com
     - Phone: +1-609-309-1732
-    - LinkedIn: https://www.linkedin.com/in/raghava-rao-05193820a
+    - LinkedIn: https://www.linkedin.com/in/raghava-reddy-432481279/
     - GitHub: https://github.com/Raghavrao1996
     - Twitter: https://twitter.com/raghava_rao25
-    - Instagram: https://www.instagram.com/raghava_rao_25
+    - Instagram: https://www.instagram.com/im_raghavareddy/
     - Portfolio Website: https://raghavareddy-portfolio.web.app
     
     ## EDUCATION
@@ -372,15 +372,15 @@ function getSimulatedResponse(userMessage: string): string {
     } else if (normalizedQuery.match(/phone|call|text|number/)) {
       return "You can contact me by phone at +1-609-309-1732. Feel free to call or text me for urgent inquiries or to discuss opportunities. I'm currently based in Skillman, New Jersey.";
     } else if (normalizedQuery.match(/linkedin|professional/)) {
-      return "My LinkedIn profile is at https://www.linkedin.com/in/raghava-rao-05193820a. I regularly update it with my professional experiences, achievements, and connect with industry professionals. Let's connect!";
+      return "My LinkedIn profile is at https://www.linkedin.com/in/raghava-reddy-432481279/. I regularly update it with my professional experiences, achievements, and connect with industry professionals. Let's connect!";
     } else if (normalizedQuery.match(/github|code|repository|repo/)) {
       return "You can view my code and projects on GitHub at https://github.com/Raghavrao1996. I try to keep it updated with my latest work, contributions, and project repositories. Check it out to see my coding style!";
     } else if (normalizedQuery.match(/twitter|x\.com/)) {
       return "You can follow me on Twitter at https://twitter.com/raghava_rao25, where I share thoughts on technology, software development trends, and occasional updates about my work and projects.";
     } else if (normalizedQuery.match(/instagram|insta/)) {
-      return "My Instagram handle is @raghava_rao_25 (https://www.instagram.com/raghava_rao_25), where I occasionally share personal updates, interests, and glimpses into my life outside of coding.";
+      return "My Instagram profile is @im_raghavareddy (https://www.instagram.com/im_raghavareddy/), where I occasionally share personal updates, interests, and glimpses into my life outside of coding.";
     } else {
-      return "You can contact me through email at vrkreddy27@gmail.com, phone at +1-609-309-1732, or through my social profiles: LinkedIn (raghava-rao-05193820a), GitHub (Raghavrao1996), Twitter (raghava_rao25), and Instagram (raghava_rao_25). I'm based in Skillman, NJ and open to remote and local opportunities!";
+      return "You can contact me through email at vrkreddy27@gmail.com, phone at +1-609-309-1732, or through my social profiles: LinkedIn (raghava-reddy-432481279), GitHub (Raghavrao1996), Twitter (raghava_rao25), and Instagram (@im_raghavareddy). I'm based in Skillman, NJ and open to remote and local opportunities!";
     }
   }
   

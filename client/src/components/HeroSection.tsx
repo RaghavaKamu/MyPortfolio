@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ButtonSpotlight } from "@/components/ui/button-spotlight";
-import { Github, Linkedin, Twitter, Mail, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Instagram, ChevronDown } from "lucide-react";
 import profilePic from "@assets/profile.jpg";
 
 export default function HeroSection() {
@@ -89,6 +89,7 @@ export default function HeroSection() {
                 { icon: Github, label: "GitHub", href: "https://github.com/RaghavaKamu" },
                 { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/raghava-reddy-432481279/" },
                 { icon: Twitter, label: "Twitter", href: "https://x.com/RaghavaReddy27" },
+                { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/im_raghavareddy/" },
                 { icon: Mail, label: "Email", href: "mailto:vrkreddy27@gmail.com" }
               ].map((item, index) => {
                 const Icon = item.icon;

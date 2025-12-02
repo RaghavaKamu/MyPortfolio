@@ -122,13 +122,13 @@ export default function ContactSection() {
                     <a href="https://github.com/Raghavrao1996" className="text-foreground hover:text-primary transition-colors" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                       <Github className="h-5 w-5" />
                     </a>
-                    <a href="https://www.linkedin.com/in/raghava-rao-05193820a" className="text-foreground hover:text-primary transition-colors" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/raghava-reddy-432481279/" className="text-foreground hover:text-primary transition-colors" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-5 w-5" />
                     </a>
                     <a href="https://twitter.com/raghava_rao25" className="text-foreground hover:text-primary transition-colors" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
                       <Twitter className="h-5 w-5" />
                     </a>
-                    <a href="https://www.instagram.com/raghava_rao_25" className="text-foreground hover:text-primary transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/im_raghavareddy/" className="text-foreground hover:text-primary transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                       <Instagram className="h-5 w-5" />
                     </a>
                   </div>
