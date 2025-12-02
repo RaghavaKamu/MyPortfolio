@@ -17,102 +17,198 @@ export function preparePrompt(userMessage: string): string {
     - GitHub: https://github.com/Raghavrao1996
     - Twitter: https://twitter.com/raghava_rao25
     - Instagram: https://www.instagram.com/raghava_rao_25
+    - Portfolio Website: https://raghavareddy-portfolio.web.app
     
     ## EDUCATION
     - Master of Science in Computer Science
-      - New Jersey Institute of Technology (NJIT)
-      - 2023 - Expected April 2025
-      - Focus on software development, machine learning, and cloud technologies
+      - Institution: New Jersey Institute of Technology (NJIT)
+      - Location: New Jersey, United States
+      - Duration: 2023 - Expected April 2025
+      - Focus: Software development, machine learning, and cloud technologies
+      - Status: Currently pursuing, graduating in April 2025
     
     - Bachelor of Engineering in Computer Science
-      - Vellore Institute of Technology (VIT)
-      - 2019 - 2023
-      - Graduated with honors, focus on software engineering and Internet of Things
+      - Institution: Vellore Institute of Technology (VIT)
+      - Location: Vellore, India
+      - Duration: 2019 - 2023
+      - Status: Graduated with honors
+      - Focus: Software engineering and Internet of Things (IoT)
     
-    ## WORK EXPERIENCE
-    - Python Developer
-      - JPMorgan Chase - NA, USA
-      - Present
-      - Built and deployed secure backend microservices using Python and Django REST Framework to process high-volume financial transactions with low latency
-      - Implemented Apache Kafka for real-time transaction streaming to enhance fraud monitoring and payment reconciliation
-      - Optimized PostgreSQL data models and queries for core banking systems handling millions of daily transaction records
-      - Integrated RESTful APIs with SWIFT / ISO 20022 standards to enable interbank fund transfers and financial data exchange
-      - Automated ETL workflows using Apache Airflow and created Tableau dashboards for key financial KPIs
+    ## CURRENT WORK EXPERIENCE
+    - Position: Python Developer
+    - Company: JPMorgan Chase
+    - Location: North America (NA), USA - Present (New Jersey, United States)
+    - Duration: Present / Currently Working
+    - Industry: Banking & Financial Services
+    - Key Responsibilities:
+      - Building and deploying secure backend microservices using Python and Django REST Framework
+      - Processing high-volume financial transactions with low latency requirements
+      - Implementing Apache Kafka for real-time transaction streaming
+      - Enhancing fraud monitoring and payment reconciliation systems
+      - Optimizing PostgreSQL data models and queries for core banking systems
+      - Handling millions of daily transaction records efficiently
+      - Integrating RESTful APIs with SWIFT / ISO 20022 standards
+      - Enabling interbank fund transfers and financial data exchange
+      - Automating ETL workflows using Apache Airflow
+      - Creating Tableau dashboards for key financial KPIs and analytics
+      - Working with AWS cloud infrastructure
+      - Ensuring security compliance and transaction monitoring
+    - Technologies: Python, Django REST Framework, PostgreSQL, Apache Kafka, REST APIs, SWIFT/ISO 20022, Airflow, Tableau, AWS, Financial Systems, Microservices
     
-    - Python Developer
-      - HCL Tech - India
-      - Previous
-      - Developed dynamic retail and e-commerce web platforms using Python and FastAPI
-      - Designed and maintained MySQL and Cassandra databases for real-time product/inventory updates
-      - Built modular microservices with Flask and integrated with third-party payment gateways
-      - Streamed live inventory and pricing updates using Apache Kafka
-      - Automated order processing and inventory synchronization workflows with Prefect
-      - Implemented GraphQL APIs (Ariadne) and deployed containerized services on Azure with Docker and Kubernetes
+    ## PREVIOUS WORK EXPERIENCE
+    - Position: Python Developer
+    - Company: HCL Tech
+    - Location: India
+    - Duration: Previous role (before JPMorgan Chase)
+    - Industry: Retail & E-commerce
+    - Key Responsibilities:
+      - Developing dynamic retail and e-commerce web platforms using Python and FastAPI
+      - Designing and maintaining MySQL and Cassandra databases
+      - Handling real-time product and inventory updates
+      - Building modular microservices with Flask
+      - Integrating with third-party payment gateways
+      - Streaming live inventory and pricing updates using Apache Kafka
+      - Automating order processing and inventory synchronization workflows with Prefect
+      - Implementing GraphQL APIs using Ariadne framework
+      - Deploying containerized services on Azure using Docker and Kubernetes
+      - Managing large-scale distributed systems
+    - Technologies: Python, FastAPI, Flask, MySQL, Cassandra, Apache Kafka, Prefect, GraphQL (Ariadne), Azure, Docker, Kubernetes, E-commerce Systems
     
-    ## TECHNICAL SKILLS
-    - Programming & Backend: Python (3.x), Django / Django REST Framework, Flask / FastAPI, GraphQL (Ariadne), Node.js
-    - Frontend: HTML, CSS, React.js, TypeScript, Tailwind CSS
-    - Data & Databases: PostgreSQL, MySQL, Oracle, MongoDB, Cassandra, Data Warehousing (Snowflake, Redshift)
-    - Data Engineering & Streaming: Apache Kafka, Spark Streaming, Airflow / Prefect, ETL Pipelines, Real-time Transaction Systems
-    - Machine Learning & Analytics: Pandas / NumPy, Scikit-learn, TensorFlow / PyTorch, Fraud Detection Models, Risk Scoring, Credit Risk Analytics, Customer Segmentation, Tableau, Power BI
-    - Cloud & DevOps: AWS, Azure, GCP (equivalents), Docker & Kubernetes, CI/CD, Cloud Security & Compliance
-    - Monitoring & Security: Prometheus / Grafana, ELK Stack, OAuth 2.0 / JWT, PCI-DSS, GDPR / CCPA, AML / KYC Systems, Transaction Monitoring Platforms
+    ## TECHNICAL SKILLS (Comprehensive)
     
-    ## PROJECTS
+    ### Programming Languages & Backend Frameworks
+    - Python (3.x) - Primary language, expert level
+    - Django / Django REST Framework - Professional experience with microservices
+    - Flask / FastAPI - RESTful API development
+    - GraphQL (Ariadne) - GraphQL API implementation
+    - Node.js - Full-stack development
+    - JavaScript - Frontend and backend development
+    
+    ### Frontend Technologies
+    - HTML / CSS - Web fundamentals
+    - React.js - Modern frontend framework
+    - TypeScript - Type-safe JavaScript development
+    - Tailwind CSS - Utility-first CSS framework
+    - Framer Motion - Animation library
+    
+    ### Databases & Data Storage
+    - PostgreSQL - Relational database (expert with banking systems)
+    - MySQL - Relational database management
+    - Oracle - Enterprise database systems
+    - MongoDB - NoSQL document database
+    - Cassandra - Distributed NoSQL database
+    - Data Warehousing - Snowflake, Redshift experience
+    
+    ### Data Engineering & Streaming
+    - Apache Kafka - Real-time event streaming (expert level)
+    - Spark Streaming - Big data processing
+    - Airflow / Prefect - Workflow orchestration and automation
+    - ETL Pipelines - Extract, Transform, Load processes
+    - Real-time Transaction Systems - High-volume processing
+    
+    ### Machine Learning & Analytics
+    - Pandas / NumPy - Data manipulation and analysis
+    - Scikit-learn - Machine learning library
+    - TensorFlow / PyTorch - Deep learning frameworks
+    - Fraud Detection Models - Specialized ML models for finance
+    - Risk Scoring - Credit and risk assessment models
+    - Credit Risk Analytics - Financial risk analysis
+    - Customer Segmentation - Marketing and analytics
+    - Tableau - Business intelligence and visualization
+    - Power BI - Data visualization and reporting
+    
+    ### Cloud & DevOps
+    - AWS (Amazon Web Services) - Cloud platform (professional use)
+    - Azure (Microsoft Azure) - Cloud platform (professional use)
+    - Docker - Containerization
+    - Kubernetes - Container orchestration
+    - CI/CD - Continuous Integration/Continuous Deployment
+    - Cloud Security & Compliance - Security best practices
+    
+    ### Monitoring & Security
+    - Prometheus / Grafana - Monitoring and observability
+    - ELK Stack - Logging and analytics
+    - OAuth 2.0 / JWT - Authentication and authorization
+    - PCI-DSS - Payment card industry compliance
+    - GDPR / CCPA - Data privacy regulations
+    - AML / KYC Systems - Anti-money laundering and know-your-customer
+    - Transaction Monitoring Platforms - Financial compliance
+    
+    ### Version Control & Tools
+    - Git & GitHub - Version control and collaboration
+    
+    ## PROJECTS (Detailed)
+    
     1. Drug Evaluation in Medicine Recommendation System
        - Technologies: Python, Django, MySQL, Machine Learning, Sentiment Analysis
-       - Built a machine learning model to predict drug effectiveness for patients
-       - Implemented sentiment analysis system for analyzing user reviews on medicines
-       - Created a recommendation engine based on drug similarities and patient profiles
+       - Description: Built a comprehensive machine learning system that predicts drug effectiveness for patients based on various factors. Implemented sentiment analysis to analyze user reviews on medicines and created a recommendation engine based on drug similarities and patient profiles. The system helps healthcare providers make informed decisions about medication.
     
     2. Dental Care Centre Website
        - Technologies: HTML, CSS, Node.js, MongoDB
-       - Designed a responsive website enabling online doctor appointments
-       - Integrated backend services ensuring secure user authentication
-       - Implemented a booking system with real-time availability checking
+       - Description: Designed and developed a fully responsive website for a dental care center that enables online doctor appointments. Integrated secure backend services with user authentication and implemented a booking system with real-time availability checking. The platform streamlines patient management and appointment scheduling.
     
     3. Automated Irrigation System using IoT
        - Technologies: Python, Arduino, IoT Sensors, Machine Learning
-       - Developed a smart irrigation system analyzing soil and climate conditions
-       - Implemented automation controlling water supply based on environmental data
-       - Created a monitoring dashboard for system status and analytics
+       - Description: Developed an innovative smart irrigation system that analyzes soil and climate conditions in real-time. Implemented automation to control water supply based on environmental data collected from IoT sensors. Created a comprehensive monitoring dashboard for system status and analytics, reducing water waste and improving crop yield.
     
     4. Portfolio Website (Current site)
        - Technologies: React.js, TypeScript, Tailwind CSS, Framer Motion, OpenAI
-       - Created a responsive portfolio with interactive UI elements
-       - Implemented dynamic theme switching and animated components
-       - Integrated an AI-powered chatbot assistant (that's me!)
+       - Description: Created a modern, responsive portfolio website with interactive UI elements and dynamic theme switching. Implemented smooth animations using Framer Motion and integrated an AI-powered chatbot assistant (this chatbot) to help visitors learn about my work. The site showcases my projects, skills, and experience.
     
     5. Machine Learning Research Project
        - Technologies: Python, TensorFlow, Deep Learning, Data Analysis
-       - Researched and developed deep learning techniques for pattern recognition
-       - Analyzed complex datasets and created predictive models
-       - Presented findings and recommendations based on research
+       - Description: Conducted research and developed advanced deep learning techniques for pattern recognition and data analysis. Worked with complex datasets to create predictive models and presented findings with recommendations. This project enhanced my understanding of neural networks and machine learning algorithms.
     
     6. Technical Workshop Management System
        - Technologies: JavaScript, Node.js, MongoDB, Express
-       - Created a platform for managing IEEE technical workshops
-       - Implemented features for registration, scheduling, and resource sharing
-       - Designed user management system with different permission levels
+       - Description: Created a comprehensive platform for managing IEEE technical workshops and mentoring programs. Implemented features for registration, scheduling, and resource sharing. Designed a robust user management system with different permission levels, facilitating smooth workshop organization and participant engagement.
     
     ## CERTIFICATES & ACHIEVEMENTS
     - Full Stack Developer Certification from Microsoft
     - Machine Learning Internship Certification from Corizo
-    - Technical Core Committee Member at IEEE NPS
+    - Technical Core Committee Member at IEEE NPS (helped organize technical workshops and mentoring programs)
+    
+    ## PROFESSIONAL EXPERTISE AREAS
+    - Backend Microservices Architecture
+    - Real-time Data Streaming Systems
+    - Financial Technology (FinTech)
+    - E-commerce Platform Development
+    - Machine Learning & AI Applications
+    - Cloud-Native Application Development
+    - API Design & Integration
+    - Database Optimization & Performance Tuning
+    - Fraud Detection & Risk Management
+    - Workflow Automation
     
     ## PERSONAL ATTRIBUTES
     - Strong problem-solving skills and analytical thinking
     - Excellent teamwork and communication abilities
     - Passionate about learning new technologies
     - Detail-oriented with strong time management
-    - Enjoys hiking, reading tech blogs, and cooking in free time
+    - Enjoys hiking on local trails around New Jersey
+    - Reads tech blogs to stay current with industry trends
+    - Experiments with new recipes in the kitchen
+    - Values continuous learning and professional growth
     
-    Remember to:
-    1. Keep responses concise (under 3-4 sentences) but informative
-    2. Maintain a friendly, professional tone reflecting Raghava's personality
-    3. If asked about contact information, provide the email and social links
-    4. If asked about expertise or capabilities, highlight relevant skills and projects
-    5. Answer as Raghava himself using first-person language
+    ## CAREER HIGHLIGHTS
+    - 3+ years of professional experience in software development
+    - Experience across multiple industries: Banking & Finance, Retail & E-commerce
+    - Expertise in building scalable, high-performance systems
+    - Strong background in data engineering and real-time systems
+    - Proven track record with major companies (JPMorgan Chase, HCL Tech)
+    
+    ## RESPONSE GUIDELINES
+    When responding to questions:
+    1. Always use first-person perspective ("I", "my", "me") as if you ARE Raghava
+    2. Keep responses concise (2-4 sentences) but informative and engaging
+    3. Maintain a friendly, professional tone that reflects technical expertise and personable character
+    4. Include specific details (technologies, companies, projects) when relevant
+    5. If asked about contact information, provide email and relevant social links
+    6. If asked about availability or opportunities, mention you're open to discussing projects
+    7. Show enthusiasm about technology and problem-solving
+    8. Be accurate with dates, company names, and technical details
+    9. If you don't know something specific, redirect to what you do know (skills, projects, experience)
+    10. For technical questions, demonstrate deep knowledge while remaining accessible
   `;
 
   return `${portfolioContext}\n\nUser: ${userMessage}\nRaghava:`;
@@ -142,96 +238,156 @@ export async function chatWithAI(userMessage: string): Promise<string> {
   }
 }
 
-// Comprehensive simulated response function that doesn't require API access
+// Comprehensive simulated response function with expanded knowledge base
 function getSimulatedResponse(userMessage: string): string {
-  const normalizedQuery = userMessage.toLowerCase();
+  const normalizedQuery = userMessage.toLowerCase().trim();
   
-  // Detailed pattern matching with accurate information
-  if (normalizedQuery.includes("project") || normalizedQuery.includes("work") || normalizedQuery.includes("portfolio")) {
-    if (normalizedQuery.includes("drug") || normalizedQuery.includes("medicine") || normalizedQuery.includes("recommendation")) {
-      return "My Drug Evaluation and Medicine Recommendation System uses Python, Django, and machine learning to predict drug effectiveness for patients. I built sentiment analysis for user reviews and created a recommendation engine based on drug similarities and patient profiles.";
-    } else if (normalizedQuery.includes("dental") || normalizedQuery.includes("care") || normalizedQuery.includes("centre")) {
-      return "For the Dental Care Centre Website, I designed a responsive interface with online appointment booking capabilities. I integrated secure user authentication and built a real-time availability checking system using Node.js and MongoDB.";
-    } else if (normalizedQuery.includes("irrigation") || normalizedQuery.includes("iot") || normalizedQuery.includes("automated")) {
-      return "My Automated Irrigation System uses IoT sensors and Python to analyze soil and climate conditions. I implemented automation to control water supply based on environmental data and created a monitoring dashboard for system analytics.";
-    } else if (normalizedQuery.includes("portfolio") || normalizedQuery.includes("website") || normalizedQuery.includes("this site")) {
-      return "I built this portfolio website using React.js, TypeScript, and Tailwind CSS. It features dynamic theme switching, interactive UI elements with Framer Motion animations, and an OpenAI-powered chatbot assistant (that's me!) to help visitors learn about my work.";
-    } else if (normalizedQuery.includes("workshop") || normalizedQuery.includes("management") || normalizedQuery.includes("technical")) {
-      return "I created a Technical Workshop Management System for IEEE events using JavaScript, Node.js, and MongoDB. It includes features for registration, scheduling, resource sharing, and a user management system with different permission levels.";
-    } else if (normalizedQuery.includes("research") || normalizedQuery.includes("machine learning")) {
-      return "For my Machine Learning Research Project, I developed deep learning techniques for pattern recognition and data analysis. I worked with complex datasets to create predictive models and presented my findings based on the research.";
-    } else {
-      return "I've worked on several key projects including a Drug Evaluation System, Dental Care Website, Automated Irrigation System using IoT, this Portfolio Website, a Machine Learning Research Project, and a Technical Workshop Management System. Each showcases different aspects of my development skills.";
-    }
-  } else if (normalizedQuery.includes("skill") || normalizedQuery.includes("technology") || normalizedQuery.includes("tech stack")) {
-    if (normalizedQuery.includes("programming") || normalizedQuery.includes("language")) {
-      return "I'm proficient in several programming languages including GoLang, JavaScript, Python, Ruby, and C. I'm particularly strong in JavaScript and Python, which I've used extensively in my professional work and academic projects.";
-    } else if (normalizedQuery.includes("frontend") || normalizedQuery.includes("front-end") || normalizedQuery.includes("front end") || normalizedQuery.includes("ui")) {
-      return "My frontend development skills include HTML, CSS, React.js, TypeScript, and Tailwind CSS. I enjoy creating responsive, interactive user interfaces with smooth animations using Framer Motion and optimizing for both desktop and mobile experiences.";
-    } else if (normalizedQuery.includes("backend") || normalizedQuery.includes("back-end") || normalizedQuery.includes("back end") || normalizedQuery.includes("server")) {
-      return "For backend development, I work with Node.js, Django, Spring Boot, and Express.js. I'm experienced in designing RESTful APIs, handling database operations, and implementing secure authentication systems.";
-    } else if (normalizedQuery.includes("database") || normalizedQuery.includes("sql") || normalizedQuery.includes("nosql")) {
-      return "I'm experienced with multiple database technologies including Oracle, MySQL for relational databases, and MongoDB for NoSQL solutions. I can design efficient schemas, write complex queries, and optimize database performance.";
-    } else if (normalizedQuery.includes("cloud") || normalizedQuery.includes("aws") || normalizedQuery.includes("azure")) {
-      return "I have experience with cloud platforms including Azure and AWS. I'm familiar with deploying applications, setting up CI/CD pipelines, and leveraging cloud services for scalable solutions.";
-    } else {
-      return "My technical skills include programming languages (GoLang, JavaScript, Python, Ruby), frontend development (React.js, HTML/CSS), backend frameworks (Node.js, Django, Spring Boot), databases (MySQL, MongoDB), and cloud platforms (AWS, Azure). I also have experience with Git, Agile methodologies, and machine learning.";
-    }
-  } else if (normalizedQuery.includes("experience") || normalizedQuery.includes("background") || normalizedQuery.includes("job") || normalizedQuery.includes("career")) {
-    if (normalizedQuery.includes("jpmorgan") || normalizedQuery.includes("chase") || normalizedQuery.includes("bank") || normalizedQuery.includes("finance")) {
-      return "I currently work as a Python Developer at JPMorgan Chase in North America, where I build and deploy secure backend microservices using Python and Django REST Framework to handle high-volume financial transactions. I also work with Apache Kafka for real-time streaming, PostgreSQL for core banking data, and integrations that follow SWIFT / ISO 20022 standards.";
-    } else if (normalizedQuery.includes("hcl") || normalizedQuery.includes("retail") || normalizedQuery.includes("ecommerce") || normalizedQuery.includes("e-commerce")) {
-      return "Previously, I worked as a Python Developer at HCL Tech in India, developing large-scale retail and e-commerce platforms using Python, FastAPI, and Flask. My work included designing MySQL and Cassandra databases, implementing Apache Kafka–based inventory and pricing updates, and automating order processing workflows with Prefect.";
-    } else {
-      return "My professional experience spans Python Developer roles at JPMorgan Chase in North America and HCL Tech in India. I focus on building secure, scalable backend services, real-time streaming pipelines with Apache Kafka, and data-driven systems using PostgreSQL, MySQL, Cassandra, Airflow/Prefect, and cloud platforms like AWS and Azure.";
-    }
-  } else if (normalizedQuery.includes("contact") || normalizedQuery.includes("email") || normalizedQuery.includes("reach") || normalizedQuery.includes("phone") || normalizedQuery.includes("social")) {
-    if (normalizedQuery.includes("email") || normalizedQuery.includes("mail")) {
-      return "You can reach me via email at vrkreddy27@gmail.com. I check my emails regularly and typically respond within 24-48 hours.";
-    } else if (normalizedQuery.includes("phone") || normalizedQuery.includes("call")) {
-      return "You can contact me by phone at +1-609-309-1732. Feel free to call or text me if you have any urgent inquiries.";
-    } else if (normalizedQuery.includes("linkedin") || normalizedQuery.includes("professional")) {
-      return "My LinkedIn profile is available at https://www.linkedin.com/in/raghava-rao-05193820a. I regularly update it with my professional experiences and achievements.";
-    } else if (normalizedQuery.includes("github") || normalizedQuery.includes("code")) {
-      return "You can view my code and projects on GitHub at https://github.com/Raghavrao1996. I try to keep it updated with my latest work and contributions.";
-    } else if (normalizedQuery.includes("twitter") || normalizedQuery.includes("tweet")) {
-      return "You can follow me on Twitter at https://twitter.com/raghava_rao25, where I share thoughts on technology and software development.";
-    } else if (normalizedQuery.includes("instagram") || normalizedQuery.includes("insta")) {
-      return "My Instagram handle is @raghava_rao_25 (https://www.instagram.com/raghava_rao_25), where I occasionally share personal updates and interests.";
-    } else {
-      return "You can contact me through email at vrkreddy27@gmail.com, by phone at +1-609-309-1732, or through my social profiles on LinkedIn, GitHub, Twitter, and Instagram. I'm currently based in Skillman, NJ and am open to remote and local opportunities.";
-    }
-  } else if (normalizedQuery.includes("education") || normalizedQuery.includes("study") || normalizedQuery.includes("degree") || normalizedQuery.includes("university") || normalizedQuery.includes("college")) {
-    if (normalizedQuery.includes("master") || normalizedQuery.includes("graduate") || normalizedQuery.includes("njit") || normalizedQuery.includes("new jersey")) {
-      return "I'm currently pursuing my Master of Science in Computer Science at New Jersey Institute of Technology (NJIT), with an expected graduation in April 2025. My graduate studies focus on software development, machine learning, and cloud technologies.";
-    } else if (normalizedQuery.includes("bachelor") || normalizedQuery.includes("undergrad") || normalizedQuery.includes("vit") || normalizedQuery.includes("vellore")) {
-      return "I completed my Bachelor of Engineering in Computer Science from Vellore Institute of Technology (VIT) from 2019 to 2023. I graduated with honors and focused on software engineering and Internet of Things during my studies.";
-    } else {
-      return "My educational background includes a Master's in Computer Science from NJIT (expected 2025) and a Bachelor's in Computer Science from Vellore Institute of Technology (2019-2023). Both programs have provided me with strong theoretical foundations and practical experience in software development.";
-    }
-  } else if (normalizedQuery.includes("hello") || normalizedQuery.includes("hi") || normalizedQuery.includes("hey") || normalizedQuery.includes("greeting") || normalizedQuery.includes("welcome")) {
-    return "Hello! I'm Raghava Kami Reddy Vasa, a Full Stack Developer and Computer Science graduate student. How can I help you learn more about my skills, projects, or experience today?";
-  } else if (normalizedQuery.includes("certification") || normalizedQuery.includes("certificate") || normalizedQuery.includes("achievement")) {
-    if (normalizedQuery.includes("microsoft") || normalizedQuery.includes("full stack")) {
-      return "I hold a Full Stack Developer Certification from Microsoft, which validates my expertise in building end-to-end web applications using modern technologies and best practices.";
-    } else if (normalizedQuery.includes("machine learning") || normalizedQuery.includes("corizo")) {
-      return "I completed a Machine Learning Internship at Corizo, where I received certification for my work on predictive models and data analysis techniques.";
-    } else if (normalizedQuery.includes("ieee") || normalizedQuery.includes("committee")) {
-      return "I served as a Technical Core Committee Member at IEEE NPS, where I helped organize technical workshops and mentoring programs for students interested in engineering and technology.";
-    } else {
-      return "My certifications include a Full Stack Developer Certification from Microsoft and a Machine Learning Internship Certification from Corizo. I've also served as a Technical Core Committee Member at IEEE NPS, which enhanced my leadership and organizational skills.";
-    }
-  } else if (normalizedQuery.includes("location") || normalizedQuery.includes("where") || normalizedQuery.includes("live") || normalizedQuery.includes("based") || normalizedQuery.includes("from")) {
-    return "I'm currently based in Skillman, New Jersey, where I'm pursuing my Master's degree at NJIT. I'm originally from India, where I completed my undergraduate studies at Vellore Institute of Technology.";
-  } else if (normalizedQuery.includes("hobbies") || normalizedQuery.includes("interests") || normalizedQuery.includes("free time") || normalizedQuery.includes("personal")) {
-    return "Outside of coding and technology, I enjoy hiking on local trails, reading tech blogs to stay updated with industry trends, and experimenting with new recipes in the kitchen. I find these activities help me maintain creativity and a fresh perspective.";
-  } else if (normalizedQuery.includes("strength") || normalizedQuery.includes("weakness") || normalizedQuery.includes("qualities")) {
-    return "My key strengths include problem-solving, analytical thinking, and adaptability to new technologies. I excel in team environments and pride myself on clear communication. I'm constantly working to improve my time management and public speaking skills.";
-  } else if (normalizedQuery.includes("future") || normalizedQuery.includes("goal") || normalizedQuery.includes("plan") || normalizedQuery.includes("aspiration")) {
-    return "My future goals include expanding my expertise in cloud architecture and machine learning applications. I aim to contribute to innovative projects that solve real-world problems and eventually lead a development team working on cutting-edge technologies.";
-  } else {
-    return "That's an interesting question. I'd be happy to tell you about my skills, projects, education, or professional experience. Feel free to ask more specific questions about any aspect of my background or interests!";
+  // Expanded pattern matching with comprehensive coverage
+  
+  // === GREETINGS & INTRODUCTIONS ===
+  if (normalizedQuery.match(/^(hi|hello|hey|greetings?|good (morning|afternoon|evening)|what'?s up|howdy)/)) {
+    return "Hello! I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase. I'm pursuing my Master's in Computer Science at NJIT and have 3+ years of experience building scalable backend systems. How can I help you learn more about my work today?";
   }
+  
+  // === WORK EXPERIENCE ===
+  if (normalizedQuery.includes("experience") || normalizedQuery.includes("background") || normalizedQuery.includes("job") || normalizedQuery.includes("career") || normalizedQuery.includes("work")) {
+    if (normalizedQuery.match(/jpmorgan|chase|jp.?morgan|bank|finance|financial|current|present|now|currently/)) {
+      return "I'm currently a Python Developer at JPMorgan Chase in North America, where I build secure backend microservices using Python and Django REST Framework to process high-volume financial transactions. I work with Apache Kafka for real-time streaming, PostgreSQL for core banking data, and integrate with SWIFT/ISO 20022 standards. I also automate ETL workflows with Airflow and create Tableau dashboards for financial analytics.";
+    } else if (normalizedQuery.match(/hcl|retail|ecommerce|e-commerce|previous|past|before|prior/)) {
+      return "Previously, I was a Python Developer at HCL Tech in India, where I developed large-scale retail and e-commerce platforms using FastAPI and Flask. I designed MySQL and Cassandra databases for real-time inventory updates, implemented Apache Kafka for streaming, automated workflows with Prefect, and deployed containerized services on Azure using Docker and Kubernetes.";
+    } else if (normalizedQuery.match(/years?|duration|how long|tenure/)) {
+      return "I have 3+ years of professional experience as a Python Developer, working at JPMorgan Chase (current) and HCL Tech (previous). My experience spans banking, finance, retail, and e-commerce industries, focusing on building secure, scalable backend services and real-time data systems.";
+    } else {
+      return "My professional experience includes working as a Python Developer at JPMorgan Chase (present) building secure banking microservices, and at HCL Tech (previous) developing retail and e-commerce platforms. I specialize in backend development, real-time data streaming with Apache Kafka, database optimization, and cloud-native applications.";
+    }
+  }
+  
+  // === SKILLS & TECHNOLOGIES ===
+  if (normalizedQuery.match(/skill|technology|tech stack|technologies|proficient|expert|know|learn/)) {
+    if (normalizedQuery.match(/python|django|flask|fastapi|backend/)) {
+      return "Python is my primary programming language, and I'm expert-level with Django REST Framework for building microservices. I've also worked extensively with Flask and FastAPI for developing RESTful APIs. I use these frameworks daily at JPMorgan Chase and HCL Tech for high-performance backend systems.";
+    } else if (normalizedQuery.match(/database|sql|postgres|mysql|cassandra|mongodb|data storage/)) {
+      return "I'm experienced with multiple database technologies: PostgreSQL (expert with banking systems), MySQL, Cassandra for distributed systems, MongoDB for NoSQL, and data warehousing with Snowflake and Redshift. I optimize database performance and design schemas for high-volume transaction processing.";
+    } else if (normalizedQuery.match(/kafka|streaming|real.?time|event/)) {
+      return "I'm an expert with Apache Kafka for real-time event streaming. I've implemented Kafka at both JPMorgan Chase for transaction streaming and fraud monitoring, and at HCL Tech for live inventory updates. I also work with Spark Streaming for big data processing.";
+    } else if (normalizedQuery.match(/machine learning|ml|ai|artificial intelligence|tensorflow|pytorch|scikit/)) {
+      return "I have strong machine learning skills, working with Pandas, NumPy, Scikit-learn, TensorFlow, and PyTorch. I've built fraud detection models, risk scoring systems, and customer segmentation analytics. My ML research project involved deep learning for pattern recognition.";
+    } else if (normalizedQuery.match(/cloud|aws|azure|docker|kubernetes|devops/)) {
+      return "I'm proficient with cloud platforms including AWS (at JPMorgan Chase) and Azure (at HCL Tech). I deploy containerized applications using Docker and Kubernetes, implement CI/CD pipelines, and ensure cloud security compliance. I've managed production deployments on both platforms.";
+    } else if (normalizedQuery.match(/react|frontend|front.?end|ui|javascript|typescript/)) {
+      return "For frontend development, I work with React.js, TypeScript, HTML/CSS, and Tailwind CSS. I've built this portfolio website using React with Framer Motion animations. I can develop full-stack applications combining modern frontend with Python backends.";
+    } else {
+      return "My technical skills span Python (Django, Flask, FastAPI), databases (PostgreSQL, MySQL, Cassandra), real-time streaming (Apache Kafka), machine learning (TensorFlow, PyTorch), cloud platforms (AWS, Azure), containerization (Docker, Kubernetes), and frontend technologies (React.js, TypeScript). I have 3+ years applying these in banking and e-commerce.";
+    }
+  }
+  
+  // === PROJECTS ===
+  if (normalizedQuery.match(/project|portfolio|work|built|created|developed|built/)) {
+    if (normalizedQuery.match(/drug|medicine|recommendation|healthcare/)) {
+      return "I built a Drug Evaluation and Medicine Recommendation System using Python, Django, and MySQL. It uses machine learning to predict drug effectiveness for patients, implements sentiment analysis on medicine reviews, and creates personalized recommendations based on drug similarities and patient profiles.";
+    } else if (normalizedQuery.match(/dental|care|appointment|booking/)) {
+      return "I developed a Dental Care Centre Website with HTML, CSS, Node.js, and MongoDB. It enables online doctor appointments with secure user authentication and a real-time availability checking system for booking management.";
+    } else if (normalizedQuery.match(/irrigation|iot|sensor|automated|agriculture/)) {
+      return "I created an Automated Irrigation System using Python, Arduino, and IoT sensors. It analyzes soil and climate conditions in real-time, automatically controls water supply based on environmental data, and includes a monitoring dashboard for system analytics and status tracking.";
+    } else if (normalizedQuery.match(/portfolio|website|this site|chatbot/)) {
+      return "I built this portfolio website using React.js, TypeScript, and Tailwind CSS. It features dynamic theme switching, interactive UI elements with Framer Motion animations, and an AI-powered chatbot assistant (that's me!) to help visitors learn about my work and projects.";
+    } else if (normalizedQuery.match(/workshop|ieee|management|technical/)) {
+      return "I created a Technical Workshop Management System for IEEE events using JavaScript, Node.js, MongoDB, and Express. It includes features for registration, scheduling, resource sharing, and a user management system with different permission levels for organizing workshops.";
+    } else if (normalizedQuery.match(/research|deep learning|pattern recognition/)) {
+      return "I worked on a Machine Learning Research Project using Python and TensorFlow, developing deep learning techniques for pattern recognition. I analyzed complex datasets, created predictive models, and presented findings with recommendations based on my research.";
+    } else {
+      return "I've worked on several key projects: a Drug Evaluation System using ML, a Dental Care booking website, an IoT-based Automated Irrigation System, this Portfolio Website, a Machine Learning Research Project, and an IEEE Workshop Management System. Each showcases different aspects of my full-stack development skills.";
+    }
+  }
+  
+  // === EDUCATION ===
+  if (normalizedQuery.match(/education|study|degree|university|college|school|graduate|master|bachelor|njit|vit/)) {
+    if (normalizedQuery.match(/master|graduate|njit|new jersey|current|pursuing/)) {
+      return "I'm currently pursuing my Master of Science in Computer Science at New Jersey Institute of Technology (NJIT), expected to graduate in April 2025. My graduate studies focus on software development, machine learning, and cloud technologies, which complement my professional experience.";
+    } else if (normalizedQuery.match(/bachelor|undergrad|vit|vellore|undergraduate/)) {
+      return "I completed my Bachelor of Engineering in Computer Science from Vellore Institute of Technology (VIT) from 2019 to 2023, graduating with honors. My undergraduate focus was on software engineering and Internet of Things, which laid the foundation for my career.";
+    } else {
+      return "I'm currently pursuing a Master's in Computer Science at NJIT (graduating April 2025) and completed my Bachelor's in Computer Science from Vellore Institute of Technology (2019-2023) with honors. Both programs have strengthened my theoretical foundations and practical software development skills.";
+    }
+  }
+  
+  // === CONTACT INFORMATION ===
+  if (normalizedQuery.match(/contact|email|reach|phone|connect|linkedin|github|social|profile/)) {
+    if (normalizedQuery.match(/email|mail/)) {
+      return "You can reach me via email at vrkreddy27@gmail.com. I check my emails regularly and typically respond within 24-48 hours. Feel free to reach out for opportunities, collaborations, or questions!";
+    } else if (normalizedQuery.match(/phone|call|text|number/)) {
+      return "You can contact me by phone at +1-609-309-1732. Feel free to call or text me for urgent inquiries or to discuss opportunities. I'm currently based in Skillman, New Jersey.";
+    } else if (normalizedQuery.match(/linkedin|professional/)) {
+      return "My LinkedIn profile is at https://www.linkedin.com/in/raghava-rao-05193820a. I regularly update it with my professional experiences, achievements, and connect with industry professionals. Let's connect!";
+    } else if (normalizedQuery.match(/github|code|repository|repo/)) {
+      return "You can view my code and projects on GitHub at https://github.com/Raghavrao1996. I try to keep it updated with my latest work, contributions, and project repositories. Check it out to see my coding style!";
+    } else if (normalizedQuery.match(/twitter|x\.com/)) {
+      return "You can follow me on Twitter at https://twitter.com/raghava_rao25, where I share thoughts on technology, software development trends, and occasional updates about my work and projects.";
+    } else if (normalizedQuery.match(/instagram|insta/)) {
+      return "My Instagram handle is @raghava_rao_25 (https://www.instagram.com/raghava_rao_25), where I occasionally share personal updates, interests, and glimpses into my life outside of coding.";
+    } else {
+      return "You can contact me through email at vrkreddy27@gmail.com, phone at +1-609-309-1732, or through my social profiles: LinkedIn (raghava-rao-05193820a), GitHub (Raghavrao1996), Twitter (raghava_rao25), and Instagram (raghava_rao_25). I'm based in Skillman, NJ and open to remote and local opportunities!";
+    }
+  }
+  
+  // === LOCATION ===
+  if (normalizedQuery.match(/location|where|live|based|from|address|city|state|country/)) {
+    return "I'm currently based in Skillman, New Jersey, USA, where I'm pursuing my Master's degree at NJIT and working at JPMorgan Chase. I'm originally from India, where I completed my undergraduate studies at Vellore Institute of Technology. I'm open to opportunities in the New Jersey area and remote work.";
+  }
+  
+  // === CERTIFICATIONS & ACHIEVEMENTS ===
+  if (normalizedQuery.match(/certification|certificate|achievement|award|recognition/)) {
+    return "I hold a Full Stack Developer Certification from Microsoft and a Machine Learning Internship Certification from Corizo. I also served as a Technical Core Committee Member at IEEE NPS, where I helped organize technical workshops and mentoring programs, which enhanced my leadership and organizational skills.";
+  }
+  
+  // === PERSONAL INTERESTS & HOBBIES ===
+  if (normalizedQuery.match(/hobby|interest|hobbies|personal|free time|outside|leisure|enjoy/)) {
+    return "Outside of coding and technology, I enjoy hiking on local trails around New Jersey, reading tech blogs to stay updated with industry trends, and experimenting with new recipes in the kitchen. These activities help me maintain creativity, stay informed, and balance work with personal interests.";
+  }
+  
+  // === STRENGTHS & QUALITIES ===
+  if (normalizedQuery.match(/strength|weakness|quality|attribute|personality|character/)) {
+    return "My key strengths include strong problem-solving skills, analytical thinking, and adaptability to new technologies. I excel in team environments and pride myself on clear communication. I'm detail-oriented with excellent time management, and I'm passionate about continuous learning and professional growth.";
+  }
+  
+  // === FUTURE GOALS & ASPIRATIONS ===
+  if (normalizedQuery.match(/future|goal|plan|aspiration|ambition|next|ahead|dream/)) {
+    return "My future goals include expanding my expertise in cloud architecture and advanced machine learning applications. I aim to contribute to innovative projects that solve real-world problems, particularly in fintech and data engineering. Eventually, I'd like to lead development teams working on cutting-edge technologies.";
+  }
+  
+  // === SPECIFIC TECHNOLOGIES ===
+  if (normalizedQuery.match(/postgres|postgresql/)) {
+    return "I'm expert-level with PostgreSQL, using it extensively at JPMorgan Chase for core banking systems. I optimize data models and queries to handle millions of daily transaction records efficiently, ensuring low latency and high reliability for financial transactions.";
+  }
+  
+  if (normalizedQuery.match(/airflow|prefect|workflow|etl|orchestration/)) {
+    return "I automate ETL workflows using Apache Airflow at JPMorgan Chase and Prefect at HCL Tech. These tools help me orchestrate complex data pipelines, schedule tasks, and monitor workflows for real-time data processing and reporting systems.";
+  }
+  
+  if (normalizedQuery.match(/tableau|power.?bi|dashboard|visualization|analytics/)) {
+    return "I create data visualizations and analytics dashboards using Tableau at JPMorgan Chase for key financial KPIs. I also have experience with Power BI for business intelligence, helping stakeholders understand complex data through interactive dashboards.";
+  }
+  
+  if (normalizedQuery.match(/graphql|ariadne/)) {
+    return "I've implemented GraphQL APIs using the Ariadne framework at HCL Tech, building flexible APIs that allow clients to request exactly the data they need. This improved API efficiency and reduced over-fetching in our e-commerce platforms.";
+  }
+  
+  // === COMPANY SPECIFIC ===
+  if (normalizedQuery.match(/jp.?morgan|chase|jpmc/)) {
+    return "I'm currently a Python Developer at JPMorgan Chase, one of the largest financial institutions. I work on secure backend microservices for high-volume financial transactions, implement real-time fraud monitoring with Kafka, optimize PostgreSQL databases, and integrate with SWIFT/ISO 20022 standards for interbank transfers.";
+  }
+  
+  if (normalizedQuery.match(/hcl|hcl.?tech/)) {
+    return "I previously worked as a Python Developer at HCL Tech, a leading IT services company. There I developed large-scale retail and e-commerce platforms using FastAPI and Flask, managed distributed databases (MySQL, Cassandra), implemented real-time streaming with Kafka, and deployed containerized services on Azure.";
+  }
+  
+  // === AVAILABILITY & OPPORTUNITIES ===
+  if (normalizedQuery.match(/available|opportunity|hire|job|position|open|looking|interested/)) {
+    return "I'm always open to discussing exciting opportunities, collaborations, or projects that align with my skills in backend development, data engineering, and machine learning. Feel free to reach out via email at vrkreddy27@gmail.com or connect with me on LinkedIn. I'm based in New Jersey and open to remote opportunities as well.";
+  }
+  
+  // === DEFAULT RESPONSE ===
+  return "That's an interesting question! I'd be happy to tell you about my skills, projects, education, work experience at JPMorgan Chase and HCL Tech, or anything else about my background. Feel free to ask me about Python development, real-time systems, machine learning, or cloud technologies. What would you like to know more about?";
 }
 
 // Function to call the OpenAI API with proper error handling
@@ -244,18 +400,18 @@ export async function getOpenAIResponse(prompt: string, apiKey: string): Promise
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "gpt-4o", // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
+        model: "gpt-4o", // Using GPT-4o for best performance
         messages: [
           {
             role: "system",
-            content: "You are raghava.ai, representing Raghava Kami Reddy Vasa on his portfolio website. IMPORTANT: Always respond in first-person as if you ARE Raghava himself ('I', 'my', 'me'). Use a friendly, professional tone that showcases both technical expertise and personable character. Keep responses concise (under 4 sentences) but informative, focusing on accurate information about Raghava's skills, projects, experience, and education. Include specific details that demonstrate depth of knowledge."
+            content: "You are raghava.ai, representing Raghava Kami Reddy Vasa on his portfolio website. IMPORTANT: Always respond in first-person as if you ARE Raghava himself ('I', 'my', 'me'). Use a friendly, professional tone that showcases both technical expertise and personable character. Keep responses concise (2-4 sentences) but informative, focusing on accurate information about Raghava's skills, projects, experience, and education. Include specific details (technologies, companies, projects) when relevant to demonstrate depth of knowledge."
           },
           {
             role: "user",
             content: prompt
           }
         ],
-        max_tokens: 300,
+        max_tokens: 400, // Increased for more detailed responses
         temperature: 0.7,
       })
     });
