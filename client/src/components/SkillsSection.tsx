@@ -165,35 +165,8 @@ const SkillBubble = React.memo(function SkillBubble({ category, index }: SkillBu
   const bubbleRef = React.useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = React.useState(false);
   const [spotlightPosition, setSpotlightPosition] = React.useState({ x: 50, y: 50 });
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  // Detect mobile device
-  React.useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   React.useEffect(() => {
-    // Reduce animations on mobile for better performance
-    if (isMobile) {
-      // Simple, lightweight animation for mobile
-      bubbleControls.start({
-        y: [0, -3, 0],
-        transition: {
-          repeat: Infinity,
-          repeatType: "mirror",
-          duration: 3,
-          ease: "easeInOut"
-        }
-      });
-      return;
-    }
-
-    // Full animations for desktop
     const animations = [
       { scale: [1, 1.05, 1], y: [0, -5, 0] },
       { y: [0, -15, 0], rotate: [0, -2, 0, 2, 0] },
@@ -212,7 +185,7 @@ const SkillBubble = React.memo(function SkillBubble({ category, index }: SkillBu
         ease: "easeInOut"
       }
     });
-  }, [bubbleControls, index, isMobile]);
+  }, [bubbleControls, index]);
 
   // Get the relative position for each skill in a circle
   const getSkillPosition = (index: number, total: number) => {
@@ -235,13 +208,13 @@ const SkillBubble = React.memo(function SkillBubble({ category, index }: SkillBu
       viewport={{ once: true }}
       animate={bubbleControls}
       // Replace framer-motion hover events with standard React ones
-      onMouseEnter={() => !isMobile && setIsHovered(true)}
+      onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
         setSpotlightPosition({ x: 50, y: 50 });
       }}
       onMouseMove={(e) => {
-        if (!isMobile && bubbleRef.current) {
+        if (bubbleRef.current) {
           const rect = bubbleRef.current.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
@@ -250,10 +223,7 @@ const SkillBubble = React.memo(function SkillBubble({ category, index }: SkillBu
           setSpotlightPosition({ x: xPercent, y: yPercent });
         }
       }}
-      onTouchStart={() => !isMobile && setIsHovered(true)}
-      onTouchEnd={() => setIsHovered(false)}
-      whileHover={!isMobile ? { scale: 1.1 } : undefined}
-      whileTap={isMobile ? { scale: 0.95 } : undefined}
+      whileHover={{ scale: 1.1 }}
     >
       {/* Outer glow effect */}
       <div 

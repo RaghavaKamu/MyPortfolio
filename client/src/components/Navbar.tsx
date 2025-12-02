@@ -184,7 +184,7 @@ export default function Navbar() {
           height: isMenuOpen ? "auto" : 0,
           opacity: isMenuOpen ? 1 : 0,
         }}
-        transition={{ duration: 0.2, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           {[
@@ -198,12 +198,12 @@ export default function Navbar() {
             <motion.a 
               key={item.href}
               href={item.href} 
-              className={`font-medium py-3 px-2 min-h-[44px] flex items-center ${activeSection === item.href.slice(1) ? "text-primary font-semibold" : ""}`}
+              className={`font-medium py-2 ${activeSection === item.href.slice(1) ? "text-primary font-semibold" : ""}`}
               onClick={() => setIsMenuOpen(false)}
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: index * 0.05, duration: 0.2 }}
-              whileTap={{ scale: 0.95 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ x: 5 }}
             >
               {item.label}
             </motion.a>
