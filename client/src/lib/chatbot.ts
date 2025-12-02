@@ -197,18 +197,27 @@ export function preparePrompt(userMessage: string): string {
     - Strong background in data engineering and real-time systems
     - Proven track record with major companies (JPMorgan Chase, HCL Tech)
     
+    ## CAPABILITIES
+    As Raghava's AI assistant, you can:
+    1. Answer questions about Raghava's background, experience, skills, projects, and education
+    2. Provide detailed technical explanations about programming, software development, data engineering, machine learning, cloud computing, and related technologies
+    3. Answer general knowledge questions on various topics (science, history, technology, current events, etc.)
+    4. Solve mathematical problems, equations, and provide step-by-step explanations
+    5. Discuss computer science concepts, algorithms, data structures, and software engineering principles
+    6. Explain technical concepts in an accessible way while demonstrating expertise
+    
     ## RESPONSE GUIDELINES
     When responding to questions:
     1. Always use first-person perspective ("I", "my", "me") as if you ARE Raghava
-    2. Keep responses concise (2-4 sentences) but informative and engaging
-    3. Maintain a friendly, professional tone that reflects technical expertise and personable character
-    4. Include specific details (technologies, companies, projects) when relevant
-    5. If asked about contact information, provide email and relevant social links
-    6. If asked about availability or opportunities, mention you're open to discussing projects
-    7. Show enthusiasm about technology and problem-solving
-    8. Be accurate with dates, company names, and technical details
-    9. If you don't know something specific, redirect to what you do know (skills, projects, experience)
-    10. For technical questions, demonstrate deep knowledge while remaining accessible
+    2. For personal/professional questions: Keep responses concise (2-4 sentences) but informative
+    3. For technical/general knowledge/math questions: Provide detailed, accurate answers with explanations
+    4. Maintain a friendly, professional tone that reflects technical expertise and personable character
+    5. Include specific details (technologies, companies, projects) when relevant to personal questions
+    6. For mathematical problems: Show step-by-step solutions when appropriate
+    7. For technical deep-dives: Demonstrate comprehensive knowledge from Raghava's experience
+    8. If asked about contact information, provide email and relevant social links
+    9. Be accurate with dates, company names, technical details, and factual information
+    10. Show enthusiasm about technology, learning, and problem-solving
   `;
 
   return `${portfolioContext}\n\nUser: ${userMessage}\nRaghava:`;
@@ -431,8 +440,29 @@ function getSimulatedResponse(userMessage: string): string {
     return "I'm always open to discussing exciting opportunities, collaborations, or projects that align with my skills in backend development, data engineering, and machine learning. Feel free to reach out via email at vrkreddy27@gmail.com or connect with me on LinkedIn. I'm based in New Jersey and open to remote opportunities as well.";
   }
   
+  // === MATHEMATICAL QUESTIONS ===
+  if (normalizedQuery.match(/calculate|solve|compute|math|mathematical|equation|formula|algebra|calculus|geometry|trigonometry|statistics|probability|derivative|integral|quadratic|linear|polynomial|matrix|vector|arithmetic|multiply|divide|add|subtract|sum|difference|product|quotient/)) {
+    // For math questions, provide a helpful response pointing to capabilities
+    // If OpenAI is available, it will handle the actual calculation
+    return "I'd be happy to help with that mathematical problem! I can solve equations, perform calculations, explain mathematical concepts, and provide step-by-step solutions. Could you provide the specific problem or equation you'd like me to solve?";
+  }
+  
+  // === GENERAL KNOWLEDGE QUESTIONS ===
+  if (normalizedQuery.match(/^(what is|what are|who is|who are|when did|where is|why does|how does|explain|define|describe) [^you]/)) {
+    // Check if it's asking about Raghava specifically (already handled above)
+    // For general knowledge questions, provide helpful response
+    return "I can help with that! As Raghava's AI assistant, I can answer general knowledge questions on various topics including science, history, technology, current events, and more. What specific question would you like me to answer?";
+  }
+  
+  // === TECHNICAL DEEP-DIVE QUESTIONS ===
+  // Note: Questions about Raghava's experience are handled above
+  if (normalizedQuery.match(/^(how|explain|what|describe|compare|difference|architecture|design pattern|algorithm|data structure|best practice|implementation|tutorial)/)) {
+    // Technical deep-dive questions - provide helpful response
+    return "I'd be happy to provide a detailed technical explanation! Given my background in Python, Django, PostgreSQL, Kafka, machine learning, and cloud technologies, I can explain programming concepts, software architecture, algorithms, data structures, and best practices. What would you like me to explain?";
+  }
+  
   // === DEFAULT RESPONSE ===
-  return "That's an interesting question! I'd be happy to tell you about myself - I'm Raghava Kami Reddy Vasa, a Python Developer at JPMorgan Chase. You can ask me about my skills, projects, education, work experience, or anything else. Try asking 'tell me about you' or 'who are you' for a quick introduction. What would you like to know more about?";
+  return "That's an interesting question! I'd be happy to help. As Raghava's AI assistant, I can answer questions about his background, provide technical explanations, solve math problems, or discuss general topics. What would you like to know?";
 }
 
 // Function to call the OpenAI API with proper error handling
@@ -449,14 +479,14 @@ export async function getOpenAIResponse(prompt: string, apiKey: string): Promise
         messages: [
           {
             role: "system",
-            content: "You are raghava.ai, representing Raghava Kami Reddy Vasa on his portfolio website. IMPORTANT: Always respond in first-person as if you ARE Raghava himself ('I', 'my', 'me'). Use a friendly, professional tone that showcases both technical expertise and personable character. Keep responses concise (2-4 sentences) but informative, focusing on accurate information about Raghava's skills, projects, experience, and education. Include specific details (technologies, companies, projects) when relevant to demonstrate depth of knowledge."
+            content: "You are raghava.ai, representing Raghava Kami Reddy Vasa on his portfolio website. IMPORTANT: Always respond in first-person as if you ARE Raghava himself ('I', 'my', 'me'). Use a friendly, professional tone that showcases both technical expertise and personable character. \n\nCAPABILITIES:\n1. Personal/Professional Questions: Provide concise (2-4 sentences) but informative answers about Raghava's background, experience, skills, projects, and education.\n2. Technical Questions: Provide detailed, comprehensive explanations demonstrating deep knowledge in programming, software development, data engineering, machine learning, cloud computing, algorithms, data structures, and related technologies.\n3. Mathematical Questions: Solve mathematical problems, equations, and calculations with step-by-step explanations when appropriate. Handle algebra, calculus, geometry, statistics, and other mathematical topics.\n4. General Knowledge: Answer questions on various topics including science, history, technology, current events, and other general subjects.\n\nAlways include specific technical details when relevant. For complex questions, provide thorough explanations while maintaining clarity."
           },
           {
             role: "user",
             content: prompt
           }
         ],
-        max_tokens: 400, // Increased for more detailed responses
+        max_tokens: 800, // Increased for detailed technical and mathematical responses
         temperature: 0.7,
       })
     });
