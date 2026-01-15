@@ -114,43 +114,5 @@ export const projects = [
   }
 ];
 
-export const experiences = [
-  {
-    title: "Python Developer",
-    company: "JPMorgan Chase - NA, USA",
-    period: "Present",
-    description:
-      "Building and deploying secure backend microservices using Python and Django REST Framework to process high-volume financial transactions with low latency. Implementing Apache Kafka-based streaming, optimizing PostgreSQL data models, and integrating RESTful APIs with SWIFT / ISO 20022 standards for interbank fund transfers and financial data exchange.",
-    skills: [
-      "Python",
-      "Django REST Framework",
-      "PostgreSQL",
-      "Apache Kafka",
-      "REST APIs",
-      "SWIFT / ISO 20022",
-      "Airflow",
-      "Tableau",
-      "AWS"
-    ],
-  },
-  {
-    title: "Python Developer",
-    company: "HCL Tech - India",
-    period: "Previous",
-    description:
-      "Developed dynamic retail and e-commerce platforms using Python and FastAPI, designed and maintained MySQL and Cassandra databases for real-time product updates, and built modular microservices integrated with third-party payment gateways. Streamlined inventory and pricing updates with Apache Kafka and automated order processing workflows using Prefect.",
-    skills: [
-      "Python",
-      "FastAPI",
-      "Flask",
-      "MySQL",
-      "Cassandra",
-      "Apache Kafka",
-      "Prefect",
-      "GraphQL (Ariadne)",
-      "Azure",
-      "Docker",
-      "Kubernetes"
-    ],
-  },
-];
+// Work experience removed - focusing on SQL Developer role
+export const experiences: any[] = [];
