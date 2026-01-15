@@ -99,27 +99,31 @@ export function preparePrompt(userMessage: string): string {
     
     ## PROJECTS (Detailed)
     
-    1. Drug Evaluation in Medicine Recommendation System
+    1. Rent A Car - Thesis Project
+       - Technologies: Django, Python, SQL, PostgreSQL, HTML, CSS, JavaScript
+       - Description: Developed a comprehensive car rental management system as my Master's thesis project using Django framework and SQL databases. The system enables efficient car rental operations with features for vehicle management, customer bookings, rental transactions, and automated billing. This project demonstrates my expertise in Django backend development, SQL database design, and full-stack web application development.
+    
+    2. Drug Evaluation in Medicine Recommendation System
        - Technologies: Python, Django, MySQL, Machine Learning, Sentiment Analysis
        - Description: Built a comprehensive machine learning system that predicts drug effectiveness for patients based on various factors. Implemented sentiment analysis to analyze user reviews on medicines and created a recommendation engine based on drug similarities and patient profiles. The system helps healthcare providers make informed decisions about medication.
     
-    2. Dental Care Centre Website
+    3. Dental Care Centre Website
        - Technologies: HTML, CSS, Node.js, MongoDB
        - Description: Designed and developed a fully responsive website for a dental care center that enables online doctor appointments. Integrated secure backend services with user authentication and implemented a booking system with real-time availability checking. The platform streamlines patient management and appointment scheduling.
     
-    3. Automated Irrigation System using IoT
+    4. Automated Irrigation System using IoT
        - Technologies: Python, Arduino, IoT Sensors, Machine Learning
        - Description: Developed an innovative smart irrigation system that analyzes soil and climate conditions in real-time. Implemented automation to control water supply based on environmental data collected from IoT sensors. Created a comprehensive monitoring dashboard for system status and analytics, reducing water waste and improving crop yield.
     
-    4. Portfolio Website (Current site)
+    5. Portfolio Website (Current site)
        - Technologies: React.js, TypeScript, Tailwind CSS, Framer Motion, OpenAI
        - Description: Created a modern, responsive portfolio website with interactive UI elements and dynamic theme switching. Implemented smooth animations using Framer Motion and integrated an AI-powered chatbot assistant (this chatbot) to help visitors learn about my work. The site showcases my projects, skills, and experience.
     
-    5. Machine Learning Research Project
+    6. Machine Learning Research Project
        - Technologies: Python, TensorFlow, Deep Learning, Data Analysis
        - Description: Conducted research and developed advanced deep learning techniques for pattern recognition and data analysis. Worked with complex datasets to create predictive models and presented findings with recommendations. This project enhanced my understanding of neural networks and machine learning algorithms.
     
-    6. Technical Workshop Management System
+    7. Technical Workshop Management System
        - Technologies: JavaScript, Node.js, MongoDB, Express
        - Description: Created a comprehensive platform for managing IEEE technical workshops and mentoring programs. Implemented features for registration, scheduling, and resource sharing. Designed a robust user management system with different permission levels, facilitating smooth workshop organization and participant engagement.
     
@@ -285,7 +289,9 @@ function getSimulatedResponse(userMessage: string): string {
   
   // === PROJECTS ===
   if (normalizedQuery.match(/project|portfolio|work|built|created|developed|built/)) {
-    if (normalizedQuery.match(/drug|medicine|recommendation|healthcare/)) {
+    if (normalizedQuery.match(/rent.*car|car.*rent|thesis|rental|vehicle.*management/)) {
+      return "I developed Rent A Car as my Master's thesis project using Django framework and SQL databases. It's a comprehensive car rental management system with features for vehicle management, customer bookings, rental transactions, and automated billing. The project demonstrates my expertise in Django backend development, SQL database design, and full-stack web application development using PostgreSQL, HTML, CSS, and JavaScript.";
+    } else if (normalizedQuery.match(/drug|medicine|recommendation|healthcare/)) {
       return "I built a Drug Evaluation and Medicine Recommendation System using Python, Django, and MySQL. It uses machine learning to predict drug effectiveness for patients, implements sentiment analysis on medicine reviews, and creates personalized recommendations based on drug similarities and patient profiles.";
     } else if (normalizedQuery.match(/dental|care|appointment|booking/)) {
       return "I developed a Dental Care Centre Website with HTML, CSS, Node.js, and MongoDB. It enables online doctor appointments with secure user authentication and a real-time availability checking system for booking management.";
@@ -298,7 +304,7 @@ function getSimulatedResponse(userMessage: string): string {
     } else if (normalizedQuery.match(/research|deep learning|pattern recognition/)) {
       return "I worked on a Machine Learning Research Project using Python and TensorFlow, developing deep learning techniques for pattern recognition. I analyzed complex datasets, created predictive models, and presented findings with recommendations based on my research.";
     } else {
-      return "I've worked on several key projects: a Drug Evaluation System using ML, a Dental Care booking website, an IoT-based Automated Irrigation System, this Portfolio Website, a Machine Learning Research Project, and an IEEE Workshop Management System. Each showcases different aspects of my SQL development and database skills.";
+      return "I've worked on several key projects: Rent A Car (my Master's thesis project using Django and SQL), a Drug Evaluation System using ML, a Dental Care booking website, an IoT-based Automated Irrigation System, this Portfolio Website, a Machine Learning Research Project, and an IEEE Workshop Management System. Each showcases different aspects of my SQL development, database skills, and full-stack development expertise.";
     }
   }
   

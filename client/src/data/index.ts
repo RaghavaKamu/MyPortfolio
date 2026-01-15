@@ -59,6 +59,15 @@ export const extendedExperiences = [
 ];
 export const projects = [
   {
+    title: "Rent A Car - Thesis Project",
+    description: "Developed a comprehensive car rental management system as my Master's thesis project using Django framework and SQL databases. The system enables efficient car rental operations with features for vehicle management, customer bookings, rental transactions, and automated billing.",
+    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+    technologies: ["Django", "Python", "SQL", "PostgreSQL", "HTML", "CSS", "JavaScript"],
+    category: "Web Development",
+    demo: "#",
+    code: "#"
+  },
+  {
     title: "Drug Evaluation in Medicine Recommendation System",
     description: "Built a machine learning model that predicts drug effectiveness for patients and implemented a sentiment analysis system that analyzes user reviews on medicines.",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
