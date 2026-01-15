@@ -50,7 +50,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.7 }}
             >
-              Computer Science graduate with expertise in software development, machine learning, and web technologies.
+              SQL Developer specializing in database design, optimization, and data-driven solutions.
             </motion.p>
             <motion.div 
               className="flex space-x-4"

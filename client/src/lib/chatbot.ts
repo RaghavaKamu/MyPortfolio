@@ -298,7 +298,7 @@ function getSimulatedResponse(userMessage: string): string {
     } else if (normalizedQuery.match(/research|deep learning|pattern recognition/)) {
       return "I worked on a Machine Learning Research Project using Python and TensorFlow, developing deep learning techniques for pattern recognition. I analyzed complex datasets, created predictive models, and presented findings with recommendations based on my research.";
     } else {
-      return "I've worked on several key projects: a Drug Evaluation System using ML, a Dental Care booking website, an IoT-based Automated Irrigation System, this Portfolio Website, a Machine Learning Research Project, and an IEEE Workshop Management System. Each showcases different aspects of my full-stack development skills.";
+      return "I've worked on several key projects: a Drug Evaluation System using ML, a Dental Care booking website, an IoT-based Automated Irrigation System, this Portfolio Website, a Machine Learning Research Project, and an IEEE Workshop Management System. Each showcases different aspects of my SQL development and database skills.";
     }
   }
   
@@ -374,13 +374,9 @@ function getSimulatedResponse(userMessage: string): string {
     return "I have knowledge of GraphQL and various API frameworks from my projects and education. As a SQL Developer, my primary focus is on database design, SQL query optimization, and ensuring efficient data access patterns.";
   }
   
-  // === COMPANY SPECIFIC ===
-  if (normalizedQuery.match(/jp.?morgan|chase|jpmc/)) {
-      return "I'm a SQL Developer specializing in database design and optimization. While I don't have specific work experience at JPMorgan Chase, I have expertise in PostgreSQL and other database systems. I'm passionate about database optimization and SQL development.";
-  }
-  
-  if (normalizedQuery.match(/hcl|hcl.?tech/)) {
-      return "I'm a SQL Developer with expertise in database systems. I specialize in SQL development, database design, and optimization. While I don't have specific work experience at HCL Tech, I have strong skills in MySQL, PostgreSQL, and other database technologies.";
+  // === COMPANY SPECIFIC (Work experience removed) ===
+  if (normalizedQuery.match(/jp.?morgan|chase|jpmc|hcl|hcl.?tech/)) {
+      return "I'm a SQL Developer specializing in database design, optimization, and SQL development. I have expertise in PostgreSQL, MySQL, Oracle, MongoDB, and other database systems. I focus on database optimization, query tuning, and building efficient data-driven solutions. How can I help you learn more about my database skills?";
   }
   
   // === AVAILABILITY & OPPORTUNITIES ===
