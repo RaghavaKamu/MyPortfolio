@@ -23,24 +23,6 @@ const education = [
   }
 ];
 
-const workExperience = [
-  {
-    title: "Python Developer",
-    company: "JPMorgan Chase - NA, USA",
-    period: "Present",
-    location: "New Jersey, United States",
-    description:
-      "Currently working as a Python Developer, building secure, low-latency banking microservices with Django REST, PostgreSQL, Apache Kafka, and Airflow to support high-volume financial transactions and real-time fraud monitoring.",
-  },
-  {
-    title: "Python Developer",
-    company: "HCL Tech - India",
-    period: "Previous",
-    location: "India",
-    description:
-      "Previously developed large-scale retail and e-commerce platforms using FastAPI/Flask, MySQL, Cassandra, Kafka, and Prefect, deploying containerized services on Azure with Docker and Kubernetes.",
-  },
-];
 
 export default function AboutSection() {
   return (
@@ -77,10 +59,10 @@ export default function AboutSection() {
                 Get to know me
               </h3>
               <p className="mb-4 text-muted-foreground">
-                I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA, currently pursuing my Master's in Computer Science at NJIT (graduating April 2025). I have 3+ years of experience building secure, data-driven products across banking, finance, retail, and e-commerce.
+                I'm Raghava Kami Reddy Vasa, a SQL Developer based in New Jersey, USA. I graduated with my Master's in Computer Science from NJIT in May 2025.
               </p>
               <p className="mb-4 text-muted-foreground">
-                I specialize in designing reliable backend APIs and microservices with Python, Django REST Framework, FastAPI, and modern data stacks like PostgreSQL, MySQL, Cassandra, Apache Kafka, Airflow/Prefect, and Pandas/NumPy—deployed on AWS and Azure with Docker and Kubernetes.
+                I specialize in database design, optimization, and SQL development. I'm proficient in working with various database systems including PostgreSQL, MySQL, Oracle, and MongoDB, and I'm passionate about building efficient data-driven solutions.
               </p>
             </motion.div>
             
@@ -131,53 +113,6 @@ export default function AboutSection() {
               </div>
             </motion.div>
 
-            <motion.div 
-              className="mt-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <h3 className="text-2xl font-semibold mb-6 flex items-center">
-                <span className="bg-primary/10 p-2 rounded-full mr-3">
-                  <Briefcase className="h-5 w-5 text-primary" />
-                </span>
-                Work Experience
-              </h3>
-              
-              <div className="space-y-6 relative pl-6">
-                <div className="absolute left-0 top-2 bottom-0 w-0.5 bg-border">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-3 h-3 rounded-full bg-primary" />
-                  <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-3 h-3 rounded-full bg-primary" />
-                </div>
-
-                {workExperience.map((item, index) => (
-                  <motion.div 
-                    key={index}
-                    className="relative"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
-                  >
-                    <Card className="border-l-4 border-l-primary hover:shadow-md transition-shadow">
-                      <CardContent className="p-4">
-                        <h4 className="text-lg font-medium text-primary mb-1">
-                          {item.title} · <span className="text-foreground">{item.company}</span>
-                        </h4>
-                        <div className="flex items-center text-xs text-muted-foreground mb-3">
-                          <Calendar className="h-3 w-3 mr-1" />
-                          <span className="mr-3">{item.period}</span>
-                          <MapPin className="h-3 w-3 mr-1" />
-                          <span>{item.location}</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
           
           <motion.div
@@ -195,11 +130,11 @@ export default function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Python Full Stack Developer</h3>
-                <div className="flex space-x-2">
-                  <span className="bg-primary/80 text-white text-xs px-2 py-1 rounded">3+ Years Experience</span>
-                  <span className="bg-white/20 text-white text-xs px-2 py-1 rounded">Finance & Retail Domains</span>
-                </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">SQL Developer</h3>
+                  <div className="flex space-x-2">
+                    <span className="bg-primary/80 text-white text-xs px-2 py-1 rounded">Database Expert</span>
+                    <span className="bg-white/20 text-white text-xs px-2 py-1 rounded">Data Specialist</span>
+                  </div>
               </div>
             </div>
             

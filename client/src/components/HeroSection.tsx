@@ -42,7 +42,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
             >
-              Full Stack Developer
+              SQL Developer
             </motion.h2>
             <motion.p 
               className="text-lg mb-8 max-w-lg text-gray-300"

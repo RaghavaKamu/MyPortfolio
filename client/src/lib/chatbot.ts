@@ -34,46 +34,6 @@ export function preparePrompt(userMessage: string): string {
       - Status: Graduated with honors
       - Focus: Software engineering and Internet of Things (IoT)
     
-    ## CURRENT WORK EXPERIENCE
-    - Position: Python Developer
-    - Company: JPMorgan Chase
-    - Location: North America (NA), USA - Present (New Jersey, United States)
-    - Duration: Present / Currently Working
-    - Industry: Banking & Financial Services
-    - Key Responsibilities:
-      - Building and deploying secure backend microservices using Python and Django REST Framework
-      - Processing high-volume financial transactions with low latency requirements
-      - Implementing Apache Kafka for real-time transaction streaming
-      - Enhancing fraud monitoring and payment reconciliation systems
-      - Optimizing PostgreSQL data models and queries for core banking systems
-      - Handling millions of daily transaction records efficiently
-      - Integrating RESTful APIs with SWIFT / ISO 20022 standards
-      - Enabling interbank fund transfers and financial data exchange
-      - Automating ETL workflows using Apache Airflow
-      - Creating Tableau dashboards for key financial KPIs and analytics
-      - Working with AWS cloud infrastructure
-      - Ensuring security compliance and transaction monitoring
-    - Technologies: Python, Django REST Framework, PostgreSQL, Apache Kafka, REST APIs, SWIFT/ISO 20022, Airflow, Tableau, AWS, Financial Systems, Microservices
-    
-    ## PREVIOUS WORK EXPERIENCE
-    - Position: Python Developer
-    - Company: HCL Tech
-    - Location: India
-    - Duration: Previous role (before JPMorgan Chase)
-    - Industry: Retail & E-commerce
-    - Key Responsibilities:
-      - Developing dynamic retail and e-commerce web platforms using Python and FastAPI
-      - Designing and maintaining MySQL and Cassandra databases
-      - Handling real-time product and inventory updates
-      - Building modular microservices with Flask
-      - Integrating with third-party payment gateways
-      - Streaming live inventory and pricing updates using Apache Kafka
-      - Automating order processing and inventory synchronization workflows with Prefect
-      - Implementing GraphQL APIs using Ariadne framework
-      - Deploying containerized services on Azure using Docker and Kubernetes
-      - Managing large-scale distributed systems
-    - Technologies: Python, FastAPI, Flask, MySQL, Cassandra, Apache Kafka, Prefect, GraphQL (Ariadne), Azure, Docker, Kubernetes, E-commerce Systems
-    
     ## TECHNICAL SKILLS (Comprehensive)
     
     ### Programming Languages & Backend Frameworks
@@ -164,21 +124,18 @@ export function preparePrompt(userMessage: string): string {
        - Description: Created a comprehensive platform for managing IEEE technical workshops and mentoring programs. Implemented features for registration, scheduling, and resource sharing. Designed a robust user management system with different permission levels, facilitating smooth workshop organization and participant engagement.
     
     ## CERTIFICATES & ACHIEVEMENTS
-    - Full Stack Developer Certification from Microsoft
+    - SQL Developer Certification
     - Machine Learning Internship Certification from Corizo
     - Technical Core Committee Member at IEEE NPS (helped organize technical workshops and mentoring programs)
     
     ## PROFESSIONAL EXPERTISE AREAS
-    - Backend Microservices Architecture
-    - Real-time Data Streaming Systems
-    - Financial Technology (FinTech)
-    - E-commerce Platform Development
-    - Machine Learning & AI Applications
-    - Cloud-Native Application Development
-    - API Design & Integration
+    - SQL Development & Database Design
     - Database Optimization & Performance Tuning
-    - Fraud Detection & Risk Management
-    - Workflow Automation
+    - Data Modeling & Schema Design
+    - Query Optimization & Tuning
+    - ETL Processes & Data Warehousing
+    - Database Administration
+    - Data Analysis & Reporting
     
     ## PERSONAL ATTRIBUTES
     - Strong problem-solving skills and analytical thinking
@@ -191,11 +148,10 @@ export function preparePrompt(userMessage: string): string {
     - Values continuous learning and professional growth
     
     ## CAREER HIGHLIGHTS
-    - 3+ years of professional experience in software development
-    - Experience across multiple industries: Banking & Finance, Retail & E-commerce
-    - Expertise in building scalable, high-performance systems
-    - Strong background in data engineering and real-time systems
-    - Proven track record with major companies (JPMorgan Chase, HCL Tech)
+    - Expertise in SQL development and database design
+    - Proficient in multiple database systems (PostgreSQL, MySQL, Oracle, MongoDB)
+    - Strong background in data analysis and optimization
+    - Database performance tuning and query optimization
     
     ## CAPABILITIES
     As Raghava's AI assistant, you can:
@@ -255,20 +211,20 @@ function getSimulatedResponse(userMessage: string): string {
   
   // === GREETINGS & INTRODUCTIONS ===
   if (normalizedQuery.match(/^(hi|hello|hey|greetings?|good (morning|afternoon|evening)|what'?s up|howdy)/)) {
-    return "Hello! I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase. I graduated with my Master's in Computer Science from NJIT in May 2025 and have 3+ years of experience building scalable backend systems. How can I help you learn more about my work today?";
+    return "Hello! I'm Raghava Kami Reddy Vasa, a SQL Developer. I graduated with my Master's in Computer Science from NJIT in May 2025. I specialize in database design, optimization, and SQL development. How can I help you learn more about my skills today?";
   }
   
   // === ABOUT ME / INTRODUCTIONS === (Check this early for general "about me" questions)
   // Check for single word queries first
   if (normalizedQuery === "about" || normalizedQuery === "who" || normalizedQuery === "you") {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I graduated with my Master's from NJIT in May 2025 and have 3+ years building scalable backend systems. Would you like to know more about my work, skills, or experience?";
+    return "I'm Raghava Kami Reddy Vasa, a SQL Developer based in New Jersey. I graduated with my Master's from NJIT in May 2025. I specialize in database design, optimization, and SQL development. Would you like to know more about my skills or projects?";
   }
   
   // Check for "tell me about you" variations
   if ((normalizedQuery.includes("tell") && normalizedQuery.includes("about") && (normalizedQuery.includes("you") || normalizedQuery.includes("yourself") || normalizedQuery.includes("raghava"))) ||
       normalizedQuery.includes("tell me about you") ||
       normalizedQuery.includes("tell me about yourself")) {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I graduated with my Master's in Computer Science from NJIT in May 2025 and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
+    return "I'm Raghava Kami Reddy Vasa, a SQL Developer based in New Jersey, USA. I graduated with my Master's in Computer Science from NJIT in May 2025. I specialize in database design, optimization, and SQL development. I'm proficient in working with various database systems including PostgreSQL, MySQL, Oracle, and MongoDB, and I'm passionate about building efficient data-driven solutions.";
   }
   
   // Check for "who are you" variations
@@ -276,7 +232,7 @@ function getSimulatedResponse(userMessage: string): string {
       normalizedQuery.includes("who is raghava") ||
       normalizedQuery.includes("who is you") ||
       normalizedQuery.match(/^who (are|is)/)) {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I graduated with my Master's from NJIT in May 2025 and have 3+ years of experience building secure, scalable backend systems. I specialize in Python, Django, PostgreSQL, Apache Kafka, and cloud technologies. How can I help you learn more about my work?";
+    return "I'm Raghava Kami Reddy Vasa, a SQL Developer based in New Jersey. I graduated with my Master's from NJIT in May 2025. I specialize in database design, optimization, and SQL development across PostgreSQL, MySQL, Oracle, and MongoDB. How can I help you learn more about my skills?";
   }
   
   // Check for introduction/description requests
@@ -284,7 +240,7 @@ function getSimulatedResponse(userMessage: string): string {
       normalizedQuery.includes("introduce you") ||
       normalizedQuery.includes("describe yourself") ||
       normalizedQuery.includes("describe you")) {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I graduated with my Master's in Computer Science from NJIT in May 2025 and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
+    return "I'm Raghava Kami Reddy Vasa, a SQL Developer based in New Jersey, USA. I graduated with my Master's in Computer Science from NJIT in May 2025. I specialize in database design, optimization, and SQL development. I'm proficient in working with various database systems including PostgreSQL, MySQL, Oracle, and MongoDB, and I'm passionate about building efficient data-driven solutions.";
   }
   
   // Check for "what do you do" variations
@@ -293,45 +249,37 @@ function getSimulatedResponse(userMessage: string): string {
       normalizedQuery.includes("what is your story") ||
       normalizedQuery.includes("about yourself") ||
       normalizedQuery.includes("about you")) {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer based in New Jersey, USA. I'm currently working as a Python Developer at JPMorgan Chase, where I build secure backend microservices for high-volume financial transactions. I graduated with my Master's in Computer Science from NJIT in May 2025 and have 3+ years of experience across banking, finance, retail, and e-commerce. I specialize in Python, Django REST Framework, PostgreSQL, Apache Kafka, and cloud platforms like AWS and Azure. I'm passionate about building scalable, data-driven applications and solving complex technical challenges.";
+    return "I'm Raghava Kami Reddy Vasa, a SQL Developer based in New Jersey, USA. I graduated with my Master's in Computer Science from NJIT in May 2025. I specialize in database design, optimization, and SQL development. I'm proficient in working with various database systems including PostgreSQL, MySQL, Oracle, and MongoDB, and I'm passionate about building efficient data-driven solutions.";
   }
   
   // Catch variations with "can you tell me" or similar
   if ((normalizedQuery.includes("can you") || normalizedQuery.includes("could you")) && 
       (normalizedQuery.includes("tell me") || normalizedQuery.includes("share")) &&
       (normalizedQuery.includes("about") || normalizedQuery.includes("who"))) {
-    return "I'm Raghava Kami Reddy Vasa, a Python Full Stack Developer currently working at JPMorgan Chase in New Jersey. I graduated with my Master's from NJIT in May 2025 and have 3+ years building scalable backend systems with Python, Django, PostgreSQL, and Apache Kafka. Feel free to ask me about my work experience, projects, skills, or anything else you'd like to know!";
+    return "I'm Raghava Kami Reddy Vasa, a SQL Developer based in New Jersey. I graduated with my Master's from NJIT in May 2025. I specialize in database design, optimization, and SQL development with expertise in PostgreSQL, MySQL, Oracle, and MongoDB. Feel free to ask me about my skills, projects, or anything else you'd like to know!";
   }
   
-  // === WORK EXPERIENCE ===
+  // === WORK EXPERIENCE === (Removed - no work experience)
   if (normalizedQuery.includes("experience") || normalizedQuery.includes("background") || normalizedQuery.includes("job") || normalizedQuery.includes("career") || normalizedQuery.includes("work")) {
-    if (normalizedQuery.match(/jpmorgan|chase|jp.?morgan|bank|finance|financial|current|present|now|currently/)) {
-      return "I'm currently a Python Developer at JPMorgan Chase in North America, where I build secure backend microservices using Python and Django REST Framework to process high-volume financial transactions. I work with Apache Kafka for real-time streaming, PostgreSQL for core banking data, and integrate with SWIFT/ISO 20022 standards. I also automate ETL workflows with Airflow and create Tableau dashboards for financial analytics.";
-    } else if (normalizedQuery.match(/hcl|retail|ecommerce|e-commerce|previous|past|before|prior/)) {
-      return "Previously, I was a Python Developer at HCL Tech in India, where I developed large-scale retail and e-commerce platforms using FastAPI and Flask. I designed MySQL and Cassandra databases for real-time inventory updates, implemented Apache Kafka for streaming, automated workflows with Prefect, and deployed containerized services on Azure using Docker and Kubernetes.";
-    } else if (normalizedQuery.match(/years?|duration|how long|tenure/)) {
-      return "I have 3+ years of professional experience as a Python Developer, working at JPMorgan Chase (current) and HCL Tech (previous). My experience spans banking, finance, retail, and e-commerce industries, focusing on building secure, scalable backend services and real-time data systems.";
-    } else {
-      return "My professional experience includes working as a Python Developer at JPMorgan Chase (present) building secure banking microservices, and at HCL Tech (previous) developing retail and e-commerce platforms. I specialize in backend development, real-time data streaming with Apache Kafka, database optimization, and cloud-native applications.";
-    }
+    return "I'm a SQL Developer with expertise in database design, optimization, and SQL development. I graduated with my Master's in Computer Science from NJIT in May 2025. I specialize in working with various database systems including PostgreSQL, MySQL, Oracle, and MongoDB. Feel free to ask me about my skills, projects, or database expertise!";
   }
   
   // === SKILLS & TECHNOLOGIES ===
   if (normalizedQuery.match(/skill|technology|tech stack|technologies|proficient|expert|know|learn/)) {
     if (normalizedQuery.match(/python|django|flask|fastapi|backend/)) {
-      return "Python is my primary programming language, and I'm expert-level with Django REST Framework for building microservices. I've also worked extensively with Flask and FastAPI for developing RESTful APIs. I use these frameworks daily at JPMorgan Chase and HCL Tech for high-performance backend systems.";
+      return "I'm a SQL Developer specializing in database systems. While I have knowledge of Python and other technologies from my projects and education, my primary focus is on SQL development, database design, and optimization across PostgreSQL, MySQL, Oracle, and MongoDB.";
     } else if (normalizedQuery.match(/database|sql|postgres|mysql|cassandra|mongodb|data storage/)) {
       return "I'm experienced with multiple database technologies: PostgreSQL (expert with banking systems), MySQL, Cassandra for distributed systems, MongoDB for NoSQL, and data warehousing with Snowflake and Redshift. I optimize database performance and design schemas for high-volume transaction processing.";
     } else if (normalizedQuery.match(/kafka|streaming|real.?time|event/)) {
-      return "I'm an expert with Apache Kafka for real-time event streaming. I've implemented Kafka at both JPMorgan Chase for transaction streaming and fraud monitoring, and at HCL Tech for live inventory updates. I also work with Spark Streaming for big data processing.";
+      return "I'm a SQL Developer with expertise in database systems and SQL development. While I have knowledge of various technologies from my projects and education, my primary specialization is in database design, optimization, and SQL development across PostgreSQL, MySQL, Oracle, and MongoDB.";
     } else if (normalizedQuery.match(/machine learning|ml|ai|artificial intelligence|tensorflow|pytorch|scikit/)) {
       return "I have strong machine learning skills, working with Pandas, NumPy, Scikit-learn, TensorFlow, and PyTorch. I've built fraud detection models, risk scoring systems, and customer segmentation analytics. My ML research project involved deep learning for pattern recognition.";
     } else if (normalizedQuery.match(/cloud|aws|azure|docker|kubernetes|devops/)) {
-      return "I'm proficient with cloud platforms including AWS (at JPMorgan Chase) and Azure (at HCL Tech). I deploy containerized applications using Docker and Kubernetes, implement CI/CD pipelines, and ensure cloud security compliance. I've managed production deployments on both platforms.";
+      return "I'm a SQL Developer with expertise in database systems. While I have knowledge of cloud platforms and various technologies from my projects and education, my primary focus is on SQL development, database design, and optimization.";
     } else if (normalizedQuery.match(/react|frontend|front.?end|ui|javascript|typescript/)) {
-      return "For frontend development, I work with React.js, TypeScript, HTML/CSS, and Tailwind CSS. I've built this portfolio website using React with Framer Motion animations. I can develop full-stack applications combining modern frontend with Python backends.";
+      return "I'm a SQL Developer specializing in database systems. While I have knowledge of frontend technologies like React.js, TypeScript, HTML/CSS from my projects and education, my primary expertise is in SQL development, database design, and optimization across PostgreSQL, MySQL, Oracle, and MongoDB.";
     } else {
-      return "My technical skills span Python (Django, Flask, FastAPI), databases (PostgreSQL, MySQL, Cassandra), real-time streaming (Apache Kafka), machine learning (TensorFlow, PyTorch), cloud platforms (AWS, Azure), containerization (Docker, Kubernetes), and frontend technologies (React.js, TypeScript). I have 3+ years applying these in banking and e-commerce.";
+      return "My technical skills focus on SQL development and database systems including PostgreSQL, MySQL, Oracle, and MongoDB. I also have knowledge of various technologies from my projects and education, but my primary specialization is in database design, optimization, and SQL development.";
     }
   }
   
@@ -361,7 +309,7 @@ function getSimulatedResponse(userMessage: string): string {
     } else if (normalizedQuery.match(/bachelor|undergrad|vit|vellore|undergraduate/)) {
       return "I completed my Bachelor of Engineering in Computer Science from Vellore Institute of Technology (VIT) from 2019 to 2023, graduating with honors. My undergraduate focus was on software engineering and Internet of Things, which laid the foundation for my career.";
     } else {
-      return "I graduated with my Master's in Computer Science from NJIT in May 2025 and completed my Bachelor's in Computer Science from Vellore Institute of Technology (2019-2023) with honors. Both programs have strengthened my theoretical foundations and practical software development skills.";
+      return "I graduated with my Master's in Computer Science from NJIT in May 2025 and completed my Bachelor's in Computer Science from Vellore Institute of Technology (2019-2023) with honors. Both programs have strengthened my theoretical foundations and practical skills in SQL development and database systems.";
     }
   }
   
@@ -386,12 +334,12 @@ function getSimulatedResponse(userMessage: string): string {
   
   // === LOCATION ===
   if (normalizedQuery.match(/location|where|live|based|from|address|city|state|country/)) {
-    return "I'm currently based in Skillman, New Jersey, USA, where I graduated with my Master's degree from NJIT in May 2025 and am working at JPMorgan Chase. I'm originally from India, where I completed my undergraduate studies at Vellore Institute of Technology. I'm open to opportunities in the New Jersey area and remote work.";
+    return "I'm currently based in Skillman, New Jersey, USA, where I graduated with my Master's degree from NJIT in May 2025. I'm originally from India, where I completed my undergraduate studies at Vellore Institute of Technology. I'm open to SQL Developer opportunities in the New Jersey area and remote work.";
   }
   
   // === CERTIFICATIONS & ACHIEVEMENTS ===
   if (normalizedQuery.match(/certification|certificate|achievement|award|recognition/)) {
-    return "I hold a Full Stack Developer Certification from Microsoft and a Machine Learning Internship Certification from Corizo. I also served as a Technical Core Committee Member at IEEE NPS, where I helped organize technical workshops and mentoring programs, which enhanced my leadership and organizational skills.";
+    return "I hold a SQL Developer Certification and a Machine Learning Internship Certification from Corizo. I also served as a Technical Core Committee Member at IEEE NPS, where I helped organize technical workshops and mentoring programs, which enhanced my leadership and organizational skills.";
   }
   
   // === PERSONAL INTERESTS & HOBBIES ===
@@ -411,33 +359,33 @@ function getSimulatedResponse(userMessage: string): string {
   
   // === SPECIFIC TECHNOLOGIES ===
   if (normalizedQuery.match(/postgres|postgresql/)) {
-    return "I'm expert-level with PostgreSQL, using it extensively at JPMorgan Chase for core banking systems. I optimize data models and queries to handle millions of daily transaction records efficiently, ensuring low latency and high reliability for financial transactions.";
+    return "I'm expert-level with PostgreSQL for database design, optimization, and SQL development. I can optimize data models and queries for efficient performance, handle complex database operations, and ensure high reliability for data-driven applications.";
   }
   
   if (normalizedQuery.match(/airflow|prefect|workflow|etl|orchestration/)) {
-    return "I automate ETL workflows using Apache Airflow at JPMorgan Chase and Prefect at HCL Tech. These tools help me orchestrate complex data pipelines, schedule tasks, and monitor workflows for real-time data processing and reporting systems.";
+    return "I have knowledge of ETL workflows and data pipeline tools like Apache Airflow and Prefect from my projects and education. As a SQL Developer, I focus on database design, query optimization, and efficient data processing using SQL.";
   }
   
   if (normalizedQuery.match(/tableau|power.?bi|dashboard|visualization|analytics/)) {
-    return "I create data visualizations and analytics dashboards using Tableau at JPMorgan Chase for key financial KPIs. I also have experience with Power BI for business intelligence, helping stakeholders understand complex data through interactive dashboards.";
+    return "I have knowledge of data visualization tools like Tableau and Power BI from my projects and education. As a SQL Developer, I focus on creating efficient SQL queries and database structures that support data analysis and reporting.";
   }
   
   if (normalizedQuery.match(/graphql|ariadne/)) {
-    return "I've implemented GraphQL APIs using the Ariadne framework at HCL Tech, building flexible APIs that allow clients to request exactly the data they need. This improved API efficiency and reduced over-fetching in our e-commerce platforms.";
+    return "I have knowledge of GraphQL and various API frameworks from my projects and education. As a SQL Developer, my primary focus is on database design, SQL query optimization, and ensuring efficient data access patterns.";
   }
   
   // === COMPANY SPECIFIC ===
   if (normalizedQuery.match(/jp.?morgan|chase|jpmc/)) {
-    return "I'm currently a Python Developer at JPMorgan Chase, one of the largest financial institutions. I work on secure backend microservices for high-volume financial transactions, implement real-time fraud monitoring with Kafka, optimize PostgreSQL databases, and integrate with SWIFT/ISO 20022 standards for interbank transfers.";
+      return "I'm a SQL Developer specializing in database design and optimization. While I don't have specific work experience at JPMorgan Chase, I have expertise in PostgreSQL and other database systems. I'm passionate about database optimization and SQL development.";
   }
   
   if (normalizedQuery.match(/hcl|hcl.?tech/)) {
-    return "I previously worked as a Python Developer at HCL Tech, a leading IT services company. There I developed large-scale retail and e-commerce platforms using FastAPI and Flask, managed distributed databases (MySQL, Cassandra), implemented real-time streaming with Kafka, and deployed containerized services on Azure.";
+      return "I'm a SQL Developer with expertise in database systems. I specialize in SQL development, database design, and optimization. While I don't have specific work experience at HCL Tech, I have strong skills in MySQL, PostgreSQL, and other database technologies.";
   }
   
   // === AVAILABILITY & OPPORTUNITIES ===
   if (normalizedQuery.match(/available|opportunity|hire|job|position|open|looking|interested/)) {
-    return "I'm always open to discussing exciting opportunities, collaborations, or projects that align with my skills in backend development, data engineering, and machine learning. Feel free to reach out via email at vrkreddy27@gmail.com or connect with me on LinkedIn. I'm based in New Jersey and open to remote opportunities as well.";
+    return "I'm always open to discussing exciting opportunities, collaborations, or projects that align with my skills in SQL development, database design, and data optimization. Feel free to reach out via email at vrkreddy27@gmail.com or connect with me on LinkedIn. I'm based in New Jersey and open to remote opportunities as well.";
   }
   
   // === MATHEMATICAL QUESTIONS ===
