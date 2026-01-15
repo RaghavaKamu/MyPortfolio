@@ -12,8 +12,8 @@ export default function Footer() {
           <nav className="flex flex-wrap justify-center space-x-6 mb-4 md:mb-0">
             <a href="#home" className="hover:text-primary transition-colors">Home</a>
             <a href="#about" className="hover:text-primary transition-colors">About</a>
+            <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
             <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
-            <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </nav>
           
